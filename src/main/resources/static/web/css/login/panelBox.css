@@ -1,0 +1,89 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.panelBoxBg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 150px;
+}
+.panelBoxBg .panelBoxBody {
+  width: 448px;
+  height: 273px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.panelBoxBg .panelBoxBody h4 {
+  color: #666;
+  margin-top: 50px;
+  font-size: 16px;
+  font-weight: normal;
+}
+.panelBoxBg .panelBoxBody p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #666;
+}
+.panelBoxBg .panelBoxBody .p1 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.panelBoxBg .panelBoxBody .p2 {
+  font-size: 16px;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.panelBoxBg .panelBoxBody button {
+  width: 140px;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-color: #e7141a;
+}
+.panelBoxBg .panelBoxBody .btn {
+  width: 448px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panelBoxBg .panelBoxBody .btn button {
+  width: 140px;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.panelBoxBg .panelBoxBody .btn .cancelBtn {
+  margin-right: 15px;
+  background-color: transparent;
+  border: 1px solid #cdcdcd;
+  color: #666;
+}
+.panelBoxBg .panelBoxBody .btn .okBtn {
+  margin-left: 15px;
+  background-color: #e7141a;
+}
+.panelBoxBg .panelBoxBody .btn1 {
+  margin-top: 30px;
+}
+.panelBoxBg .panelBoxBody input {
+  width: 300px;
+  height: 40px;
+  text-indent: 1em;
+  font-size: 14px;
+  margin: 15px 0;
+}

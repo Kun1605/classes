@@ -1,0 +1,163 @@
+@charset "UTF-8";
+.modal-backdrop {
+  background: transparent;
+}
+html,
+body {
+  position: relative;
+  font-family: "微软雅黑";
+}
+select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: solid 1px #84cfe4;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 120px;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #84cfe4;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: url("../../image/activitytwo/xl.png") no-repeat scroll right center transparent;
+  background-size: 10% 20%;
+  background-position: 100px;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 14px;
+}
+select .select_all span {
+  color: #84cfe4;
+}
+select::-ms-expand {
+  display: none;
+}
+#mainInfo .infoContent .infoRightBar {
+  height: 100%;
+  background: #fff;
+}
+#mainInfo .infoContent .infoRightBar .tap_img img {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 50px;
+}
+#mainInfo .infoContent .infoRightBar .btn {
+  margin-top: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+#mainInfo .infoContent .infoRightBar .btn .btn_all {
+  background: #f05b3b;
+  border: none;
+  width: 200px;
+  height: 55px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+#mainInfo .infoContent .infoRightBar .btn .btn_one {
+  margin-right: 20px;
+}
+#mainInfo .infoContent .infoRightBar .btn .btn_two {
+  margin-bottom: 60px;
+}
+#mainInfo .infoContent .infoRightBar .btn h2 {
+  font-weight: bold;
+}
+#mainInfo .infoContent .infoRightBar .btn h2:first-child {
+  margin-top: 60px;
+}
+#mainInfo .infoContent .infoRightBar .btn h2:last-child {
+  color: #afe3f1;
+}
+#mainInfo .infoContent .infoRightBar .tab_list h5 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul {
+  width: 50.6%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 0  2.7%;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul .select_tt {
+  margin-bottom: 4px;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul li {
+  list-style: none;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul li .styled-select {
+  width: 140px;
+  height: 30px;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul .c_blue {
+  color: #84cfe4;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul div {
+  display: inline-block;
+  line-height: 30px;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul div:nth-child(1) {
+  width: 10.4%;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul div:nth-child(2) {
+  width: 29.4%;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul div:nth-child(3) {
+  width: 23.3%;
+}
+#mainInfo .infoContent .infoRightBar .tab_list ul div:nth-child(4) {
+  width: 21.6%;
+}
+#mainInfo .infoContent .infoRightBar .tab_list .ranking {
+  color: #fff;
+  background: #84cfe4;
+  border-radius: 30px;
+}
+#mainInfo .infoContent .infoRightBar .tab_list .my {
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  background: #84cfe4;
+  border-radius: 30px;
+}
+
+.btnn {
+  text-align: center;
+  margin-top:40px;
+}
+
+.btnn h2 {
+  font-weight: bold;
+}
+
+.btnn h2:nth-child(4) {
+  color:#84cfe4;
+}
+
+.btnt {
+  text-align: center;
+}
+.btnt .btn_all {
+  background: #f05b3b;
+  border: none;
+  width: 200px;
+  height: 55px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  /* margin-top:30px; */
+
+}
+.btnt .btn_one {
+  margin-right: 20px;
+  outline: none;
+}
+.btnt .btn_two {
+  margin-bottom: 60px;
+  outline: none;
+}

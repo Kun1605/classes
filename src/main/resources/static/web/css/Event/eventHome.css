@@ -1,0 +1,688 @@
+@charset "UTF-8";
+.infoRightBar {
+  width: 1010px;
+  background-color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox {
+  background: url("../../image/event/eventBg.png") no-repeat;
+  background-size: cover;
+  background-position: -8px -3px;
+  box-shadow: 0 2px 4px 0 rgba(180, 180, 180, 0.5);
+  padding: 60px 35px 60px 35px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventTitle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox .eventTitle h3 {
+  font-size: 46px;
+  letter-spacing: 1px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventTitle a {
+  width: 482px;
+  height: 50px;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, #9e349f, #d42e25);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 25px 0 30px 0;
+  cursor: default;
+}
+.infoRightBar .account-bind-panel .eventBox .eventTitle span {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList {
+  margin-top: 56px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList {
+  width: 551px;
+  height: 100%;
+  background: url("../../image/event/eventListBg.png") no-repeat;
+  background-size: contain;
+  padding: 24px 0 0 51px;
+  margin-top: -4px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListTitle {
+  display: block;
+  width: 455px;
+  text-align: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListTitle p {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum {
+  color: #fff;
+  width: 455px;
+  height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .leftListRank {
+  width: 136px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .leftListRank span {
+  font-size: 20px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .rightListName {
+  width: 319px;
+  height: 84px;
+  padding: 14px 0 0 100px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .rightListName span {
+  display: block;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .rightListName span:nth-of-type(1) {
+  font-size: 12px;
+  color: #e6e6e6;
+  margin-bottom: 6px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .rightListName span:nth-of-type(2) {
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  color: #fbff45;
+  font-weight: bold;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum .rightListName span:nth-of-type(3) {
+  font-size: 12px;
+  color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum:nth-of-type(2) {
+  margin-top: 60px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum:nth-of-type(3) {
+  margin-top: 36px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum:nth-of-type(4) {
+  margin-top: 36px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum:nth-of-type(5) {
+  margin-top: 39px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum:nth-of-type(6) {
+  margin-top: 41px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .leftList .leftListNum:nth-of-type(7) {
+  margin-top: 38px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList {
+  height: 854px;
+  width: 340px;
+  background-image: linear-gradient(to bottom, #4d0b6a, #912cfc);
+  box-shadow: 0 0 3px 1px rgba(40, 40, 40, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList p {
+  color: #fff;
+  font-size: 20px;
+  margin: 20px 0 22px 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .myRankBox {
+  width: 321px;
+  height: 82px;
+  border-radius: 3px;
+  background-color: #f08412;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .myRankBox .myRank {
+  width: 120px;
+  height: 61px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .myRankBox .myRank:nth-of-type(2) {
+  overflow: hidden;
+  color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .myRankBox .myRank:nth-of-type(2) span {
+  width: 100%;
+  height: 61px;
+  text-align: center;
+  display: block;
+  line-height: 61px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 3px;
+  font-size: 18px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .myRankBox .myRank p {
+  font-size: 12px;
+  color: #fff;
+  margin: 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .myRankBox .myRank p:nth-of-type(2) {
+  font-size: 16px;
+  font-weight: bold;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList {
+  width: 321px;
+  height: 100%;
+  padding-left: 0;
+  margin-top: 13px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li {
+  width: 100%;
+  height: 46px;
+  list-style: none;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid #979797;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li:nth-of-type(1),
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li:nth-of-type(2),
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li:nth-of-type(3) {
+  background-image: linear-gradient(to right, #d8261c, rgba(123, 14, 14, 0));
+  border-bottom: none;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li:nth-of-type(1) div:nth-child(1),
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li:nth-of-type(2) div:nth-child(1),
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li:nth-of-type(3) div:nth-child(1) {
+  font-size: 26px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li div:nth-of-type(1) {
+  width: 38px;
+  height: 100%;
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: 900;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li div:nth-of-type(2) {
+  width: 140px;
+  height: 46px;
+  margin-left: 15px;
+  text-align: left;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li div:nth-of-type(2) span {
+  width: 100%;
+  height: 46px;
+  display: inline-block;
+  line-height: 46px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.infoRightBar .account-bind-panel .eventBox .eventList .rightList .rightRankList li div:nth-of-type(3) {
+  height: 100%;
+  margin-left: 15px;
+  font-size: 14px;
+  justify-content: flex-start;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .ruleBtn {
+  width: 254px;
+  height: 55px;
+  border-radius: 41px;
+  background-image: linear-gradient(to right, #9e349f, #d42e25);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: default;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank {
+  width: 100%;
+  padding-left: 0;
+  margin-top: 36px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
+  color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li:nth-of-type(1) {
+  height: 36px;
+  border-radius: 18px;
+  background-color: #d42e25;
+  border-bottom: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li:nth-of-type(2) {
+  height: 51px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li:nth-of-type(3) {
+  height: 51px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li:nth-of-type(4) {
+  flex-direction: column;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li span {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li span .creatBtn {
+  width: 100px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #d42e25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellTop {
+  width: 100%;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom {
+  width: 100%;
+  position: relative;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList {
+  display: none;
+  width: 100%;
+  background-image: linear-gradient(to right, #d42e25, #ffb600);
+  margin: 0 auto;
+  padding: 26px 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell {
+  list-style: none;
+  width: 100%;
+  height: 60px;
+  display: flex;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell:nth-of-type(1) {
+  border-bottom: 1px dashed #cdcdcd;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell:nth-of-type(4) {
+  height: 60px;
+  flex-direction: row;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell span {
+  font-size: 14px;
+  color: #fff;
+  width: 182px;
+  display: inline-block;
+  text-align: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell span:nth-of-type(1) {
+  width: 25%;
+  padding-left: 10px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell span:nth-of-type(2) {
+  width: 25%;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell span:nth-of-type(3) {
+  width: 25%;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell span:nth-of-type(4) {
+  width: 25%;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div {
+  display: inline-block;
+  width: 182px;
+  height: 60px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  text-align: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div:nth-of-type(1) {
+  width: 25%;
+  padding-left: 20px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div:nth-of-type(2) {
+  width: 25%;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div:nth-of-type(3) {
+  width: 25%;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div:nth-of-type(4) {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div img {
+  width: 40px;
+  margin-right: 8px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell div .pocketMoney {
+  width: 66px;
+  height: 20px;
+  background-color: #c70000;
+  color: #ffe60a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding-left: 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket .openPocket,
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket .unopenPocket {
+  width: 46px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: #d42e25;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket .openPocket:focus,
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket .unopenPocket:focus {
+  outline: none;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket .openPocket .openIcon,
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .inviteList .inviteListCell .checkRedPocket .unopenPocket .openIcon {
+  width: 100%;
+  margin-right: 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .changeErrow {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .changeErrow.rotate-arrows {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .noticeBox .modal-content {
+  width: 430px;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .noticeBox .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .noticeBox .modal-body p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 73px;
+  margin-bottom: 65px;
+  color: #333;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .noticeBox .modal-body button {
+  margin: 0 0 46px 0;
+  width: 140px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+  background-color: #e7141a;
+  color: #fff;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .noticeBox .modal-body button:focus {
+  outline: none;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen {
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog {
+  height: 400px;
+  width: 500px;
+  margin-top: 80px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header {
+  width: 100%;
+  height: 100%;
+  border-bottom: none;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .pocketWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../image/event/yellowLight.png") no-repeat center center;
+  background-size: contain;
+  -webkit-animation: gogogo 10s infinite linear ;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .openPocketBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .openPocketBox .unopenBag {
+  background: url("../../image/event/unopenPocket.png") no-repeat;
+  background-size: 100% 100%;
+  height: 220px;
+  width: 200px;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  margin: 0 auto;
+  margin-top: 17%;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .openPocketBox .openedPocket {
+  background: url("../../image/event/openPocket.png") no-repeat;
+  background-size: 100% 100%;
+  height: 250px;
+  width: 220px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .openPocketBox .collectBtn {
+  color: #fff;
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60px;
+  height: 30px;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .openPocketBox .pocketGift {
+  width: 100%;
+  opacity: 0;
+  height: 20px;
+  color: #fd3331;
+  margin-top: 45px;
+  font-size: 18px;
+  text-align: center;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .openPocketBox .pocketGift:nth-of-type(2) {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .closeBtnBox {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .closeBtnBox .closeBtn {
+  width: 60px;
+  height: 28px;
+  background-image: linear-gradient(to right, #ffe733, #ff9f00);
+  box-shadow: 0 0 8px 0 rgba(40, 40, 40, 0.1);
+  color: #cf3333;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .cellBottom .redPocketOpen .modal-dialog .modal-content .modal-header .closeBtnBox .closeBtn:focus {
+  outline: none;
+}
+@keyframes gogogo {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .questionMark {
+  width: 16px;
+  height: 16px;
+  border: 0.5px solid #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: 200;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .checkDetailBtn {
+  color: #fff;
+  cursor: pointer;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #fff;
+  margin-left: 5px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank li .triangle.rotate-arrows {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .redPocketRank .removeBottomLine {
+  border-bottom: none;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .eventRuleDetail {
+  width: 100%;
+  height: 386px;
+  margin-top: 30px;
+  color: #ffffff;
+  padding: 0 60px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .eventRuleDetail .ruelCell {
+  display: flex;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  margin: 14px 0;
+  font-weight: 300;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .eventRuleDetail .ruelCell:nth-of-type(1) {
+  margin-top: 0;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .eventRuleDetail .ruelCell span:nth-of-type(1) {
+  font-size: 18px;
+}
+.infoRightBar .account-bind-panel .eventBox .eventRules .eventRuleDetail .ruelCell span:nth-of-type(2) {
+  text-align: justify;
+  margin-top: 3px;
+}

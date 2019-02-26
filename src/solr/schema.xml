@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.5">
+	<field name="_version_" type="long" indexed="true" stored="true" />
+	<field name="_root_" type="string" indexed="true" stored="false" />
+	<!-- indexed需不需要做索引 ，stored需不需要做存储 required 是不是必须的，multiValued是不是有多个值-->
+	<field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+	<!-- 标题 -->
+	<field name="title" type="text_ik" indexed="true" stored="true" required="true" multiValued="false" />
+	<!-- 内容无标签 -->
+	<field name="contentNoTag" type="text_ik" indexed="true" stored="true" required="true" multiValued="false" />
+	<!-- 图片 -->
+	<field name="image" type="string" indexed="false" stored="true" required="false" multiValued="true" />
+	<!-- 创建时间 -->
+	<field name="update_time" type="string" indexed="false" stored="true" required="true" multiValued="false" />
+	<uniqueKey>id</uniqueKey>
+	<fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+	<fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0" />
+	<fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0" />
+	<!-- 集成中文IK分词器 
+						开启title和摘要的分词 -->
+	<fieldType name="text_ik" class="solr.TextField">   
+     	<analyzer class="org.wltea.analyzer.lucene.IKAnalyzer"/>   
+	</fieldType>
+</schema>

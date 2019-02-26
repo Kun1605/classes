@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kunakun.mapper.MessageMapper">
+	
+  <resultMap id="BaseResultMap" type="Message">
+  	<id column="id" jdbcType="NUMERIC" property="id" />
+  	 <result column="student_id" jdbcType="NUMERIC" property="studentId" />
+  	 <result column="title" jdbcType="VARCHAR" property="title" />
+  	 <result column="content" jdbcType="VARCHAR" property="content" />
+  	 <result column="state" jdbcType="NUMERIC" property="state" />
+  	 <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+  	 <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+  </resultMap>
+  <sql id="BaseColumnSql">
+	id,student_id,title,content,state,create_time,update_time
+	</sql>
+  <select id="selectAvaiMessagePageInfo" resultMap="BaseResultMap" parameterType="Message" >
+  	SELECT <include refid="BaseColumnSql"/>  FROM t_message 
+  	WHERE  1=1
+  	<if test="state!=null">
+  		AND state!=#{state}
+  	</if>
+  	<if test="studentId!=null">
+  		AND student_id=#{studentId}
+  	</if>
+  </select>
+</mapper>

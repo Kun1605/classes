@@ -1,0 +1,112 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("../../image/login/loginBg.png") no-repeat;
+  background-size: cover;
+}
+#qqLoginPlatform .loginHeader {
+  height: 47px;
+  width: 100%;
+  background-color: #51B7EC;
+  display: flex;
+  align-items: center;
+}
+#qqLoginPlatform .loginHeader img {
+  height: 39px;
+  margin-left: 350px;
+  margin-right: 28px;
+}
+#qqLoginPlatform .loginHeader span {
+  color: #fff;
+  font-size: 20px;
+}
+#qqLoginPlatform .loginContent {
+  width: 100%;
+  height: 100%;
+  padding-left: 300px;
+  padding-top: 50px;
+}
+#qqLoginPlatform .loginContent .leftLoginForm {
+  float: left;
+  padding: 0 50px 0 50px;
+  text-align: center;
+  height: 500px;
+  border-right: 1px solid #cacaca;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form p {
+  margin-bottom: 0;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form p:nth-of-type(1) {
+  font-size: 20px;
+  color: #333;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form p:nth-of-type(2) {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form input {
+  width: 242px;
+  height: 36px;
+  border: 1px solid #cdcdcd;
+  display: block;
+  margin-top: 37px;
+  text-indent: 1em;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form input:focus {
+  outline: none;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form input:nth-of-type(2) {
+  margin-top: 12px;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form button {
+  margin-top: 26px;
+  width: 110px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form button:focus {
+  outline: none;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form button:nth-of-type(1) {
+  background-color: #51B7EC;
+  margin-right: 20px;
+}
+#qqLoginPlatform .loginContent .leftLoginForm form button:nth-of-type(2) {
+  background-color: #cdcdcd;
+}
+#qqLoginPlatform .loginContent .rightLoginForm {
+  float: left;
+  padding: 50px 50px 0 35px;
+  text-align: center;
+  height: 614px;
+}
+#qqLoginPlatform .loginContent .rightLoginForm div {
+  font-size: 16px;
+  color: #666;
+  width: 240px;
+  text-align: left;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #cdcdcd;
+}
+#qqLoginPlatform .loginContent .rightLoginForm ul {
+  text-align: left;
+  padding-left: 20px;
+}
+#qqLoginPlatform .loginContent .rightLoginForm ul li {
+  font-size: 14px;
+  color: #969696;
+  margin-bottom: 10px;
+}
+#qqLoginPlatform .loginContent .rightLoginForm ul li a {
+  text-decoration: none;
+  color: #51B7EC;
+}

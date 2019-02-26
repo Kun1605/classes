@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <title>班集-个人主页</title>
+</head>
+<body>
+<!-- 判断是否手机站S -->
+<!--<script>-->
+	<!--var w = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;-->
+    <!--if (1000>w){-->
+    	<!--window.location.href="/wap/home/index";-->
+    <!--}else{-->
+    	<!---->
+    <!--}-->
+<!--</script>-->
+<div id="mainInfo">
+	
+    <!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+
+    <div class="infoContent">
+
+        <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+
+        <div class="infoRightBar pull-right">
+         <!--    <p>手机号绑定后将作为找回密码依据</p> -->
+            <div class="inviteFriend" style="">
+                 <div class="inviteImg">
+                     <img src="/web/image/InfoPage/banner.jpg" alt="">
+                 </div>
+            </div>
+            <!--个人信息 S-->
+            <div class="personalBox">
+                <div class="personalInfo">
+                    <div class="personIcon">
+                    	
+                        <img th:if="${student.avatar==null}"  src="/web/image/other/user_nologin.jpg" alt="" class="personImage img-circle">
+                        <img  th:src="${student.avatar}" alt="" class="personImage img-circle">
+                        <div class="personName">
+                            <div class="personUserName">
+                                <div class="leftUserName">
+                                    <span class="mainUserName" th:text="${student.name}"></span>
+                                </div>
+                                <div class="rightUserName">
+                                    <img class="editBtn" src="/web/image/accountpage/bianji.png" alt="">
+                                </div>
+                            </div>
+                            <p class="personCellPhone" th:text="${student.phone}"></p>
+                        </div>
+                    </div>
+                    <div class="requestCode" th:if="${depart!=null}">
+                            <div class="leftBarCode">
+                                <img class="codeImg img-circle"  th:src="${depart.logo}" alt="" >
+                            </div>
+                            <div class="rightRequestBtn">
+                              <!--  <p >
+                               		班费余额   : 
+                               <span style="color: red;" th:text="${'¥'+depart.balance/100 +','+depart.balance%100}"> </span></p> -->
+                                <a class="copyCodeBtn" th:href="${depart.weibo}"><button>前往班级微博</button></a>
+                                <a th:text="${depart.name}">前往班级微博 -><img src="/web/image/InfoPage/rightErr.png"></a>
+                            </div>
+                       </div>
+                </div>
+                <div class="dataInfo" th:if="${accountCount!=0&&contentCount!=0}">
+                    <ul class="dataInfoBox">
+                        <li>
+                            <p th:text="0">59</p>
+                            <p class="firstIcon leftIcon">我的实践分</p>
+                        </li>
+                        <li>
+                            <p th:text="0">0</p>
+                            <p class="secondIcon leftIcon">我的德育分</p>
+                        </li>
+                       <li>
+                            <p th:text="${student.dianzan}">0</p>
+                            <p class="thirdIcon leftIcon">同学圈集赞</p>
+                        </li>
+                        <li>
+                            <p th:text="0">0</p>
+                            <p class="seventhIcon leftIcon">朋友圈评论</p>
+                        </li>
+                        <li>
+                            <p th:text="0">0</p>
+                            <p class="fifthIcon leftIcon">新的文章</p>
+                        </li>
+                        <li>
+                            <p th:text="0">0</p>
+                            <p class="sixthIcon leftIcon">新的消息</p>
+                        </li>
+                        <li>
+                            <p th:text="0">0</p>
+                            <p class="seventhIcon leftIcon">我的收藏</p>
+                        </li>
+                        <li>
+                            <p th:text="0">0</p>
+                            <p class="eightIcon leftIcon">系统通知</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--个人信息 E-->
+
+
+          <!--   <!--新手引导 S-->
+        
+            <div class="firstCameIn" th:if="${student.avatar==null or student.classId==null}" >
+                <p>新手引导--(该模块只在信息不完善时出现)<img class="rocket" src="/web/image/InfoPage/huojian.png"></p>
+                <div class="newHand">
+                    <div class="newHandLeft">
+                        <img class="leftPic" src="/web/image/InfoPage/account.png" alt="">
+                        <div class="rightSide">
+                            <h3>1 完善个人信息</h3>
+                            <p>有助于本班文化等一系列功能的建设</p>
+                            <span><img src="/web/image/InfoPage/orangeLine.png"></span>
+                            <a href="/web/student/edit">完善信息</a>
+                        </div>
+                    </div>
+                    <div class="newHandRight"  >
+                        <img class="rightPic" src="/web/image/InfoPage/xiewenzhang.png" alt="">
+                        <div class="rightSide">
+                            <h3>您还未绑定自己的手机号</h3>
+                            <p>点击去提交申请,填写手机号,有助于班集文化建设哦</p>
+                            <span><img class="yellowLine" src="/web/image/InfoPage/yellowLine.png"></span>
+                            <a href="/web/student/edit" target="_blank">点击去绑定手机号</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!--新手引导 E-->
+
+            <!-- messageList S -->
+           <!--  <div class="messageList"
+                 th:if="${(not #lists.isEmpty(mediaMessageList))&&(accountCount!=0&&contentCount!=0)}">
+                <ul>
+                    <li style="margin-top: 0;"><p>最新消息</p></li>
+                    <li th:each="item,iterStat: ${mediaMessageList}" th:style="${iterStat.first}?'margin-top: 19px;'">
+                        <span><a href="/s/f/message/allMessageList" th:text="${item.title}">今日头条需要授权</a></span>
+                        <span th:text="${#dates.format(item.create_time,'yyyy-MM-dd HH:mm:ss')}">2017-08-01</span>
+                    </li>
+                </ul>
+            </div> -->
+            <!-- messageList E -->
+        </div>
+    </div>
+
+
+    <!--footer S -->
+    <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+
+
+</body>
+
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:src="@{/web/vendor/clipboard/clipboard.min.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:inline="javascript">
+    $(".editBtn").click(function () {
+       $(window).attr('location',"/web/student/edit");
+    });
+   	
+
+</script>
+</html>

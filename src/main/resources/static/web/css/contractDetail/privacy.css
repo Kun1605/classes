@@ -1,0 +1,42 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f0ed;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .row .privacyBox {
+  padding: 0 12px;
+  margin: 0 auto;
+  padding-bottom: 37px;
+}
+.container .row .privacyBox .privacyTitle {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 30px;
+  margin-top: 37px;
+}
+.container .row .privacyBox p {
+  text-align: justify;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #666;
+  margin: 0;
+  line-height: 22px;
+}
+.container .row .privacyBox p span {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.container .row .privacyBox .privacySmTitle {
+  font-size: 18px;
+  color: #333;
+  margin: 20px 0;
+}

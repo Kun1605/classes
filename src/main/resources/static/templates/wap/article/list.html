@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="wap/common/header :: header(~{::title},~{::link})">
+<link rel="stylesheet" th:href="@{/wap/css/slick.css(v=${vtimestamp})}">
+<link rel="stylesheet" th:href="@{/wap/css/base.css(v=${vtimestamp})}">
+<link rel="stylesheet" th:href="@{/wap/css/style.css(v=${vtimestamp})}">
+<link rel="stylesheet" th:href="@{/wap/css/all.css(v=${vtimestamp})}">
+<link rel="stylesheet"
+	th:href="@{/wap/css/swiper.min.css(v=${vtimestamp})}">
+<link rel="stylesheet"
+	th:href="@{/wap/css/iconfont/iconfont.css(v=${vtimestamp})}">
+<link rel="stylesheet" th:href="@{/wap/css/w_a.css(v=${vtimestamp})}">
+<title>学习文章</title>
+
+</head>
+<body>
+	<!-- 判断是否手机站S -->
+	<!--<script>-->
+		<!--var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;-->
+		<!--if (1000 < w) {-->
+			<!--window.location.href = "/web/home/index";-->
+		<!--} else {-->
+	<!---->
+		<!--}-->
+	<!--</script>-->
+	<div class="header">
+				<span>学习文章</span>
+				<a href="/wap/home/index" class="back"></a>
+	</div>
+
+	<div class="wap_searchbox">
+		<form action="http://m.meishichina.com/search/" method="post"
+			id="wap_searchform">
+			<div>
+				<input type="text" id="wap_search" placeholder="根据关键字搜索"> <a
+					id="wap_search_Btn" href="javascript:void(0);"><span>搜索</span>
+				</a>
+			</div>
+		</form>
+	</div>
+
+	<div class="alist_c3">
+		<ul>
+		</ul>
+	</div>
+	<div class="ca">
+	<a id="more">查看更多文章</a>
+	</div>
+
+
+
+	<!--footer S -->
+	<th:block th:replace="wap/common/footer :: footer" />
+	<!--footer E -->
+
+
+</body>
+<script type="text/javascript"
+	th:src="@{/wap/js/jquery.min.js(v=${vtimestamp})}"></script>
+<script type="text/javascript"
+	th:src="@{/wap/js/fastclick.js(v=${vtimestamp})}"></script>
+<script type="text/javascript"
+	th:src="@{/wap/js/slick.min.js(v=${vtimestamp})}"></script>
+
+<script type="text/javascript"
+	th:src="@{/wap/js/rem.js(v=${vtimestamp})}"></script>
+<script type="text/javascript"
+	th:src="@{/wap/js/basic.js(v=${vtimestamp})}"></script>
+<script type="text/javascript"
+	th:src="@{/wap/js/swiper.jquery.min.js(v=${vtimestamp})}"></script>
+<script type="text/javascript">
+	var param = {}
+	param.page = 1;
+	param.limit = 3;
+	param.keyWords = "";
+	keyWords = $("#wap_search").val();
+	$('#more').click(function() {
+		param.page+=1;
+		getData();
+	})
+	
+	
+	var height=380;
+	var bheight=$("body").height();
+	function getData() {
+		$.post('/web/article/datagrid', param, function(data) {
+			var list = data.obj.list;
+			var isEnd = data.obj.isLastPage;
+			list.forEach(function(elt, i, array) {
+				if (isEnd) {
+					$('.ca').find('a').text('已经没有更多了');
+					$('#more').unbind('click');
+				}
+				var html = [];
+				html.push('<li><a href="/wap/article/' + elt.id + '">')
+				html.push('<div class="pic">')
+				html.push('<img width="60" height="60"')
+				html.push('src="' + elt.imageList[0] + '">')
+				html.push('</div>')
+				html.push('<div class="detail">')
+				html.push('<p class="pline">' + elt.title + '</p>')
+				html.push('<p class="pview">创建时间:' + elt.create_time + '</p>')
+				html.push('</div>')
+				html.push('</a></li>')
+				$('.alist_c3').find('ul').append(html.join(''));
+			})
+				$("body").height(bheight+=height);
+		}, "json");
+	}
+	$(function() {
+
+		getData()
+
+	})
+</script>
+</html>

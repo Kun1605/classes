@@ -1,0 +1,263 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("../image/homepage/indexBg.png") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+body .mainWrapper .navbar-default {
+  background-color: transparent;
+  border-bottom: none;
+  margin-bottom: 0;
+  border-color: transparent;
+}
+body .mainWrapper .navbar-default .container-fluid .navbar-header {
+  display: flex;
+  align-items: center;
+}
+body .mainWrapper .navbar-default .container-fluid .navbar-header .navbar-brand {
+  height: 100%;
+  padding-left: 45px;
+}
+body .mainWrapper .navbar-default .container-fluid .navbar-header .navbar-brand img {
+  width: 120px;
+}
+body .mainWrapper .navbar-default .container-fluid .navbar-header .navbar-brand2 {
+  padding-left: 0;
+  padding-right: 0;
+}
+body .mainWrapper .navbar-default .container-fluid .navbar-header .navbar-text {
+  margin-left: 0;
+  font-size: 22px;
+  color: #ffffff;
+}
+body .mainWrapper .mainContent {
+  width: 100%;
+  display: flex;
+}
+body .mainWrapper .mainContent .container {
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  body .mainWrapper .mainContent .container {
+    margin-top: 0;
+  }
+}
+body .mainWrapper .mainContent .container .leftContent img {
+  width: 90%;
+  height: 90%;
+  margin-top: -25px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel {
+  margin-top: -15px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel ul li a {
+  font-size: 28px;
+  color: #666;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel ul .spanIcon {
+  width: 1px;
+  height: 24px;
+  background-color: #CDCDCD;
+  border: none;
+  margin-top: 17px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .forgetPwdTitle {
+  border-bottom: 1px solid #e7141a;
+  padding-bottom: 10px;
+  margin: 13px auto;
+  display: none;
+  font-size: 31px;
+  color: #e7141a;
+  text-align: center;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel #forgetPwd {
+  padding: 0 41px 0 41px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel #forgetPwd .btnSubmit {
+  margin-top: 50px;
+  margin-bottom: 33px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form button {
+  height: 65px;
+  width: 382px;
+  background-color: #e7141a;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form .errMessage1 {
+  display: flex;
+  justify-content: space-between;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form .errMessage1 span {
+  color: #e7141a;
+  font-size: 19px;
+  opacity: 0;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form .errorMessage2 {
+  margin-top: 15px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form .errorMessage2 span {
+  color: #e7141a;
+  font-size: 19px;
+  display: none;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form p {
+  font-size: 19px;
+  color: #666;
+  margin-bottom: 0;
+  margin-top: 30px;
+  margin-right: 0;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form .registerNotice {
+  margin: 5px 0 0 0;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content form .registerNotice a {
+  color: #E7141A;
+  text-decoration: none;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group .left-form-control {
+  height: 46px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group a {
+  border-radius: 5px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group .form-control {
+  height: 48px;
+  padding: 0 0 0 54px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group a {
+  height: 46px;
+  width: 127px;
+  background-color: #F2F3F4;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group a img {
+  width: 100%;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #cellphone,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #username {
+  background: url("../image/login/head.png") no-repeat 13px 12px;
+  background-size: 19px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #password,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #userpwd,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #usermessage,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #usercode,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #forgetCode,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #forgetPwd,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #forgetMessage,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #setPwd {
+  background: url("../image/login/lock.png") no-repeat 13px 12px;
+  background-size: 19px;
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #username {
+  background: url("../image/login/head.png") no-repeat 13px 12px;
+  background-size: 19px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #userphone,
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content .form-group #forgetPhone {
+  background: url("../image/login/phone.png") no-repeat 14px 9px;
+  background-size: 15px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content #forgetBtn {
+  margin-right: 0;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content #forgetBtn a {
+  color: #666;
+  font-size: 14px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content #forgetBtn a :hover {
+  text-decoration: none;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content > .tab-pane:nth-of-type(1) {
+  margin: 20px 42px 20px 42px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .tab-content > .tab-pane:nth-of-type(2) {
+  padding: 0 41px 0 41px;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .btnSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px !important;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .nav-tabs {
+  border: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+body .mainWrapper .mainContent .container .rightContent .loginPanel .nav-tabs li a {
+  border: none!important;
+}
+body .mainWrapper .mainContent .container .rightContent #login > form > .form-group > .form-control {
+  position: relative;
+}
+body .mainWrapper .mainContent .container .rightContent #register > form > .form-group {
+  margin-top: 0;
+}
+body .mainWrapper .mainContent .container .rightContent #register > form > .form-group > .form-control {
+  margin-top: 15px;
+}
+body .mainWrapper .mainContent .container .rightContent .nav-tabs > li.active > a,
+body .mainWrapper .mainContent .container .rightContent .nav-tabs > li.active > a:hover,
+body .mainWrapper .mainContent .container .rightContent .nav-tabs > li.active > a:focus {
+  color: #e7141a !important;
+}
+body .mainWrapper .mainContent .container .rightContent .nav > li > a:hover,
+body .mainWrapper .mainContent .container .rightContent .nav > li > a:focus {
+  background-color: transparent;
+}
+body .mainWrapper .mainContent .container .bottomContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+}
+body .mainWrapper .mainContent .container .bottomContent > img {
+  max-width: 100%;
+}
+body .mainWrapper .infoFooter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}
+body .mainWrapper .infoFooter span {
+  display: block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #e3e3e3;
+  font-weight: 300;
+}
+body .mainWrapper .infoFooter span img {
+  height: 15px;
+  width: 15px;
+}

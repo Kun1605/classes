@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">  
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}" >
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/Event/eventHome.css(v=${vtimestamp})}">
+<!--    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css">-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>班集-班级主页</title>
+</head>
+<body>
+<div id="mainInfo">
+	<!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    <div class="infoContent">
+   		 <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+        <div class="infoRightBar pull-right" style="background-color: transparent">
+            <div class="tab-content">
+                <div class="tab-pane active account-bind-panel" role="tabpanel" id="account-bind">
+                    <div class="eventBox">
+                        <div class="eventTitle">
+                            <h3 th:text="${depart.name}"></h3>
+                            <a th:href="${depart.weibo}">软件学院</a>
+                            <span id="create_time" ></span>
+                        </div>
+                        <div class="eventList" >
+                    		
+                    	</div>
+                   	</div>
+               	</div>
+           	</div>
+   		 </div>
+    </div>
+    
+    <!--footer S -->
+        <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+    
+</div>
+</body>
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:src="@{/web/vendor/clipboard/clipboard.min.js(v=${vtimestamp})}"></script> 
+<script type="text/javascript" th:inline="javascript">
+$(function(){
+	var intro=[[${depart.intro}]]
+	var new_time=newsTime([[${depart.create_time}]]);
+	$(".eventList").html(intro);
+	
+})
+	
+	
+</script>
+</html>

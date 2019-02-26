@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        p{
+            text-align: center;
+            font-size: 14px;
+            margin-top: -2px;
+            margin-left: -3px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            color:#fff;
+            border: none;
+            border-radius: 5px;
+            background-color:#e7141a;
+            margin: 10px auto;
+            margin-top: 23px;
+            cursor:pointer;
+        }
+        button:focus{
+            outline:none;
+        }
+    </style>
+
+</head>
+<body>
+<p class="p2">已成功保存!</p>
+<button id="btn_sure" type="button" class="btn1">确认</button>
+
+<script src="/web/vendor/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btn_sure").on("click",function () {
+            window.parent.$("#edui14").trigger("click");
+        });
+    });
+</script>
+</body>
+</html>

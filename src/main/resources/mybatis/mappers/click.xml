@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kunakun.mapper.ClickMapper">
+
+    <!--前台查询列表-->
+    <select id="queryClick" resultType="hashmap" >
+     SELECT
+        id,click,dup_click,DATE(create_time) AS time,update_time
+    FROM
+        t_click
+    ORDER BY
+        create_time ASC
+        LIMIT 30
+
+    </select>
+
+
+
+</mapper>

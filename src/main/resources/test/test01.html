@@ -1,0 +1,29 @@
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>入门小Demo-6 循环数据</title>
+    <script src="angular.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []); //定义了一个叫myApp的模块
+        //定义控制器
+        app.controller('myController', function ($scope) {
+            $scope.list = ['杨坤', 192, 203, 434];//定义数组
+        });
+    </script>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+    <h1 id="hehe">呵呵</h1>
+<table>
+    <tr ng-repeat="x in list">
+        <td>{{x}}</td>
+    </tr>
+</table>
+    <script type="text/javascript" charset="UTF-8" >
+    </script>
+
+</body>
+
+</html>

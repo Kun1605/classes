@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">  
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/AccountInfo/accountBind.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/AccountInfo/AccountList.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <title>班集-同学圈子</title>
+</head>
+<body>
+<div id="mainInfo">
+	<!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    
+    <div class="infoContent">
+    
+        <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+        
+         <div class="infoRightBar pull-right">
+            <ul class="nav nav-tabs" id="tab-control">
+                <li role="presentation"  class="active">
+                    <a href="/web/student/zoneList" style="margin-right: 26px;" >我的同学</a>
+                </li>
+                <li role="presentation">
+                    <a href="/web/student/contacts">同学通讯录</a>
+                </li>
+            </ul>
+            
+            
+            <div class="tab-content">
+                <div class="tab-pane active account-list-panel" role="tabpanel" id="account-list">
+                    <div class="topTagBox">
+                      <span id="0" class="tagBtn">全部</span>
+                      <span th:id="${e.id}" class="tagBtn" th:each="e:${classList}" th:text="${e.name}"> </span>
+                      
+                    </div>
+                    <div class="searchBox">
+                        <div class="leftSearch">
+                            <div class="selectOption">
+                                <select name="sex" id=""  class="optionBox">
+                                    <option value="">全部</option>
+                                    <option value="男生">男生</option>
+                                    <option value="女生">女生</option>
+                                </select>
+                            </div>
+                            <div class="searchOption">
+                                <input type="text" placeholder="请输入学生姓名">
+                                <img src="../image/accountpage/sousuo.png" alt="" class="searchIcon">
+                            </div>
+                        </div>
+                    </div>
+                  <!--   <div class="rightSearch">
+                        <span>总数：</span>
+                        <span th:text="${#lists.size(studentList)}"></span>
+                    </div> -->
+                    <div id="bottomTagBox" class="bottomTagBox">
+                       <!--  <div class="loadingMore">
+                            <span>加载更多</span>
+                        </div> -->
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  <!--footer S -->
+        <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+<p id="add_tan"   style="z-index:1000; height:50px;border-radius: 5px;padding:0 20px;background:rgba(224,82,68,.7);position:fixed;top:68%;margin-top: -25px;left:43%;margin-left: -107px;font-size: 16px;color:#fff;line-height:50px; display:none"></p>
+<script th:src="@{/web/vendor/jquery/dist/jquery.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/js/utils.js(v=${vtimestamp})}" type="text/javascript"></script>
+<script type="text/javascript" th:inline="javascript">
+var sessionUser=[[${student}]]
+
+var classId=0;
+var sex='';
+var name='';
+var page=1;
+var limit=12;
+$(function(){
+	initData();
+});
+function initData(){
+	updateData();
+}
+$('.tagBtn').click(function(){
+	page=1;
+	$('.tagBtn').removeClass('activeBtn');
+	$(this).addClass('activeBtn');
+	classId=$(this).attr("id");
+	$(".bottomTagBox").children().remove();
+	updateData();
+});
+$("select[name='sex']").change(function(){
+	console.log($(this).val());
+	sex=$(this).val();
+	$(".bottomTagBox").children().remove();
+	updateData(); 
+})
+//搜索点击事件
+$('.searchIcon').click(function () {
+    name = $(this).prev().val().trim();
+    $(".bottomTagBox").children().remove();
+	updateData();
+});
+//离开搜索输入
+$('.searchIcon').prev().blur(function(){
+	if($(this).val().trim() == ""){
+		$(this).val("");
+		name = "";
+	}
+});
+// 按下enter搜索
+$('.searchIcon').prev().keydown(function(event){
+	var that = $(this);
+	if (event.keyCode == "13") {
+		name = that.val().trim();
+		 $(".bottomTagBox").children().remove();
+    	updateData();
+    }  
+});
+//更新
+function updateData(){
+	$.ajax({
+		type:'post',
+		url:'/web/student/datagrid',
+		data:{
+			classId:classId,
+			sex:sex,
+			name:name,
+			limit:limit,
+			page:page
+		},
+		dataType:'json',
+		success:function(data){
+			if(data.code==200){
+			 	var studentList = data.obj.list;
+			 	var pageInfo=data.obj;
+				 if(studentList.length==0){
+				    htmlNoData();
+					return;
+				} 
+				htmlAccountData(studentList,pageInfo);
+			}
+		},
+		error:function(){
+			point("网络错误,请检查网络连接");
+		}
+	});
+}
+
+// 动态拼接
+function htmlAccountData(studentList,pageInfo){
+	var studentHtml = [];
+	for(var i = 0; i < studentList.length; i++){
+		studentHtml.push('<div class="innerTagBox">');
+		studentHtml.push('<div class="leftInner">');
+		studentHtml.push('<img src="'+studentList[i].avatar+'" alt="未上传头像">');
+		studentHtml.push('</div>');
+		studentHtml.push('<div class="rightInner">');
+		studentHtml.push('<div class="topTitle">');
+		studentHtml.push('<span>'+studentList[i].name+'</span>');
+		studentHtml.push('<span>_'+studentList[i].position+'</span>');
+		studentHtml.push('</div>');
+		studentHtml.push(' <div class="bottomTitle">');
+		studentHtml.push('<div class="tagCount">');
+		studentHtml.push('<span>获赞</span>');
+		studentHtml.push(' <span id="dz">'+studentList[i].dianzan+'</span>');
+		studentHtml.push('</div>');
+		studentHtml.push(' <div class="tagStatus">');
+		studentHtml.push('<span>性别</span>');
+		studentHtml.push(' <div class="statusBtn" >');
+		if(studentList[i].sex){
+			if(studentList[i].sex.indexOf('男')>-1){
+				studentHtml.push('<span class="normalStatus">男生</span>');
+			}else{
+				studentHtml.push('<span class="errorStatus">女生</span>')
+			}
+		}else{
+				studentHtml.push('<span class="errorStatus statusHoverBtn" >异常</span>')
+		}
+		studentHtml.push('<div class="tipBox">*该同学资料不完整</div>');
+		studentHtml.push('</div>');
+		studentHtml.push('</div>');
+		studentHtml.push('<div class="tagEdit">');
+		studentHtml.push('<a href="#" data-toggle="modal" data-target=".editModalBox">');
+		studentHtml.push('<img id="'+studentList[i].id+'" class="sendMessage" src="../image/InfoPage/icon/pinglun.png" alt="">');
+		studentHtml.push('</a>');
+		studentHtml.push('<a href="#"><img id="'+studentList[i].id+'" class="dianzan"  src="../image/InfoPage/icon/tuijian.png" alt=""></a>');
+		studentHtml.push(' <a href="javascript:;"> <img id="'+studentList[i].id+'" class="personInfo" src="../image/InfoPage/icon/shouye.png" alt="" data-toggle="modal" data-target=".editModal"></a>');
+		studentHtml.push(' </div>');
+		studentHtml.push(' </div>');
+		studentHtml.push(' </div>');
+		studentHtml.push(' </div>');
+		
+	}
+	// 添加同学列表
+	$("#bottomTagBox").append(studentHtml.join(''));
+	//判断是否显示更多
+	if(page<pageInfo.pages){
+		$("#bottomTagBox").append(htmlMore());
+	}
+	// 勾勒出modal
+	$(".bottomTagBox").children('.modal').remove();
+	$("#bottomTagBox").append(modalData());
+	//状态hover
+	$('.statusHoverBtn').hover(function () {
+	    $(this).siblings('.tipBox').show();
+	},function () {
+	    $(this).siblings('.tipBox').hide();
+	});
+	// 点击info
+	$('.personInfo').click(function(){
+		var hobbiesHtml=[];
+		var nameLabel=$(".rightLabel");
+		var hobbiesLabel=$(".rightTagLabel").html('');
+		var studentId=$(this).attr('id');
+		for(var i=0;i<studentList.length;i++){
+			if(studentId==studentList[i].id){
+				nameLabel.html(studentList[i].name);
+				if(studentList[i].hobbies){
+					var hobbies=studentList[i].hobbies.split(",");
+					hobbies.forEach(function (item,index){
+						hobbiesHtml.push('<span>'+item+'</span>');
+						return;
+					});
+					hobbiesLabel.append(hobbiesHtml);
+				}
+			}
+		}
+	})
+    var submitBtn =$('button[id="urlbackSure"]');
+    var modalInput =$('input[class="modalInput"]');
+    var studentId;
+    $('.dianzan').unbind('click').click(function(){
+    	studentId=$(this).attr('id');
+    	sendDianZan($(this));
+    })
+    
+    function sendDianZan(clickHtml){
+    	 $.ajax({
+             url: "/web/dianzan/add",
+             data: {
+            	 studentId:studentId,
+            	 userId:sessionUser.id,
+             },
+             dataType: "json",
+             type: "post",
+             success: function (data) {
+                 if (data.code == 1) {
+                	 var count=clickHtml.parent().parent().prev().prev().children('#dz').html();
+                	 if(data.msg.indexOf('点赞成功')>-1){
+                		 var num=parseInt(count)+1;
+                		 clickHtml.parent().parent().prev().prev().children('#dz').html(num);
+                		 point("点赞成功");
+                	 }else{
+                		var num=parseInt(count)-1;
+                		 clickHtml.parent().parent().prev().prev().children('#dz').html(num);
+                		 point("取消点赞成功");
+                	 }
+                 } else {
+               	     point(data.msg)
+                 }
+             },
+             error: function (data) {
+            	 point("网络连接错误");
+             }
+         });
+    }
+    
+	// 点击message
+	$('.sendMessage').click(function(){
+	    studentId=$(this).attr('id');
+	    var pText =$('p[class="modalHead"]');
+		for(var i=0;i<studentList.length;i++){
+			if(studentId==studentList[i].id){
+				pText.html("发给"+studentList[i].name+"同学的私信~");
+			}
+		} 
+	})
+	// 确定发送消息按钮点击
+	submitBtn.click(function(){
+		var title="来自"+sessionUser.depart.name+"班-"+sessionUser.name+"的私信";
+		var content=modalInput.val().trim();
+		if(content){
+			sendToMessage(
+					studentId,		
+					title,
+					content
+			)
+		}else{
+			point("请输入内容后再发送")
+		}
+	})
+	// 更多按钮点击
+	$('.loadingMore').click(function(){
+		page=page+1;
+	    $(".bottomTagBox").children('.loadingMore').remove();
+		updateData();
+	});
+	
+	
+}
+function  sendToMessage(studentId,title,content){
+	   $.ajax({
+           url: "/web/message/add",
+           data: {
+        	   studentId:studentId,
+        	   title:title,
+        	   content:content
+           },
+           dataType: "json",
+           type: "post",
+           success: function (data) {
+               if (data.code == 1) {
+            	   $('button[class="btn cancelBtn"]').trigger('click')
+                  point(data.msg);
+               } else {
+                   point('连接网络失败');
+               }
+           },
+           error: function (data) {
+        	   point('连接网络失败');
+           }
+       });
+}
+// 对话框的拼接
+function modalData(student){
+	var modalHtml = [];
+	modalHtml.push('<div class="modal fade editModalBox" tabindex="-1" id="urlback">');
+	modalHtml.push('<div class="modal-dialog" role="document">');
+	modalHtml.push(' <div class="modal-content modalContent">');
+	modalHtml.push(' <div class="modalBody">');
+	modalHtml.push('<p class="modalHead"></p >');
+	modalHtml.push('<input class="modalInput" type="text" placeholder="请输入消息内容" id="urlbackstate">');
+	modalHtml.push('<button type="button" class="btn cancelBtn" data-dismiss="modal" id="urlbackCancel">取消</button>');
+	modalHtml.push('<button type="button" class="btn confirmBtn" id="urlbackSure">确认</button>');
+	modalHtml.push('</div>');
+	modalHtml.push(' </div>');
+	modalHtml.push('</div>');
+	modalHtml.push('</div>');
+	modalHtml.push(' <div class="modal fade editModal" tabindex="-1" role="dialog">');
+	modalHtml.push('<div class="modal-dialog" role="document">');
+	modalHtml.push('<div class="modal-content">');
+	modalHtml.push('<div class="modal-header">');
+	modalHtml.push('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+	modalHtml.push('<div class="topCell">');
+	modalHtml.push('<div class="leftLabel">姓名:</div>');
+	modalHtml.push('<div class="rightLabel">a</div>');
+	modalHtml.push('</div>');
+	modalHtml.push('<div class="bottomCell">');
+	modalHtml.push('<div class="leftTagLabel">标签:</div>');
+	modalHtml.push(' <div class="rightTagLabel">');
+	modalHtml.push(' <span>科技美学</span>');
+	modalHtml.push(' </div>');
+	modalHtml.push('</div>');
+	modalHtml.push('</div>');
+	return modalHtml.join('');
+}
+//无数据空白页
+function htmlNoData(){
+	$(".bottomTagBox").children().remove();
+	//暂无数据
+	var nodataHtml = [];
+    nodataHtml.push('<div class="noDataBox">');
+    nodataHtml.push('<img src="/web/image/accountpage/noData.png" alt="">');
+    nodataHtml.push('<p>暂无数据</p>');
+    nodataHtml.push('</div>');
+    $(".bottomTagBox").append(nodataHtml.join(''));
+}
+// 提示
+function point(html){
+	$('#add_tan').html(html);
+	$('#add_tan').show().fadeOut(1500);
+}
+//加载更多
+function htmlMore(){
+	var moreHtml=[];
+	moreHtml.push('<div class="loadingMore">');
+	moreHtml.push('<span>加载更多</span>');
+	moreHtml.push('</div>');
+	return moreHtml.join();
+}
+</script>
+</body>
+</html>

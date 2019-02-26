@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="wap/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/wap/css/slick.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/base.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/style.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/all.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/swiper.min.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/iconfont/iconfont.css(v=${vtimestamp})}">
+    <title>功能主页</title>
+</head>
+	<body>
+	<!-- 判断是否手机站S -->
+<!--<script>-->
+	<!--var w = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;-->
+    <!--if (1000<w){-->
+    	<!--window.location.href="/web/home/index";-->
+    <!--}else{-->
+    	<!---->
+    <!--}-->
+<!--</script>-->
+		<div class="header">
+			<span>功能主页</span>
+			<a href="user-center.html"><span class="user"><i class="iconfont icon-person"></i></span></a>
+		</div>
+		<div class="banner autoplay">
+			<div>
+				<a href="#" class="banner-img"><img src="/web/image/InfoPage/banner.jpg" alt=""></a>
+			</div>
+			<!-- <div>
+				<a href="#" class="banner-img"><img src="/web/image/InfoPage/banner.jpg" alt=""></a>
+			</div>
+			<div>
+				<a href="#" class="banner-img"><img src="/web/image/InfoPage/banner.jpg" alt=""></a>
+			</div> -->
+		</div>
+		<!-- <div class="banner swiper-container">
+             <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/web/image/InfoPage/banner.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/web/image/InfoPage/banner.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="img/banner1.png" alt=""></a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="img/banner1.png" alt=""></a></div>
+            </div> 
+            <div class="swiper-pagination"></div>
+        </div> -->
+		<div class="menu">
+			<ul class="clearfix">
+				<li>
+					<a href="self-report.html">
+						<img src="/web/image/InfoPage/zhuye.png">
+						<p class="menu-txt">个人主页</p>
+					</a>
+				</li>
+				<li>
+					<a href="green.html">
+						<img src="/web/image/InfoPage/guanl.png">
+						<p class="menu-txt">同学圈子</p>
+					</a>
+				</li>
+				<li>
+					<a href="arrive.html">
+						<img src="/web/image/InfoPage/wenji.png">
+						<p class="menu-txt">学习园地</p>
+					</a>
+				</li>
+				<li>
+					<a href="delay.html">
+						<img src="/web/image/InfoPage/huod.png">
+						<p class="menu-txt">班级主页</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li>
+					<a href="must-know.html">
+						<img src="/web/image/InfoPage/zhanghao.png">
+						<p class="menu-txt">班费详情</p>
+					</a>
+				</li>
+				<li>
+					<a href="notice.html">
+						<img src="/web/image/InfoPage/wenji.png">
+						<p class="menu-txt">班级作业</p>
+				</li>
+				</a>
+				<li>
+					<a href="data.html">
+						<img src="/web/image/InfoPage/xiaoxi.png">
+						<p class="menu-txt">班级消息</p>
+					</a>
+				</li>
+				<li>
+					<a href="ask.html">
+						<img src="/web/image/InfoPage/dingdan.png">
+						<p class="menu-txt">班集工具</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="brief">
+			<h3 class="brief-tit">我的班级</h3>
+			<div class="brirf-content clearfix">
+				<div style="widows: 100px;height: 150px;" class="bc-left fl">
+					<img width="50px" height="150px" th:src="${logo}">
+				</div>
+				<div class="bc-right fr" th:text="${content}">
+				</div>
+			</div>
+		</div>
+		
+		
+		<dl class="news">
+			<dt class="news-tit">最新学习文章</dt>
+		</dl>
+		<!--footer S -->
+	    <th:block th:replace="wap/common/footer :: footer"/>
+	    <!--footer E -->
+	    
+	    
+	    <script type="text/javascript" th:src="@{/wap/js/jquery.min.js(v=${vtimestamp})}"></script>
+	    <script type="text/javascript" th:src="@{/wap/js/fastclick.js(v=${vtimestamp})}"></script>
+	    <script type="text/javascript" th:src="@{/wap/js/slick.min.js(v=${vtimestamp})}"></script>
+		
+	    <script type="text/javascript" th:src="@{/wap/js/rem.js(v=${vtimestamp})}"></script>
+	    <script type="text/javascript" th:src="@{/wap/js/basic.js(v=${vtimestamp})}"></script>
+	    <script type="text/javascript" th:src="@{/wap/js/swiper.jquery.min.js(v=${vtimestamp})}"></script>
+	    
+	    
+	    
+	    <script type="text/javascript">
+	    	$(function(){
+	    		$.post("/wap/home/articles", {}, function(data) {
+	    			data.forEach(function(elt, i, array) {
+	    			var html=[];
+	    			html.push('<dd  class="news-content clearfix" id='+elt.id+'>')
+	    			html.push('<div class="nc-left fl">')
+	    				if(elt.imageList.length==1){
+	    					var imgPath=elt.imageList[0];
+			    			html.push('<img src="'+imgPath+'">')
+	    				}else{
+			    			html.push('<img src="">')
+	    				}
+	    			html.push('</div>')
+	    			html.push('<div class="nc-right fr">')
+	    			html.push('<a class="ncr-top">'+elt.title+'</a>')
+	    			html.push('<span class="nc-time">'+elt.create_time+'</span>')
+	    			html.push('</div>')
+	    			html.push('</dd>')
+					$(".news").append(html.join(''));   			
+	    			})
+	    		})
+	    	});
+	    	
+	    	$(document).delegate('dd', "click", function() {
+	    		window.location.href="/wap/article/"+$(this).attr('id');
+	    	})
+	    
+	    </script>
+		<script>
+			$(function() {
+				$('.autoplay').slick({
+				  slidesToScroll: 1,
+				  autoplay: true,
+				  autoplaySpeed: 2000,
+				   dots:true,
+				});
+			});
+		</script>
+		<script >
+		    $(function () {
+		        var banner = new Swiper('.banner',{
+		            autoplay: 5000,
+		            pagination : '.swiper-pagination',
+		            paginationClickable: true,
+		            lazyLoading : true,
+		            loop:true
+		        });		
+		    });
+		</script>
+	</body>
+</html>

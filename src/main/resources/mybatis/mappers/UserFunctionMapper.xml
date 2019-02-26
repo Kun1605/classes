@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kunakun.mapper.UserFunctionMapper">
+
+    <select id="queryUserAuthList" parameterType="cn.kunakun.pojo.UserFunction"
+            resultType="cn.kunakun.pojo.UserFunction">
+        SELECT
+        f.*,
+        s.name AS 'student.name'
+        FROM
+        user_function f,
+        t_student s
+        WHERE
+        f.user_id =s.id
+        <if test="student !=null ">
+            <if test="student.name != null">
+              AND s.name  like concat('%',#{student.name},'%')
+            </if>
+        </if>
+    </select>
+
+</mapper>

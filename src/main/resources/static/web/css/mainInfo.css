@@ -1,0 +1,999 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dddddd;
+}
+#mainInfo .navbarHeader {
+  height: 62px;
+  width: 100vw;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px 2px #cdcdcd;
+  position: fixed;
+  z-index: 999;
+}
+#mainInfo .navbarHeader .topHeader {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#mainInfo .navbarHeader .topHeader .headerRight {
+  display: flex;
+  align-items: center;
+}
+#mainInfo .navbarHeader .topHeader > .headerLogo > a > img {
+  width: 100px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .createArticle-box {
+  position: relative;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .creatArticle {
+  width: 84px;
+  height: 34px;
+  background-color: #e7141a;
+  border: none;
+  padding: 7px 12px;
+  color: #FFFEFE;
+  font-size: 14px;
+  margin-right: 33px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .creatArticle .articleSlier {
+  margin-left: 14px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userLogout {
+  font-size: 14px;
+  color: #B3B3B3;
+  display: inline-block;
+  text-decoration: none;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .spanIcon {
+  width: 1px;
+  height: 18px;
+  background-color: #B3B3B3;
+  display: inline-block;
+  margin-right: 15px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userInfoName {
+  font-size: 14px;
+  color: #333;
+  max-width: 114px;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 30px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userInfoName a {
+  text-decoration: none;
+  color: #333;
+  max-width: 114px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userLoginBtn {
+  font-size: 20px;
+  width: 117px;
+  height: 38px;
+  background-color: #e7141a;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox {
+  margin-right: 35px;
+  position: relative;
+  padding: 0;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox img {
+  width: 32px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox .userMailNumber {
+  width: 32px;
+  height: 20px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  background-color: #e7141a;
+  color: #FFFEFE;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -9px;
+  right: -16px;
+  margin-bottom: 0;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox .userMailNumber span {
+  margin-top: -1px;
+}
+#mainInfo .infoContent {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#mainInfo .infoContent .infoLeftBar {
+  width: 160px;
+  height: 100%;
+  margin-top: 70px;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+  background-color: #e7141a;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  position: fixed;
+  z-index: 999;
+}
+#mainInfo .infoContent .infoLeftBar .infoLeftTab {
+  list-style: none;
+  height: 50px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+#mainInfo .infoContent .infoLeftBar .infoLeftTab a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #e7141a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoLeftBar li .navbarOne::before,
+.navbarTwo::before,
+.navbarThree::before,
+.navbarFour::before,
+.navbarFive::before,
+.navbarSix::before,
+.navbarSeven::before {
+  content: '';
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+#mainInfo .infoContent .infoLeftBar li .navbarOne::before {
+  background-image: url("../image/InfoPage/zhuyew.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarTwo::before {
+  background-image: url("../image/InfoPage/guanlw.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarThree::before {
+  background-image: url("../image/InfoPage/wenjiw.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarFour::before {
+  background-image: url("../image/InfoPage/huodw.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarFive::before {
+  background-image: url("../image/InfoPage/dingdanw.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarSix::before {
+  background-image: url("../image/InfoPage/zhuanghaow.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarSeven::before {
+  background-image: url("../image/InfoPage/xiaoixiw.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarOne::before {
+  background-image: url("../image/InfoPage/zhuye.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarTwo::before {
+  background-image: url("../image/InfoPage/guanl.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarThree::before {
+  background-image: url("../image/InfoPage/wenji.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarFour::before {
+  background-image: url("../image/InfoPage/huod.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarFive::before {
+  background-image: url("../image/InfoPage/dingdan.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarSix::before {
+  background-image: url("../image/InfoPage/zhanghao.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active .navbarSeven::before {
+  background-image: url("../image/InfoPage/xiaoxi.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarOne:active::before {
+  background-image: url("../image/InfoPage/zhuye.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarTwo:active::before {
+  background-image: url("../image/InfoPage/guanl.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarThree:active::before {
+  background-image: url("../image/InfoPage/wenji.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarFour:active::before {
+  background-image: url("../image/InfoPage/huod.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarFive:active::before {
+  background-image: url("../image/InfoPage/dingdan.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarSix:active::before {
+  background-image: url("../image/InfoPage/zhanghao.png");
+}
+#mainInfo .infoContent .infoLeftBar li .navbarSeven:active::before {
+  background-image: url("../image/InfoPage/xiaoxi.png");
+}
+#mainInfo .infoContent .infoLeftBar li.active a {
+  color: #333333;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 0 0 8px 0 rgba(40, 40, 40, 0.1), /*左边阴影*/ 0 0 8px 0 rgba(40, 40, 40, 0.1), /*右边阴影*/ 0 0 8px 0 rgba(40, 40, 40, 0.1), /*顶部阴影*/ 0 1px 8px 0 rgba(40, 40, 40, 0.4);
+  /*底边阴影*/
+  font-weight: bold;
+}
+#mainInfo .infoContent .infoLeftBar li:hover {
+  color: #333333;
+}
+#mainInfo .infoContent .infoLeftBar li a img {
+  margin-right: 15px;
+  height: 20px;
+}
+#mainInfo .infoContent .infoLeftBar .infoBottomCode {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 90px;
+}
+#mainInfo .infoContent .infoLeftBar .infoBottomCode span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoLeftBar .infoBottomCode span:nth-of-type(1) {
+  margin-top: 5px;
+}
+#mainInfo .infoContent .infoLeftBar .infoBottomCode .codeBox {
+  height: 80px;
+  width: 80px;
+}
+#mainInfo .infoContent .infoLeftBar .infoBottomCode img {
+  width: 100%;
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar {
+  min-height: 600px;
+  width: 1020px;
+  margin-top: 70px;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend {
+  width: 100%;
+  height: 290px;
+  position: relative;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend .inviteImg {
+  width: 100%;
+  height: 290px;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend .inviteImg img {
+  width: 100%;
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend .topBanner {
+  width: 127px;
+  height: 157px;
+  position: absolute;
+  top: 66px;
+  right: 80px;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend .topBanner div {
+  width: 127px;
+  height: 127px;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend .topBanner div img {
+  width: 100%;
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar .inviteFriend .topBanner span {
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+#mainInfo .infoContent .infoRightBar .smallmodel {
+  width: 324px;
+  height: 360px;
+  margin: auto;
+}
+#mainInfo .infoContent .infoRightBar .smallmodel .small-body {
+  padding: 28px 15px;
+}
+#mainInfo .infoContent .infoRightBar .smallmodel .small-body h3 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 800;
+  margin-top: 10px;
+  position: relative;
+}
+#mainInfo .infoContent .infoRightBar .smallmodel .small-body h3 span {
+  position: absolute;
+  right: 10px;
+  top: -18px;
+  cursor: pointer;
+}
+#mainInfo .infoContent .infoRightBar .smallmodel .small-body .imgs {
+  width: 133px;
+  height: 148px;
+  margin: 25px auto 0;
+}
+#mainInfo .infoContent .infoRightBar .smallmodel .small-body a {
+  width: 176px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 5px;
+  display: block;
+  margin: 25px auto 0;
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .messageInfo {
+  height: 42px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.27);
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .messageInfo span {
+  margin-left: 23px;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .messageInfo span img {
+  height: 22px;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .messageInfo p {
+  margin-left: 22px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 200;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox {
+  width: 1030px;
+  height: 275px;
+  background: url("../image/InfoPage/topBanner.png") no-repeat -6px -4px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox {
+  height: 100%;
+  display: flex;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .leftInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .topBannerTitle {
+  margin-top: 30px;
+  font-size: 46px;
+  font-weight: bold;
+  color: #ffffff;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .topBannerBtn {
+  width: 380px;
+  height: 50px;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, #9e349f, #d42e25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 9px;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .topBannerTime {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 100;
+  margin-top: 28px;
+  display: block;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner {
+  height: 100%;
+  margin-left: 40px;
+  display: flex;
+  position: relative;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner .rightCircle {
+  width: 154px;
+  height: 154px;
+  background-color: rgba(255, 255, 255, 0.52);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-direction: column;
+  padding-top: 10px;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner .rightCircle:nth-of-type(2) {
+  margin-left: 30px;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner .rightCircle img {
+  height: 80px;
+  margin-bottom: 7px;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner .rightCircle .bannerTitle {
+  width: 48px;
+  height: 20px;
+  background-color: #d42f25;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 20px;
+  text-align: center;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner .rightCircle p {
+  font-size: 14px;
+  color: #d42e25;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .topInnerBox .rightInner .bannerBtn a {
+  width: 150px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #d8261c;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  font-weight: 300;
+  text-decoration: none;
+}
+#mainInfo .infoContent .infoRightBar .topBannerBox .rightInnerBox {
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar .personalBox {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+  background-color: #fff;
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo {
+  height: 160px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon img {
+  width: 100px;
+  height: 100px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personName {
+  width: 300px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personUserName {
+  display: flex;
+  margin-left: 21px;
+  width: 100%;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personName div {
+  color: #666;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personUserName .leftUserName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 42px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personUserName .leftUserName .mainUserName {
+  margin-right: 5px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personUserName .rightUserName {
+  width: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personName .personUserName .rightUserName .changeBtn {
+  width: 41px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 2px;
+  background-color: #dc371a;
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  display: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personName .changeBtn:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personUserName .rightUserName img {
+  height: 18px;
+  width: 16px;
+  cursor: pointer;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personName p {
+  margin-left: 21px;
+  margin-bottom: 0;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personUserName {
+  font-size: 26px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .personIcon .personCellPhone {
+  font-size: 18px;
+  color: #888;
+  font-weight: 300;
+  margin-top: 8px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode {
+  height: 100%;
+  margin-left: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .leftBarCode {
+  width: 100px;
+  height: 100px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .leftBarCode .codeImg {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn {
+  width: 247px;
+  height: 130px;
+  position: relative;
+  margin-top: 15px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn p {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: -8px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn button {
+  width: 208px;
+  height: 47px;
+  border-radius: 5px;
+  background-color: #e7141a;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn button:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn a {
+  font-size: 16px;
+  color: #e7141a;
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn a img {
+  width: 8px;
+  height: 15px;
+  margin-left: 9px;
+  margin-top: -2px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .personalInfo .requestCode .rightRequestBtn .copySuccessTip {
+  height: 32px;
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 32px;
+  background-color: #e1e1e8;
+  position: absolute;
+  top: 0;
+  right: 40%;
+  display: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfo {
+  width: 90%;
+  height: 300px;
+  border-top: 1px solid #dadada;
+  margin: 0 auto;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0 0 0;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li {
+  list-style: none;
+  width: 229px;
+  height: 56px;
+  float: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+  border-right: solid 1px #dadada;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li:nth-of-type(4),
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li:nth-of-type(8) {
+  border-right: none;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li p {
+  margin: 0;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li p:nth-of-type(1) {
+  font-size: 28px;
+  color: #333333;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li p:nth-of-type(2) {
+  font-size: 14px;
+  color: #666666;
+  display: flex;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .leftIcon::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .firstIcon::before {
+  background: url("../image/InfoPage/icon/shouye.png") no-repeat center center;
+  background-size: 14px 16px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .secondIcon::before {
+  background: url("../image/InfoPage/icon/wenzhang.png") no-repeat center center;
+  background-size: 14px 17px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .thirdIcon::before {
+  background: url("../image/InfoPage/icon/tuijian.png") no-repeat center center;
+  background-size: 16px 16px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .fourthIcon::before {
+  background: url("../image/InfoPage/icon/yuedu.png") no-repeat center center;
+  background-size: 16px 14px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .fifthIcon::before {
+  background: url("../image/InfoPage/icon/pinglun.png") no-repeat center center;
+  background-size: 16px 16px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .sixthIcon::before {
+  background: url("../image/InfoPage/icon/zhunfaliaang.png") no-repeat center center;
+  background-size: 15px 12px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .seventhIcon::before {
+  background: url("../image/InfoPage/icon/shouchang.png") no-repeat center center;
+  background-size: 17px 15px;
+}
+#mainInfo .infoContent .infoRightBar .personalBox .dataInfoBox li .eightIcon::before {
+  background: url("../image/InfoPage/icon/dainj.png") no-repeat center center;
+  background-size: 16px 19px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn {
+  width: 100%;
+  height: 300px;
+  background-color: #ECFAFD;
+  padding-top: 25px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn p {
+  font-size: 26px;
+  color: #E75E14;
+  margin-left: 23px;
+  font-weight: bold;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn p .rocket {
+  margin-left: 15px;
+  width: 70px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand {
+  margin-top: 42px;
+  display: flex;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft {
+  margin-left: 90px;
+  width: 500px;
+  display: flex;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .leftPic {
+  height: 142px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide {
+  margin-left: 13px;
+  display: inline-block;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide h3 {
+  font-size: 22px;
+  color: #E75E14;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide p {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 10px 18px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide span img {
+  margin-bottom: 15px;
+  margin-left: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide a {
+  width: 116px;
+  height: 40px;
+  background-color: #e7141a;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 84px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight {
+  display: flex;
+  height: 149px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightPic {
+  width: 142px;
+  height: 142px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide {
+  margin-left: 13px;
+  display: inline-block;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide h3 {
+  font-size: 22px;
+  color: #E2AE11;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide p {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 7px 18px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide span {
+  width: 210px;
+  display: inline-block;
+  margin-bottom: 13px;
+  margin-left: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide a {
+  width: 116px;
+  height: 40px;
+  background-color: #e7141a;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+}
+#mainInfo .infoContent .infoRightBar .messageList {
+  width: 100%;
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul {
+  width: 100%;
+  padding: 26px 92px 26px 42px;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li span {
+  color: #888;
+  font-size: 12px;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li span a {
+  text-decoration: none;
+  font-size: 12px;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 0;
+}
+.modal-backdrop.in {
+  opacity: 0.8;
+}
+#mainInfo .redPocketModal .modal-dialog {
+  margin-top: 50px;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-content {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header {
+  border-bottom: none;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox {
+  width: 583px;
+  height: 549px;
+  border-radius: 46px;
+  margin: 0 auto;
+  background: url('../image/InfoPage/pocketBg.png') no-repeat center center;
+  background-size: 282px 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox {
+  width: 282px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox h4 {
+  font-size: 38px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffcf1a;
+  margin-top: -20px;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span {
+  font-size: 20px;
+  color: #fff;
+  display: block;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span a {
+  display: block;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span a .rightErrow {
+  width: 13px;
+  height: 13px;
+  margin-left: 2px;
+  margin-top: -2px;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(1) {
+  font-weight: 100;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(2) {
+  font-size: 16px;
+  margin-top: 195px;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(3) {
+  font-size: 14px;
+  margin-top: 3px;
+  font-weight: 100;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(3) a {
+  color: #fff;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(4) {
+  margin: 16px 0 0 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(4) a {
+  color: #cf3333;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4px;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(5) {
+  margin: 0 0 0 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span:nth-of-type(5) a {
+  color: #cf3333;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4px;
+}
+#mainInfo .redPocketModal .modal-dialog .modal-header .redPocketBox .pocketInnerBox span .clickBtn {
+  width: 213px;
+  height: 58px;
+  display: block;
+  background: url("../image/InfoPage/btnBg.png") no-repeat;
+  background-size: cover;
+}
+#mainInfo .redPocketModal .modal-dialog .close {
+  font-weight: 100;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 40px;
+  position: absolute;
+  right: 80px;
+  top: 20px;
+}
+#mainInfo .infoFooter {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 85px;
+  margin-top: 20px;
+}
+#mainInfo .infoFooter span,
+.contactMail {
+  display: block;
+  font-size: 12px;
+  color: #a8a8a8;
+  font-weight: 300;
+}
+#mainInfo .infoFooter .contactMail {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+#mainInfo .infoFooter .contactMail .contactBox {
+  height: 100%;
+  position: relative;
+}
+#mainInfo .infoFooter .contactMail .contactBox a {
+  color: #e7141a;
+  font-weight: bold;
+}
+#mainInfo .infoFooter .contactMail .contactBox .contactCode {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  bottom: 17px;
+  right: -13px;
+  display: none;
+}
+#mainInfo .infoFooter .contactMail .contactBox .contactCode img {
+  height: 100%;
+  width: 100%;
+}
+#mainInfo .infoFooter span img {
+  height: 15px;
+  width: 15px;
+}

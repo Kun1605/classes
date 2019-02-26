@@ -1,0 +1,735 @@
+@charset "UTF-8";
+.navbarStatic {
+  position: static !important;
+}
+.articleContent {
+  width: 1200px;
+  height: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.articleContent .leftSideBar {
+  width: 183px;
+  background-color: #FBF7EC;
+}
+.articleContent .leftSideBar .newArticle {
+  width: 135px;
+  height: 38px;
+  border: 1px solid #666;
+  display: inline-block;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 5px;
+  margin: 25px auto;
+  text-decoration: none;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.articleContent .leftSideBar .newArticle img {
+  margin-right: 10px;
+}
+.articleContent .leftSideBar .articleTitle {
+  width: 135px;
+  padding-left: 0;
+  margin: 0 auto;
+}
+.articleContent .leftSideBar .articleTitle li {
+  list-style: none;
+  margin-bottom: 23px;
+}
+.articleContent .leftSideBar .articleTitle li a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
+.articleContent .rightSideContent {
+  width: 983px;
+  height: 800px;
+  background-color: #FBF7EC;
+  padding: 10px 0 20px 0;
+  position: relative;
+}
+.articleContent .rightSideContent .messageInfo {
+  height: 18px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background-color: #e6e2d8;
+  border-radius: 30px;
+  margin-left: 10px;
+}
+.articleContent .rightSideContent .messageInfo span {
+  margin-left: 23px;
+  color: #e7141a;
+  font-size: 14px;
+}
+.articleContent .rightSideContent .messageInfo p {
+  margin-left: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #e7141a;
+}
+.articleContent .rightSideContent #contentForm {
+  min-height: 854px;
+}
+.articleContent .rightSideContent #contentForm .articleTitle {
+  width: 840px;
+  height: 98px;
+  font-size: 24px;
+  color: #333;
+  padding-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+.articleContent .rightSideContent #contentForm .articleTitle:focus {
+  outline: none;
+}
+.articleContent .rightSideContent #contentForm .artistBox {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.articleContent .rightSideContent #contentForm .artistBox .artistName {
+  width: 88%;
+  font-size: 20px;
+  padding-left: 14px;
+  background-color: transparent;
+  border: none;
+  color: #333;
+}
+.articleContent .rightSideContent #contentForm .artistBox .artistName:focus {
+  outline: none;
+}
+.articleContent .rightSideContent #contentForm .artistBox .artistCount {
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #cdcdcd;
+  width: 143px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+.articleContent .rightSideContent #contentForm .artistBox input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #666;
+}
+.articleContent .rightSideContent #contentForm input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #F5676B;
+}
+.articleContent .rightSideContent #contentForm .articleCount {
+  display: inline-block;
+  height: 98px;
+  width: 143px;
+  float: right;
+  line-height: 98px;
+  text-align: right;
+  font-size: 24px;
+  color: #cdcdcd;
+  padding-right: 10px;
+}
+.articleContent .rightSideContent #contentForm .btnContent {
+  width: 983px;
+  margin-top: 30px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .selectOption,
+.articleContent .rightSideContent #contentForm .btnContent .submitArticle {
+  width: 238px;
+  height: 42px;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  color: #666;
+  font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 13px;
+  background-color: #FBF7EC;
+}
+.articleContent .rightSideContent #contentForm .btnContent .selectOption:focus,
+.articleContent .rightSideContent #contentForm .btnContent .submitArticle:focus {
+  outline: none;
+}
+.articleContent .rightSideContent #contentForm .btnContent .selectOption {
+  background: url("../image/InfoPage/moreGray.png") no-repeat center right;
+  background-color: #FBF7EC;
+  background-position: 210px center;
+  margin-top: 45px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .noticeBox {
+  display: flex;
+  align-items: center;
+}
+.articleContent .rightSideContent #contentForm .btnContent .submitArticle {
+  margin-top: 15px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.articleContent .rightSideContent #contentForm .btnContent .articleNotice {
+  display: flex;
+  margin-top: 15px;
+  height: 42px;
+  width: 100%;
+  align-items: center;
+  color: #e7141a;
+  padding-left: 30px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg span {
+  font-size: 16px;
+  color: #666;
+  display: block;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg .uploadImgBox {
+  width: 900px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg .uploadImgBox a {
+  display: block;
+  width: 120px;
+  height: 38px;
+  font-size: 16px;
+  color: #666;
+  border: 1px solid #cdcdcd;
+  text-align: center;
+  line-height: 38px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg .uploadImgBox .imgPanel {
+  width: 188px;
+  height: 120px;
+  margin-top: 11px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../image/InfoPage/upLoadBg.png") no-repeat left center;
+  background-size: contain;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg .uploadImgBox .imgPanel img {
+  height: 100%;
+  width: 100%;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg textarea {
+  width: 938px;
+  height: 100px;
+  background-color: transparent;
+  border: 1px solid #cdcdcd;
+  margin-top: 18px;
+  resize: none;
+  text-align: left;
+  font-size: 16px;
+  text-indent: 1em;
+  padding-top: 5px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg textarea::placeholder {
+  color: #cdcdcd;
+}
+.articleContent .rightSideContent #contentForm .btnContent .uploadImg textarea:focus {
+  outline: none;
+}
+.articleContent .rightSideContent #contentForm .btnContent .checkOption {
+  font-size: 16px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .checkOption .checkOptionBox {
+  margin-bottom: 30px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .checkOption .checkTitle {
+  width: 130px;
+  color: #666;
+  font-weight: normal;
+}
+.articleContent .rightSideContent #contentForm .btnContent .checkOption .checkSelection {
+  color: #666;
+  font-weight: normal;
+}
+.articleContent .rightSideContent #contentForm .btnContent .checkOption .checkSelection input {
+  margin-right: 10px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox label {
+  color: #666;
+  font-weight: normal;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox .artistInnerBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+  height: 44px;
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox .artistInnerBox .artistName {
+  width: 780px;
+  height: 100%;
+  font-size: 16px;
+  padding-left: 14px;
+  background-color: transparent;
+  color: #333;
+  border: none;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox .artistInnerBox .artistName:focus {
+  outline: none;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox .artistInnerBox input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #cdcdcd;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistBottomBox .artistInnerBox .artistCount {
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #cdcdcd;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox label {
+  color: #666;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*定义边框*/
+  /*定义输入元素text*/
+  /*定义标签样式*/
+  /*第一输入元素的父元素*/
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup .container {
+  width: 900px;
+  display: inline-block;
+  margin-left: 3px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup input {
+  width: 900px;
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+  height: 44px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup input[type=submit] {
+  padding: 8px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup .myTags {
+  width: 900px;
+  border-radius: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 0;
+  border: none;
+  margin-left: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup .myTagsValues {
+  width: 733px;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup #singleFieldTags {
+  border: 1px solid #b1c9dc;
+  background: #e7e3ca;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup #singleFieldTags input {
+  background: #e7e3ca;
+  color: blue;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup #singleFieldTags li {
+  background: #e7e3ca;
+  border: 1px solid #930;
+  color: red;
+}
+.articleContent .rightSideContent #contentForm .btnContent .artistTagBox .tagFormGroup #singleFieldTags .tagit-new {
+  border: none;
+}
+.articleContent .rightSideContent .selectedAccount {
+  width: 983px;
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  margin-top: 14px;
+  padding: 10px 0 30px 40px;
+}
+.articleContent .rightSideContent .selectedAccount p {
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #666666;
+}
+.articleContent .rightSideContent .selectedAccount p .origionalBtn {
+  width: 44px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #adadad;
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0 5px;
+  text-align: center;
+  line-height: 20px;
+}
+.articleContent .rightSideContent .selectedAccount li {
+  list-style: none;
+  width: 125px;
+  float: left;
+  position: relative;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+.articleContent .rightSideContent .selectedAccount li span {
+  display: inline-block;
+  position: absolute;
+  top: -17px;
+  right: -12px;
+  cursor: pointer;
+}
+.articleContent .rightSideContent .selectedAccount li span img {
+  height: 12px;
+}
+.articleContent .rightSideContent .selectedAccount li .leftTagBox {
+  width: 46px;
+  display: inline-block;
+}
+.articleContent .rightSideContent .selectedAccount li .leftTagBox img {
+  height: 44px;
+  margin-right: 5px;
+}
+.articleContent .rightSideContent .selectedAccount li .leftTagBox .origionalBtn {
+  width: 44px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #adadad;
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0;
+  margin-top: 4px;
+  border: none;
+  text-align: center;
+  line-height: 20px;
+}
+.articleContent .rightSideContent .selectedAccount li .leftTagBox .origionalBtn:focus {
+  outline: none;
+}
+.articleContent .rightSideContent .selectedAccount li .leftTagBox .origionalBtn:hover {
+  background-color: #e7141a;
+}
+.articleContent .rightSideContent .selectedAccount li .leftTagBox .active {
+  background-color: #e7141a;
+}
+.articleContent .rightSideContent .selectedAccount li .tagTitle {
+  display: inline-block;
+  width: 75px;
+  height: 63px;
+  line-height: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.articleContent .rightSideContent button {
+  width: 205px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 22px;
+  margin-top: 60px;
+  border: none;
+}
+.articleContent .rightSideContent button:focus {
+  outline: none;
+}
+.articleContent .rightSideContent button:nth-of-type(1) {
+  background-color: transparent;
+  border: 1px solid #cdcdcd;
+  color: #666;
+  margin-right: 42px;
+}
+.articleContent .rightSideContent button:nth-of-type(2) {
+  background-color: #e7141a;
+  color: #fff;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog {
+  width: 100%;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .modal-content {
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .modal-body {
+  text-align: center;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .modal-body h3 {
+  font-size: 24px;
+  margin: 30px 0 39px 0;
+  color: #333;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon {
+  height: 100%;
+  width: 100%;
+  padding-left: 30px;
+  margin-top: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .leftListIcon {
+  height: 57px;
+  width: 82px;
+  text-align: center;
+  float: left;
+  margin-right: 26px;
+  padding-top: 5px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .leftListIcon span {
+  font-size: 16px;
+  color: #666;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon ul {
+  width: 717px;
+  height: 100%;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  float: left;
+  margin-right: 13px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon ul li {
+  list-style: none;
+  height: 46px;
+  width: 46px;
+  float: left;
+  margin-right: 9px;
+  margin-bottom: 11px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a:hover {
+  text-decoration: none;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a img {
+  height: 44px;
+  width: 44px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a span {
+  height: 44px;
+  width: 44px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  display: none;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .extraIconList {
+  display: none;
+  margin-left: 108px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon {
+  width: 45px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 23px;
+  top: 15px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon a {
+  font-size: 12px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon a:hover {
+  text-decoration: none;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon a img {
+  margin-left: 4px;
+  height: 5px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag {
+  margin-top: 35px;
+  height: 100%;
+  width: 100%;
+  padding-left: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .leftListIcon {
+  height: 112px;
+  width: 82px;
+  text-align: left;
+  float: left;
+  margin-right: 26px;
+  padding-top: 5px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .leftListIcon span {
+  font-size: 16px;
+  color: #666;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag ul {
+  width: 717px;
+  height: 100%;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  float: left;
+  margin-right: 13px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag ul li {
+  list-style: none;
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag ul li a {
+  display: inline-block;
+  background-color: #E8E8E8;
+  text-decoration: none;
+  width: 72px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #8e8e8c;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag ul li a:hover {
+  text-decoration: none;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag ul li a img {
+  height: 44px;
+  width: 44px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag ul li .allTagBtn {
+  background-color: #e7141a;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon {
+  height: 80px;
+  width: 45px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 23px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon a {
+  font-size: 12px;
+  text-decoration: none;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon a:hover {
+  text-decoration: none;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon a img {
+  margin-left: 4px;
+  height: 5px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .listTag .extraTagList {
+  display: none;
+  margin-left: 108px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .selectedTag {
+  width: 875px;
+  min-height: 100px;
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .selectedTag li {
+  list-style: none;
+  width: 125px;
+  height: 80px;
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .selectedTag li span {
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 0;
+  cursor: pointer;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .selectedTag li span img {
+  height: 12px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog .selectedTag li img {
+  height: 30px;
+  margin-right: 5px;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog button {
+  margin-top: 46px !important;
+  margin-bottom: 43px !important;
+}
+.articleContent .rightSideContent #accountModal .modal-dialog button:nth-of-type(1) {
+  color: #666;
+}
+.articleContent .rightSideContent #myModal .modal-content {
+  width: 430px;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.articleContent .rightSideContent #myModal .modal-body p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 73px;
+  margin-bottom: 65px;
+}
+.articleContent .rightSideContent #myModal .modal-body button {
+  margin: 0 0 46px 0;
+  width: 140px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+}
+.articleContent .rightSideContent #myModal .modal-body button:focus {
+  outline: none;
+}
+.articleContent .rightSideContent #myModal .modal-body button:nth-of-type(1) {
+  margin-right: 43px;
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #cdcdcd;
+}

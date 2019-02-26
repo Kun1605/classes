@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link},~{::script})">
+    <title>管理员添加</title>
+    <link href="/web/assets/css/backend.min.css" rel="stylesheet">
+        <script type="text/javascript">
+            var require = {
+                "config": {
+                    "site": {
+                        "name": "FastAdmin",
+                        "cdnurl": "",
+                        "version": "1.0.0",
+                        "timezone": "Asia/Shanghai",
+                        "languages": {
+                            "backend": "zh-cn",
+                            "frontend": "zh-cn"
+                        }
+                    },
+                    "modulename": "admin",
+                    "controllername": "admin",
+                    "actionname": "add",
+                    "jsname": "../../js/auth/admin",
+                    "moduleurl": "./",
+                    "language": "zh-cn",
+                    "referer": null
+                }
+            };
+        </script>
+    </head>
+
+    <body class="inside-header inside-aside is-dialog">
+        <div id="main" role="main">
+            <div class="tab-content tab-addtabs">
+                <div id="content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <section class="content-header hide">
+                                <h1>
+                                    控制台                                    <small>Control panel</small>
+                                </h1>
+                            </section>
+                            <div class="content">
+                                <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="/s/f/user/add">
+                                    <div class="form-group">
+                                        <label for="loginName" class="control-label col-xs-12 col-sm-2">手机号码:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <input type="text" class="form-control"  id="loginName" name="loginName" data-rule="required;mobile">        
+                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="control-label col-xs-12 col-sm-2">用户名:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <input type="text" class="form-control" id="username" name="username" data-rule="required" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="control-label col-xs-12 col-sm-2">Email:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <input type="email" class="form-control" id="email" name="email" data-rule="email" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="c-flag" class="control-label col-xs-12 col-sm-2">状态:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <select id="c-flag" class="form-control selectpicker" data-rule="required" name="status">
+                                            <option value="enabled" selected="selected">启用</option>
+                                            <option value="disabled">禁用</option>
+                                            </select>       
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="control-label col-xs-12 col-sm-2">密码:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <input type="password" class="form-control" id="password" name="plainPassword" data-rule="required;password" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group hidden layer-footer">
+                                        <label class="control-label col-xs-12 col-sm-2"></label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <button type="submit" class="btn btn-success btn-embossed disabled">确定</button>
+                                            <button type="reset" class="btn btn-default btn-embossed">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/web/assets/js/require.min.js" data-main="/web/assets/js/require-backend.min.js"></script>
+    </body>
+</html>

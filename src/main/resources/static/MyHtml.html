@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<form action="http://112.124.54.19/Score/score/importScoreFromSchool.action" method="post">
+  		<input type="hidden" value="F94074A9821395402CDAC85171F7E3DF" name="schoolIdentity">
+  		<input type="hidden" value="0" name="s_Id">
+  		<input type="hidden" value="2016" name="b_y">
+  		<input type="hidden" value="2" name="t_m">
+  		<input type="hidden" value="B7A561993EB57FE0E83B06D362EDF660" name="identity">
+  		请输入您的学号
+  		<input type="text" value="" name="s_n"><br>
+  		请输入密码
+  		<input type="password" value="" name="p_d"><br>
+  		
+  		<img alt="" src="http://112.124.54.19/Score/score/getVerCode.action?identity=B7A561993EB57FE0E83B06D362EDF660&schoolIdentity=F94074A9821395402CDAC85171F7E3DF&st=1517629284757">
+  		<input type="text" value="请输入验正码" name="v_c"><br>
+  		<input type="submit" value="查询成绩">
+  	</form>
+  </body>
+</html>

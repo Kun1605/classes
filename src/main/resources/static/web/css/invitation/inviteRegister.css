@@ -1,0 +1,107 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("../../image/invite/beijing.png") no-repeat;
+  background-size: cover;
+}
+.invitePage2 .whiteCenterLogo {
+  height: 4rem;
+  margin: 4.35rem 0 6rem 3.7rem;
+}
+.invitePage2 .inviteForm {
+  text-align: center;
+}
+.invitePage2 .inviteForm input {
+  width: 20.8rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.05rem solid #fff;
+  margin-bottom: 2.4rem;
+  padding: 1.4rem 0 1rem 3rem;
+  color: #fff;
+  border-radius: 0;
+  display: inline-block;
+  font-size: 18px;
+}
+.invitePage2 .inviteForm input:nth-of-type(1) {
+  background: url("../../image/invite/xingm.png") no-repeat 0.2rem 1.6rem;
+  background-size: 1.7rem;
+}
+.invitePage2 .inviteForm input:nth-of-type(2) {
+  background: url("../../image/invite/phone.png") no-repeat 0.2rem 1rem;
+  background-size: 1.4rem;
+}
+.invitePage2 .inviteForm input:nth-of-type(3) {
+  background: url("../../image/invite/mima.png") no-repeat 0.2rem 1.4rem;
+  background-size: 1.4rem;
+}
+.invitePage2 .inviteForm input::placeholder {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.invitePage2 .inviteForm input:focus {
+  outline: none;
+}
+.invitePage2 .inviteForm .activeMsg {
+  width: 24.8rem;
+  margin: 0 auto !important;
+  position: relative;
+}
+.invitePage2 .inviteForm .activeMsg input {
+  background: url("../../image/invite/duanxi.png") no-repeat 0.2rem 1.8rem;
+  background-size: 1.6rem;
+}
+.invitePage2 .inviteForm .activeBtn {
+  padding: 0 1.5rem;
+  height: 3.25rem;
+  opacity: 0.62;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.15rem 0.45rem 0.05rem rgba(115, 15, 18, 0.36);
+  border: none;
+  position: absolute;
+  right: 0.6rem;
+  top: 0;
+  font-size: 1.5rem;
+  color: #000000;
+}
+.invitePage2 .inviteForm .registerBtnBox {
+  margin-top: 5rem;
+}
+.invitePage2 .inviteForm .registerBtnBox .joinBtn {
+  width: 24.5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  opacity: 0.62;
+  background-color: #ffffff;
+  box-shadow: 0 0.15rem 0.45rem 0.05rem rgba(115, 15, 18, 0.36);
+}
+.invitePage2 .inviteForm .registerBtnBox .joinBtn:focus {
+  outline: none;
+}
+.invitePage2 p {
+  font-size: 1rem;
+  color: #d3d3d3;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.invitePage2 p a {
+  color: #fe6816;
+  text-decoration: none;
+}

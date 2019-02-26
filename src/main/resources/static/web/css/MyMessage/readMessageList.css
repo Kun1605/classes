@@ -1,0 +1,136 @@
+@charset "UTF-8";
+.modal-backdrop {
+  background: transparent;
+}
+#readMessage {
+  margin-bottom: 100px;
+}
+#readMessage .articleTable {
+  margin-top: 29px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+}
+#readMessage .articleTable table {
+  text-align: center;
+  width: 100%;
+}
+#readMessage .articleTable table tr:last-of-type {
+  border-bottom: 1px solid #cdcdcd;
+}
+#readMessage .articleTable table tr td {
+  font-size: 14px;
+  color: #666;
+  padding: 18px 8px;
+}
+#readMessage .articleTable table tr td:nth-of-type(1) {
+  width: 1%;
+}
+#readMessage .articleTable table tr td:nth-of-type(2) {
+  text-align: left;
+  max-width: 320px;
+  width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 100px;
+}
+#readMessage .articleTable table tr td:nth-of-type(3) {
+  width: 18%;
+  text-align: left;
+}
+#readMessage .articleTable table tr td:nth-of-type(4) {
+  width: 25%;
+  text-align: right;
+  font-size: 14px;
+}
+#readMessage .articleTable table tr td a {
+  text-decoration: none;
+  color: #666;
+}
+#readMessage .articleTable table tr td a:nth-of-type(1) {
+  margin-right: 20px;
+}
+#readMessage .articleTable table tr td span {
+  height: 8px;
+  width: 8px;
+  background-color: #e7141a;
+  border-radius: 50%;
+  display: inline-block;
+}
+#readMessage .messageDetail3 {
+  margin: 0 auto;
+  text-align: center;
+}
+#readMessage .messageDetail3 .modal-content {
+  height: 303px;
+  width: 479px;
+  margin: 0 auto;
+}
+#readMessage .messageDetail3 .modal-content h3 {
+  font-size: 18px;
+  margin-top: 28px;
+  color: #333;
+  margin-bottom: 23px;
+}
+#readMessage .messageDetail3 .modal-content p {
+  width: 421px;
+  height: 100px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: left;
+  color: #666;
+  overflow: hidden;
+}
+#readMessage .messageDetail3 .modal-content button {
+  width: 149px;
+  height: 47px;
+  border: 1px solid #cdcdcd;
+  font-size: 18px;
+  color: #666;
+  margin-top: 44px;
+}
+#readMessage .messageDetail3 .modal-content button:nth-of-type(1) {
+  margin-right: 45px;
+}
+#readMessage .messageDetail3 .modal-content button:nth-of-type(1):hover {
+  background-color: transparent;
+}
+#readMessage .messageDetail3 .modal-content button:nth-of-type(2) {
+  background-color: #e7141a;
+  color: #fff;
+  border: 1px solid #e7141a;
+}
+#readMessage .messageDetail3 .modal-content button:nth-of-type(2):hover {
+  background-color: #e7141a;
+}
+#readMessage .loadingMore {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 14px;
+  color: #666666;
+}
+#readMessage .pagination > .active > a,
+#readMessage .pagination > .active > span,
+#readMessage .pagination > .active > a:hover,
+#readMessage .pagination > .active > span:hover,
+#readMessage .pagination > .active > a:focus,
+#readMessage .pagination > .active > span:focus {
+  background-color: #e7141a;
+  border: 1px solid #e7141a;
+}
+.noDataBox {
+  margin-top: 100px;
+  text-align: center;
+}
+.noDataBox img {
+  width: 80px;
+  margin-bottom: 14px;
+}
+.noDataBox p {
+  color: #cdcdcd;
+  margin-left: 3px;
+}

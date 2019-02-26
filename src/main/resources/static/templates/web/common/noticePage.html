@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aaa</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .noticePage{
+            padding-top: 200px;
+        }
+        img{
+            width: 110px;
+        }
+        p{
+            color:#fff;
+            background-color: #e7141a;
+            width: 170px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+            font-size:16px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="noticePage">
+    <img src="/web/image/other/sad.png" alt="">
+    <p>此账号已存在!</p>
+</div>
+<script type="text/javascript" src="/web/js/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	setTimeout("location.href='/s/f/account/list';",3000);
+});
+
+</script>
+</body>
+</html>

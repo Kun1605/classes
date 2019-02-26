@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="wap/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/wap/css/slick.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/base.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/style.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/wap/css/iconfont/iconfont.css(v=${vtimestamp})}">
+    <title>班集-个人主页</title>
+    
+</head>
+		<body>
+			<div class="header">
+				<span>班集-文章详情</span>
+				<a href="/wap/home/index" class="back"><i class="iconfont icon-left"></i></a>
+			</div>
+			<div class="noticeDtail">
+					<p class="detail-tit">
+						<span></span>
+					</p>
+				    <p class="detail-txt" th:utext="${content}">
+				    </p>
+			</div>
+		  <script type="text/javascript" th:src="@{/wap/js/jquery.min.js(v=${vtimestamp})}"></script>
+				
+	    <script type="text/javascript" th:src="@{/wap/js/rem.js(v=${vtimestamp})}"></script>
+	    <script type="text/javascript" th:src="@{/wap/js/basic.js(v=${vtimestamp})}"></script>
+		</body>
+		<style type="text/css">
+    	img, object { max-width: 100%;}
+		</style>
+		<script type="text/javascript" th:inline="javascript">
+			var article=[[${title}]]
+			var time=[[${time}]]
+			$(function(){
+				$(".detail-tit").html(title+"<span>"+time+"</span>");
+			})
+			$(document).delegate('img', 'click', function() {
+				$(this).attr("width", "100%");
+				$(this).attr("height", "100%");
+				
+			})
+			
+		</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue.js遍历集合</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+​
+<body>
+<table id="myVue" width="30%" border="1">
+    <tr>
+        <th>序列</th>
+        <th>商品编号</th>
+        <th>商品名称</th>
+        <th>价格</th>
+    </tr>
+   <tr v-for="(product ,index) in products">
+       <td>{{index+1}}</td>
+       <td>{{product.id}}</td>
+       <td>{{product.name}}</td>
+       <td>{{product.name}}</td>
+   </tr>
+</table>
+</body>
+
+<script type="text/javascript">
+   var vue=new Vue({
+       el:"#myVue",
+       data:{
+           products:[
+               {id:1001,name:"杨坤", price: "100"},
+               {id:2,name:"杨坤", price: "100"}
+           ]
+       }
+   })
+</script>
+</html>

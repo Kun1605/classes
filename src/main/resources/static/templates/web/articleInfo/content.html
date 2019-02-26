@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <title>班集-文章</title>
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/articlePreview.css(v=${vtimestamp})}">
+   
+</head>
+<body>
+    <div class="wechatContent">
+        <div class="container-fluid">
+            <div class="row">
+		   <!--top_nav_bar S -->
+		 	   <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+		    <!--top_nav_bar E -->
+                <div class="col-lg-6 col-lg-offset-3 col-xs-12 col-sm-12 col-md-6 col-md-offset-3 mainContent">
+                    <div class="wechatContent">
+                            <h3 class="text-center" th:text="${article.title}"><strong></strong></h3>
+                        <article  th:utext="${article.content}"></article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--PC版-->
+<div id="SOHUCS" th:sid="${article.id}"></div>
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+</body>
+<script src="/web/vendor/jquery/dist/jquery.js"></script>
+<script src="/web/vendor/bootstrap/dist/js/bootstrap.js"></script>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>班集-班级的联盟</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/web/vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/web/vendor/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="/web/css/index.css">
+</head>
+<!-- 判断是否手机站S -->
+<!--<script>-->
+<!--var w = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;-->
+<!--if (1000>w){-->
+<!--window.location.href="/wap/login"-->
+<!--}else{-->
+<!---->
+<!--}-->
+<!--</script>-->
+<body>
+
+<div id="Main" class="mainWrapper">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header hidden-xs hidden-sm">
+                <a class="navbar-brand" href="#">
+                    <img alt="logo" src="image/login/logo-white.png" class="img-responsive">
+                </a>
+                <p class="navbar-text hidden-xs">欢迎使用</p>
+            </div>
+        </div>
+    </nav>
+    <div class="mainContent">
+        <div class="container">
+            <div class="leftContent col-md-7 ">
+                <img src="image/homepage/center.png" alt="" class="img-responsive">
+            </div>
+            <div class="rightContent col-md-5 ">
+                <div class="panel loginPanel">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active" id="loginBtn"><a href="#login" aria-controls="login"
+                                                                                    role="tab" data-toggle="tab">登录</a>
+                            </li>
+                            <li class="spanIcon"><span></span></li>
+                            <li role="presentation" id="registerBtn"><a href="#register" aria-controls="register"
+                                                                        role="tab" data-toggle="tab">注册</a></li>
+                        </ul>
+                        <p class="forgetPwdTitle">忘记密码</p>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="login">
+                                <form action="/web/login" method="POST">
+                                    <div class="form-group input-group">
+                                        <input type="text" class="form-control" id="cellphone" name="username"
+                                               th:src="${username}" placeholder="输入学号">
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="icon-user"></i>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               placeholder="输入密码">
+                                    </div>
+                                    <div class="" id="forgetBtn">
+                                        <p class="errMessage1">
+                                            <span class="text-left phoneErrMsg"
+                                                  th:style="${loginMessage!=null?'opacity:1':'' }"
+                                                  th:text="'*'+${loginMessage}"></span>
+                                            <a href="#" class="text-right !important" id="forgetPwdBtn">忘记密码?</a>
+                                        </p>
+                                    </div>
+                                    <div class="btnSubmit">
+                                        <button id="ButtonLogin" class="btn btn-default" type="submit">登录</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- regist S -->
+                            <div role="tabpanel" class="tab-pane " id="register">
+                                <form id="registForm" action="/web/regist" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="usermessage1" name="studentNo"
+                                               placeholder="输入学号">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control" id="usermessage" name="classId"
+                                                placeholder="请选择您的班级">
+                                            <option value="">---------请选择您的班级--------</option>
+                                            <option th:value="${depart.id}" th:each="depart: ${departs}"
+                                                    th:text="${depart.name}"></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="username" name="name"
+                                               placeholder="输入姓名">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="userpwd" name="password"
+                                               placeholder="输入密码">
+                                    </div>
+                                    <!--     <div class="form-group">
+                                            <input type="text" class="form-control left-form-control" id="usercode" placeholder="验证码">
+                                        </div> -->
+                                    <!-- <div class="form-group">
+                                        <input type="text" class="form-control left-form-control" id="usermessage" placeholder="请输入左边验证码">
+                                        <a href="#javascript:;">获取验证码</a>
+                                    </div> -->
+                                    <p class="errorMessage2">
+                                        <span id="registMessage" class="text-left phoneErrMsg">aaaa</span>
+                                    </p>
+                                    <div class="btnSubmit" style="margin-top: 21px;">
+                                        <button id="registButton" class="btn btn-default" type="button">注册</button>
+                                    </div>
+                                    <p class="registerNotice">点击"注册"即表明您同意并愿意遵守班集<a
+                                            href="view/contractDetail/service.html">用户协议</a>和<a
+                                            href="view/contractDetail/privacy.html">隐私政策</a></p>
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="forgetPwd">
+                                <form action="">
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" id="forgetPhone" placeholder="手机号">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control left-form-control" id="forgetCode"
+                                               placeholder="验证码">
+                                        <a href="#javascript:;">aaa</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control left-form-control" id="forgetMessage"
+                                               placeholder="短信验证码">
+                                        <a href="#javascript:;">获取验证码</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="setPwd" placeholder="设置密码">
+                                    </div>
+                                    <p class="errorMessage2">
+                                        <span class="text-left phoneErrMsg">*手机号不正确</span>
+                                        <span class="text-left pwdErrMsg">*密码不正确</span>
+                                        <span class="text-left codeErrMsg">*验证码不正确</span>
+                                        <span class="text-left msnErrMsg">*短信码不正确</span>
+                                    </p>
+                                    <div class="btnSubmit">
+                                        <button class="btn btn-warning" type="submit"
+                                                style="width:180px;margin-right: 20px;background-color: transparent;border: 1px solid #cdcdcd;color:#666"
+                                                id="cancelBtn">取消
+                                        </button>
+                                        <button class="btn btn-default" type="submit" style="width: 180px;">提交</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/web/vendor/jquery/dist/jquery.js"></script>
+<script src="/web/vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/web/vendor/swiper/dist/js/swiper.js"></script>
+</body>
+<script>
+
+    $("#registButton").on('click', function () {
+        var value = $("#registForm").serialize();
+        $.post("/web/regist", value, function (data) {
+            if (data.code == 1) {
+                $("#registMessage").html(data.msg);
+                $("#registMessage").show()
+            } else if (data.code == 201) {
+                //参数有错误
+                $("#registMessage").html(data.msg);
+                $("#registMessage").show()
+            }
+        })
+    })
+    $('.btnRegister').click(function () {
+        swiper.slideTo(5, 2000, false);
+        $("#registerBtn").tab("show");
+        $("#register").addClass('active').siblings().removeClass('active');
+    });
+    $('.btnLogin').click(function () {
+        swiper.slideTo(5, 2000, false);
+        $("#loginBtn").tab("show");
+        $("#login").addClass('active').siblings().removeClass('active');
+    });
+
+    $("#loginBtn").click(function () {
+        $('.loginPanel').removeClass('registerPanel');
+    });
+
+    $("#registerBtn").click(function () {
+        $('.loginPanel').addClass('registerPanel');
+    });
+
+    $("#forgetPwdBtn").click(function () {
+        $('.nav-tabs').css('display', 'none');
+        $('#login').css('display', 'none');
+        $('.forgetPwdTitle').css('display', 'block');
+        $('#forgetPwd').css('display', 'block');
+        $('#register').css('display', 'none');
+    });
+    $('#cancelBtn').click(function () {
+        $('.nav-tabs').css('display', 'table');
+        $('.forgetPwdTitle').css('display', 'none');
+
+        $('#login').removeAttr('style');
+        $('#register').removeAttr('style');
+        $('#forgetPwd').removeAttr('style');
+
+        return false;
+    });
+
+    function hehe() {
+        $.post(url, param, function (data, textStatus, jqXHR) {
+
+        }, "json")
+    }
+</script>
+</html>

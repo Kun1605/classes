@@ -1,0 +1,85 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url("../../image/invite/beijing.png") no-repeat;
+  background-size: cover;
+}
+.invitePage1 .container .whiteLogo {
+  height: 3.25rem;
+  margin: 1rem 0 0 2.35rem;
+}
+.invitePage1 .container .inviteSlogan {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.invitePage1 .container .inviteSloganBox {
+  width: 100%;
+  padding: 0 1.85rem;
+}
+.invitePage1 .container .inviteBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10rem;
+  right: 6rem;
+}
+.invitePage1 .container .inviteBox .teacher {
+  border-radius: 0.25rem;
+  padding: 0 0.8rem;
+  width: 100%;
+  min-width: 9rem;
+  height: 3.5rem;
+  margin: 0;
+  background: #2fcdfd;
+  transform: skew(-20deg, 0) rotateZ(-12deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.invitePage1 .container .inviteCode {
+  height: 8.5rem;
+  width: 8.5rem;
+  border: 0.05rem solid #fff;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.invitePage1 .container .inviteCode img {
+  width: 100%;
+  height: 100%;
+}
+.invitePage1 .container .invitePlatForm {
+  width: 30rem;
+  display: block;
+  margin: 1.8rem auto;
+}
+.invitePage1 .container .registerBtnBox {
+  padding: 0 5rem;
+}
+.invitePage1 .container .registerBtnBox .registerBtn {
+  height: 4.6rem;
+  border-radius: 0.5rem;
+  background-color: #fe6816;
+  border: none;
+  font-size: 2.2rem;
+  color: #ffffff;
+  text-shadow: 0 0.1rem 0.15rem rgba(1, 16, 32, 0.48);
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

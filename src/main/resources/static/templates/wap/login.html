@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="css/base.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="css/iconfont/iconfont.css"/>
+  <title>用户登录</title>
+  <!-- 判断是否手机站S -->
+<script>
+	var w = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+    if (1000<=w){
+    window.location.href="/web/login"
+    }else{
+    	
+    }
+</script>
+	</head>
+	<body style="background: url('/web/image/homepage/indexBg.png');">
+		<div class="header">
+			<span>班集-登陆</span>
+			<!-- <a href="#" class="back"><i class="iconfont icon-left"></i></a> -->
+		</div>
+		<ul class="login-box">
+			<li>
+				    <span class="login-name"><i class="iconfont icon-user" ></i></span>
+		        <input id="username" type="text" name="username" placeholder="请输入学号"/>   
+			</li>
+			<li>
+				<span class="login-psw"><i class="iconfont icon-psw"></i></span>
+		        <input id="password" type="password" name="password" placeholder="请输入密码" />   
+			</li>
+		</ul>
+		</div>
+		<div class="confirm">
+			<a href="#" id="login">登录</a>
+		<!-- 	<p class="foget-psw"><a href="#">注册</a></p> -->
+		</div>
+	</body>
+	<script src="js/jquery-1.10.2.min.js"></script>
+     <script type="text/javascript" src="js/rem.js"></script>	
+     <script type="text/javascript">
+     var params={
+     }
+     $("#login").click(function() {
+	     params.username=$("#username").val();
+	     params.password=$("#password").val();
+     	$.post("/web/login", params, function(data) {
+     		if(data.indexOf("个人主页")!=-1){
+     			window.location.href="/wap/home/index";
+     		}
+     	})
+     })
+     </script>
+</html>

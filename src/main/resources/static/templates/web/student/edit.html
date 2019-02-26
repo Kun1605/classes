@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/video/creatVideo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/vendor/jquery-ui/themes/base/jquery-ui.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/vendor/jquery-tagit/css/jquery.tagit.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/vendor/jquery-tagit/css/tagit.ui-zendesk.css(v=${vtimestamp})}">
+    <title>班集-个人主页</title>
+</head>
+<body>
+<div id="mainInfo">
+    <!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    <div class="infoContent">
+         <!--left_nav_bar S -->
+            <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+        <div class="infoRightBar pull-right">
+            <h4>修改个人资料</h4>
+            <input type="file" name="file" style="display: none;">
+	            <form id="uploadForm" class="uploadForm" action="/web/student/save" method="post">
+               	<input th:if="${id!=null and id != 0}" type="hidden" th:value="${id}" name="id">
+                <div class="form-group" >
+                    <label  class="control-label">姓名</label>
+                    <div class="inputRightSide">
+                        <input id="title" name="name" type="text" class="form-control" th:value="${name}">
+                    </div>
+                </div>
+                <div class="form-group" style="align-items:flex-start" >
+                    <label  class="control-label">手机号码</label>
+                    <div class="inputRightSide">
+                        <input name="phone" type="text" id="desc" class="form-control" th:value="${phone}">
+                    </div>
+                </div>
+				  <div class="form-group">
+                    <label  class="control-label">爱好</label>
+                    <div class="inputRightSide tagFormGroup">
+                        <div id="container">
+                            <ul class="myTags">
+                            </ul>
+                            <input id="label" name="hobbies" type="hidden" th:value="${hobbies}" class="myTagsValues" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="align-items:flex-start">
+                    <label  class="control-label">头像</label>
+                    <div class="inputRightSide">
+                       <div class="rightBox">
+                            <div class="uploadImgBox">
+                           	 <input type="hidden" name="avatar" id="avatar" th:value="${avatar}"  data-rule="required" /> 
+                               <a id="input_avatar" href="javascript:void(0);" class="uploadBtn">
+						                  <img  th:if="${avatar}==null" id="avatar-img" src="/web/image/InfoPage/uploadImg.png" style="width: 51px;height: 51px;" /> 
+						                 <img  th:if="${avatar}!=null" id="avatar-img" th:src="${avatar}" style="width: 100%;height: 100%;" />
+			                 </a> 
+                            </div>
+                       </div>
+                    </div>
+                </div>
+                <!-- ArticleType S -->
+                <div class="form-group">
+                    <label  class="control-label">性别</label>
+                    <div class="inputRightSide">
+                        <div class="rightBox" style="height: 50px;">
+                            <select id="type" name="sex" class="selectOption">
+                               <option value="">请选择性别</option>
+                               <option value="男生" th:selected="${#strings.equals(sex,'男生')}">男生</option>
+                               <option value="女生" th:selected="${#strings.equals(sex,'女生')}">女生</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label  class="control-label">QQ号码</label>
+                    <div class="inputRightSide">
+                        <input id="qq" name="qq" type="text" class="form-control" th:value="${qq}">
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label  class="control-label">微信号码</label>
+                    <div class="inputRightSide">
+                        <input id="wx" name="wx" type="text" class="form-control" th:value="${wx}">
+                    </div>
+                </div>
+                <!-- 发布S -->
+                <div class="btnformgroup">
+                    <button id="publish" type="button" class="btn btn-default" data-toggle="modal" >发布</button>
+                    <button type="button" class="btn btn-default">取消</button>
+		            <div class="modal fade myModal" id="myModal"  tabindex="-1" role="dialog">
+		                <div class="modal-dialog" role="document">
+		                    <div class="modal-content">
+		                        <div class="modal-body">
+		                            <p>是否确定保存？</p >
+		                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		                            <button id="publish_sure" type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+                </div>
+		      </form>
+        </div>
+    </div>
+      <!--footer S -->
+        <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+</body>
+ <script charset="utf-8" type="text/javascript" th:src="@{/web/js/jquery/jquery-2.2.4.min.js(v=${vtimestamp})}"></script> 
+ <script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/jquery-ui/jquery-ui.js(v=${vtimestamp})}"></script> 
+<script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/jquery-tagit/js/tag-it.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/jquery.fileupload/jquery.iframe-transport.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/jquery.fileupload/jquery.xdr-transport.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/ajaxFileUpload/jquery.ajaxfileupload.js(v=${vtimestamp})}"></script>
+
+<!-- 校验 -->
+<script type="text/javascript">
+	var $tipAlert = $("#myModal");
+	var $tipText = $tipAlert.find("p");
+	$('#publish').on("click", function () {
+	    $tipText.html("是否把信息提交到服务器？");
+	    $tipAlert.modal();
+	});
+    $('#publish_sure').on("click", function () {
+    	$.post('/web/student/save',$("form").serialize()
+        , function (data) {
+        	console.log(data)
+            if (data.code == 1) {
+				alert(data.msg);
+            	window.location.href="/web/home/index"
+            } else {
+           	    $tipText.html("网络故障.暂时无法修改个人资料");
+         	    $tipAlert.modal();
+            }
+        }, "json");
+    });
+</script>
+<!-- 校验 -->
+<!-- 页面 S-->
+<script>
+    var sampleTags = ['c++', 'java', 'php', 'coldfusion', 'javascript', 'asp', 'ruby', 'python', 'c', 'scala', 'groovy', 'haskell', 'perl', 'erlang', 'apl', 'cobol', 'go', 'lua'];
+    $('.myTags').tagit({
+        singleField: true,
+        singleFieldNode: $('.myTagsValues')
+    });
+    $('#singleFieldTags').tagit({
+//输入提示
+        availableTags: sampleTags,
+// 与赋值操作有关
+        singleField: true,
+        allowSpaces: false, //标签中是否允许空格
+        singleFieldNode: $('#mySingleField') //将值保存到mySingleField元素
+    });
+</script>
+<script type="text/javascript">
+var uploadBtn = $("#input_avatar");
+var file= $("input[type='file']");
+var img= $("input[name='avatar']");
+uploadBtn.on('click', function () {
+	  file.trigger("click");
+	 
+});
+file.ajaxfileupload({
+      action: '/qiniu/upload',
+      method:'post',
+      valid_extensions : ['png', 'jpg', 'jpeg', 'gif', 'bmp','webp'],
+      params: {
+          action:'uploadimage'
+      },
+      onComplete: function(resp) {
+          console.log(JSON.stringify(resp));
+          $("#avatar-img").attr("src",resp.qiniu_path); 
+          img.attr("value",resp.qiniu_path); 
+      },
+      onStart: function() {
+          console.log('img upload start')
+      },
+      onCancel: function() {
+      	console.log('no file selected');
+      }
+  });
+</script>
+</html>

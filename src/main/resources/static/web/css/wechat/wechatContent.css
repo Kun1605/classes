@@ -1,0 +1,87 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.wechatContent .container-fluid .row .mainContent {
+  padding: 20px 15px;
+}
+.wechatContent .container-fluid .row .mainContent .contentTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #e7e7eb;
+}
+@media (max-width: 970px) {
+  .wechatContent .container-fluid .row .mainContent .contentTitle {
+    border-bottom: none;
+  }
+}
+.wechatContent .container-fluid .row .mainContent .contentTitle h3 {
+  display: inline-block;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+@media (max-width: 750px) {
+  .wechatContent .container-fluid .row .mainContent .contentTitle h3 {
+    border-bottom: none;
+  }
+}
+.wechatContent .container-fluid .row .mainContent .contentTitle span {
+  width: 2px;
+  height: 1rem;
+  background-color: #000;
+  display: inline-block;
+  margin: 0 10px;
+}
+.wechatContent .container-fluid .row .mainContent .contentDetail {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.wechatContent .container-fluid .row .mainContent .contentDetail span {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #8c8c8c;
+}
+.wechatContent .container-fluid .row .mainContent .contentDetail span a {
+  text-decoration: none;
+}
+.wechatContent .container-fluid .row .mainContent .wechatContent {
+  width: 100%;
+  min-height: 350px;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 16px;
+  color: #666;
+}
+@media (min-width: 750px) {
+  .wechatContent .container-fluid .row .mainContent .wechatContent {
+    font-size: 16px;
+  }
+}
+.wechatContent .container-fluid .row .mainContent .wechatContent article {
+  line-height: 30px;
+  word-wrap: break-word;
+  text-align: justify;
+  color: #666;
+}
+@media (max-width: 750px) {
+  .wechatContent .container-fluid .row .mainContent .wechatContent article {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+.wechatContent .container-fluid .row .mainContent .wechatContent article img {
+  width: 100%;
+  margin: 10px 0;
+}
+.wechatContent .container-fluid .row .mainContent .wechatContent img {
+  width: 100%;
+  margin: 10px 0;
+}

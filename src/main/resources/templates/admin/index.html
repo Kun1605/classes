@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>FastAdmin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta name="renderer" content="webkit"></meta>
+        <link rel="shortcut icon" href="/admin/assets/img/favicon.ico" ></link>
+        <link href="/admin/assets/css/backend.min.css" rel="stylesheet"></link>
+        <script type="text/javascript">
+            var require = {
+                "config": {
+                    "site": {
+                        "name": "FastAdmin",
+                        "cdnurl": "",
+                        "version": "1.0.0",
+                        "timezone": "Asia/Shanghai",
+                        "languages": {
+                            "backend": "zh-cn",
+                            "frontend": "zh-cn"
+                        }
+                    },
+                    "upload": {
+                        "cdnurl": "./",
+                        "uploadurl": "data/upload.json",
+                        "bucket": "yourbucketname",
+                        "maxsize": "10mb",
+                        "mimetype": "*",
+                        "multipart": {
+                            "policy": "eyJidWNrZXQiOiJ5b3VyYnVja2V0bmFtZSIsInNhdmUta2V5IjoiXC91cGxvYWRzXC97eWVhcn17bW9ufXtkYXl9XC97ZmlsZW1kNX17LnN1ZmZpeH0iLCJleHBpcmF0aW9uIjoxNTAwNTI2NTczLCJub3RpZnktdXJsIjoiaHR0cDpcL1wvd3d3LnlvdXJzaXRlLmNvbVwvdXB5dW5cL25vdGlmeSJ9",
+                            "signature": "043eaf09c0319b1a9a11d06511bfdc4e",
+                            "bucket": "yourbucketname",
+                            "save-key": "/uploads/{year}{mon}{day}/{filemd5}{.suffix}",
+                            "expiration": 1500526573,
+                            "notify-url": "http://www.yoursite.com/upyun/notify"
+                        },
+                        "multiple": false
+                    },
+                    "modulename": "admin",
+                    "controllername": "index",
+                    "actionname": "index",
+                    "jsname": "backend/index",
+                    "moduleurl": "./",
+                    "language": "zh-cn",
+                    "referer": null
+                }
+            };
+        </script>
+        <script>
+        </script>
+    </head>
+    <body class="hold-transition skin-green sidebar-mini fixed" id="tabs">
+        <div class="wrapper">
+
+            <header id="header" class="main-header">
+                <!-- Logo -->
+                <a href="./" class="logo">
+                    <!-- 迷你模式下Logo的大小为50X50 -->
+                    <span class="logo-mini">班</span>
+                    <!-- 普通模式下Logo -->
+                    <span class="logo-lg"><b>班</b>集</span>
+                </a>
+                <!-- 顶部通栏样式 -->
+                <nav class="navbar navbar-static-top">
+                    <!-- 边栏切换按钮-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+
+                    <div id="nav" class="pull-left">
+                        <!--如果不想在顶部显示角标,则给ul加上disable-top-badge类即可-->
+                        <ul class="nav nav-tabs nav-addtabs disable-top-badge" role="tablist">
+                        </ul>
+                    </div>
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            <li class="hidden-xs">
+                                <a href="#" data-toggle="fullscreen"><i class="fa fa-arrows-alt"></i></a>
+                            </li>
+
+                            <!-- 账号信息下拉框 -->
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img th:src="${session.Student.avatar}" class="user-image" alt="Admin"/>
+                                    <span class="hidden-xs">Admin</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img  th:src="${session.Student.avatar}" class="img-circle" alt=""/>
+
+                                        <p>
+                                            <div th:text="${session.Student.name}">Admin</div>                            
+                                            <small th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd hh:mm:ss')}">2017-07-18 18:16:04</small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <div class="row">
+                                            <div class="col-xs-4 text-center">
+                                                <a href="http://www.fastadmin.net" target="_blank">官网</a>
+                                            </div>
+                                            <div class="col-xs-4 text-center">
+                                                <a href="http://forum.fastadmin.net" target="_blank">论坛</a>
+                                            </div>
+                                            <div class="col-xs-4 text-center">
+                                                <a href="http://doc.fastadmin.net" target="_blank">文档</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="profile.html" class="btn btn-default btn-flat addtabsit">个人资料</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="/admin/logout" class="btn btn-default btn-flat">注销</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- 控制栏切换按钮 -->
+                            <li>
+                                <a href="javascript:;" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel hidden-xs">
+                        <div class="pull-left image">
+                            <a href="profile" class="addtabsit"><img th:src="${session.Student.avatar}" class="img-circle" /></a>
+                        </div>
+                        <div class="pull-left info" >
+                            <p th:text="${session.Student.name}">Admin</p>
+                            <i class="fa fa-circle text-success"></i> <i  th:text="管理员">在线</i>        </div>
+                    </div>
+
+                    <!-- search form -->
+                    <form action="" method="get" class="sidebar-form" onsubmit="return false;">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="搜索菜单"/>
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            <div class="menuresult list-group sidebar-form hide">
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <!--如果想始终显示子菜单,则给ul加上show-submenu类即可-->
+                   <ul class="sidebar-menu">
+                        <li class="header">站内导航</li>
+                          <li class=" active"><a href="/admin/dashboard" addtabs="11180" url="/admin/dashboard" py="kzt" pinyin="kongzhitai"><i class="fa fa-dashboard"></i> <span>欢迎来带班集后台首页</span> <span class="pull-right-container"> <small class="label pull-right bg-blue">hot</small></span></a> </li>
+						<li th:class="(${menu.right.size()==0}?'active':'treeview')" th:each="menu:${menus}">
+						
+							<a th:if="${menu.right.size()!=0}" href="javascript:;" th:addtabs="${menu.left.id}" url="javascript:;"><i th:class="${menu.left.icon}"></i> <span th:text="${menu.left.title}"></span></a>			
+							<a th:if="${menu.right.size()==0}" th:href="@{${menu.left.url}}" th:addtabs="${menu.left.id}" th:url="@{${menu.left.url}}"><i th:class="${menu.left.icon}"></i> <span th:text="${menu.left.title}"></span> </a> 
+							
+							<ul class="treeview-menu" th:if="${menu.right.size()!=0}">
+								<li class="" th:each="twoMenu : ${menu.right}">
+									<a th:href="${twoMenu.url}"  th:addtabs="${twoMenu.id}"   th:url="${twoMenu.url}"><i th:class="${twoMenu.icon}"></i> <span th:text="${twoMenu.title}"></span> </a>  
+								</li>
+							</ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper tab-content tab-addtabs">
+
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer hide">
+                <div class="pull-right hidden-xs">
+                </div>
+                <strong>Copyright &copy; 2017-2018 <a href="http://aynu.cn">安阳师范学院</a>.</strong> All rights
+                reserved.
+            </footer>
+
+            <!-- Add the sidebar's background. This div must be placed
+                 immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
+            <style>
+                .skin-list li{
+                    float:left; width: 33.33333%; padding: 5px;
+                }
+                .skin-list li a{
+                    display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4);
+                }
+            </style>
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li class="active"><a href="#control-sidebar-setting-tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-wrench"></i></a></li>
+                    <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane active" id="control-sidebar-setting-tab">
+                        <h4 class="control-sidebar-heading">皮肤</h4>
+                        <ul class="list-unstyled clearfix skin-list">
+                            <li><a href="javascript:;" data-skin="skin-blue" style="" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9;"></span><span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin">Blue</p></li>
+                            <li><a href="javascript:;" data-skin="skin-black" class="clearfix full-opacity-hover"><div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix"><span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe;"></span><span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin">Black</p></li>
+                            <li><a href="javascript:;" data-skin="skin-purple" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span><span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin">Purple</p></li>
+                            <li><a href="javascript:;" data-skin="skin-green" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span><span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin">Green</p></li>
+                            <li><a href="javascript:;" data-skin="skin-red" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span><span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin">Red</p></li>
+                            <li><a href="javascript:;" data-skin="skin-yellow" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span><span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin">Yellow</p></li>
+                            <li><a href="javascript:;" data-skin="skin-blue-light" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9;"></span><span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin" style="font-size: 12px">Blue Light</p></li>
+                            <li><a href="javascript:;" data-skin="skin-black-light" class="clearfix full-opacity-hover"><div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix"><span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe;"></span><span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin" style="font-size: 12px">Black Light</p></li>
+                            <li><a href="javascript:;" data-skin="skin-purple-light" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span><span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin" style="font-size: 12px">Purple Light</p></li>
+                            <li><a href="javascript:;" data-skin="skin-green-light" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span><span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin" style="font-size: 12px">Green Light</p></li>
+                            <li><a href="javascript:;" data-skin="skin-red-light" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span><span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin" style="font-size: 12px">Red Light</p></li>
+                            <li><a href="javascript:;" data-skin="skin-yellow-light" class="clearfix full-opacity-hover"><div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span><span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span><span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a><p class="text-center no-margin" style="font-size: 12px;">Yellow Light</p></li>
+                        </ul>
+                    </div>
+
+                    </div>
+
+                    <!-- /.tab-pane -->
+                </div>
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+        <!-- end main content -->
+        <script src="/admin/assets/js/require.js" data-main="/admin/assets/js/require-backend.min.js"></script>
+    </body>
+</html>

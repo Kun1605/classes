@@ -1,0 +1,529 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dddddd;
+}
+#mainInfo .navbarHeader {
+  height: 78px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px 2px #cdcdcd;
+}
+#mainInfo .navbarHeader .topHeader {
+  width: 1200px;
+  height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#mainInfo .navbarHeader .topHeader .headerRight {
+  display: flex;
+  align-items: center;
+}
+#mainInfo .navbarHeader .topHeader > .headerLogo > a > img {
+  width: 100px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .createArticle-box {
+  position: relative;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .creatArticle {
+  width: 117px;
+  height: 38px;
+  background-color: #e7141a;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFEFE;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 33px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .creatArticle .articleSlier {
+  margin-left: 14px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .headerDropDown {
+  width: 95px;
+  height: 151px;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 60px;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .headerDropDown li {
+  width: 95px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .headerDropDown li a {
+  font-size: 16px;
+  color: #666;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .creatArticle:hover .headerDropDown {
+  display: block;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userLogout {
+  font-size: 16px;
+  color: #B3B3B3;
+  display: inline-block;
+  text-decoration: none;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .spanIcon {
+  width: 1px;
+  height: 18px;
+  background-color: #B3B3B3;
+  display: inline-block;
+  margin-right: 15px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userInfoName {
+  font-size: 16px;
+  color: #333;
+  max-width: 114px;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 30px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userInfoName a {
+  text-decoration: none;
+  color: #333;
+  max-width: 114px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userLoginBtn {
+  font-size: 20px;
+  width: 117px;
+  height: 38px;
+  background-color: #e7141a;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox {
+  margin-right: 35px;
+  position: relative;
+  padding: 0;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox img {
+  width: 32px;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox .userMailNumber {
+  width: 32px;
+  height: 20px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  background-color: #e7141a;
+  color: #FFFEFE;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -9px;
+  right: -16px;
+  margin-bottom: 0;
+}
+#mainInfo .navbarHeader .topHeader .headerRight .userMailBox .userMailNumber span {
+  margin-top: -1px;
+}
+#mainInfo .infoContent {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#mainInfo .infoContent .infoLeftBar {
+  height: 520px;
+  width: 160px;
+  margin-top: 16px;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.3);
+}
+#mainInfo .infoContent .infoLeftBar li {
+  list-style: none;
+  height: 130px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+#mainInfo .infoContent .infoLeftBar li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #e7141a;
+  color: #fff;
+  font-size: 16px;
+}
+#mainInfo .infoContent .infoLeftBar li.active a {
+  background-color: #CE0B10;
+}
+#mainInfo .infoContent .infoLeftBar li a:hover {
+  background-color: #CE0B10;
+}
+#mainInfo .infoContent .infoLeftBar li a:focus {
+  background-color: #CE0B10;
+}
+#mainInfo .infoContent .infoLeftBar li a:active {
+  background-color: #CE0B10;
+}
+#mainInfo .infoContent .infoLeftBar li a img {
+  margin-bottom: 8px;
+  height: 33px;
+}
+#mainInfo .infoContent .infoRightBar {
+  width: 1031px;
+  margin-left: 9px;
+  margin-top: 16px;
+}
+#mainInfo .infoContent .infoRightBar .messageInfo {
+  height: 56px;
+  width: 1031px;
+  background-color: #FFD7DB;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+#mainInfo .infoContent .infoRightBar .messageInfo span {
+  margin-left: 23px;
+}
+#mainInfo .infoContent .infoRightBar .messageInfo span img {
+  height: 22px;
+}
+#mainInfo .infoContent .infoRightBar .messageInfo p {
+  margin-left: 22px;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #000;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo {
+  height: 200px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+#mainInfo .infoContent .infoRightBar .personalInfo img {
+  width: 143px;
+  height: 143px;
+  border-radius: 50%;
+  margin-left: 83px;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .personName p {
+  margin-left: 21px;
+  color: #666;
+  margin-bottom: 0;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .personUserName {
+  font-size: 26px;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .personCellPhone {
+  font-size: 18px;
+  margin-top: 10px;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode {
+  height: 200px;
+  width: 400px;
+  margin-left: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .leftBarCode {
+  width: 133px;
+  height: 133px;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .leftBarCode .codeImg {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .rightRequestBtn {
+  width: 247px;
+  height: 130px;
+  padding-right: 39px;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .rightRequestBtn p {
+  font-size: 14px;
+  color: #666666;
+  margin-left: 10px;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .rightRequestBtn button {
+  width: 208px;
+  height: 47px;
+  border-radius: 5px;
+  background-color: #e7141a;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .rightRequestBtn button:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .rightRequestBtn a {
+  font-size: 16px;
+  color: #e7141a;
+  display: block;
+  margin-top: 24px;
+  text-align: center;
+}
+#mainInfo .infoContent .infoRightBar .personalInfo .requestCode .rightRequestBtn a img {
+  width: 8px;
+  height: 15px;
+  margin-left: 9px;
+  margin-top: -2px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn {
+  width: 1030px;
+  height: 357px;
+  background-color: #ECFAFD;
+  padding-top: 25px;
+  margin-top: 15px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn p {
+  font-size: 26px;
+  color: #E75E14;
+  margin-left: 23px;
+  font-weight: bold;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn p .rocket {
+  margin-left: 15px;
+  width: 70px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand {
+  margin-top: 50px;
+  display: flex;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft {
+  margin-left: 90px;
+  width: 500px;
+  display: flex;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .leftPic {
+  height: 142px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide {
+  margin-left: 13px;
+  display: inline-block;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide h3 {
+  font-size: 22px;
+  color: #E75E14;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide p {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 10px 18px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide span img {
+  margin-bottom: 15px;
+  margin-left: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandLeft .rightSide a {
+  width: 116px;
+  height: 40px;
+  background-color: #e7141a;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 84px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight {
+  display: flex;
+  height: 149px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightPic {
+  width: 142px;
+  height: 142px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide {
+  margin-left: 13px;
+  display: inline-block;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide h3 {
+  font-size: 22px;
+  color: #E2AE11;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide p {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 7px 18px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide span {
+  width: 210px;
+  display: inline-block;
+  margin-bottom: 13px;
+  margin-left: 6px;
+}
+#mainInfo .infoContent .infoRightBar .firstCameIn .newHand .newHandRight .rightSide a {
+  width: 116px;
+  height: 40px;
+  background-color: #e7141a;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo {
+  width: 100%;
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo ul {
+  width: 1030px;
+  height: 200px;
+  padding-left: 0;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo ul li {
+  width: 202px;
+  height: 201px;
+  float: left;
+  list-style: none;
+  margin-right: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo ul li:nth-of-type(5) {
+  margin-right: 0;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo ul li p {
+  margin-bottom: 0;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo ul li .dataNumber {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo ul li .dataAccount {
+  font-size: 16px;
+  color: #666666;
+}
+#mainInfo .infoContent .infoRightBar .dataInfo .moreDataList {
+  display: none;
+  margin-top: 5px;
+}
+#mainInfo .infoContent .infoRightBar .moreData {
+  width: 1030px;
+  height: 100%;
+  margin-bottom: 9px;
+  margin-top: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .moreData a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+}
+#mainInfo .infoContent .infoRightBar .moreData a img {
+  margin-left: 3px;
+}
+#mainInfo .infoContent .infoRightBar .messageList {
+  width: 1030px;
+  height: 100%;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul {
+  width: 1030px;
+  padding: 26px 62px 16px 23px;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 23px;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li span a {
+  text-decoration: none;
+}
+#mainInfo .infoContent .infoRightBar .messageList ul li p {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 0;
+}
+#mainInfo .infoFooter {
+  width: 100%;
+  margin: 30px auto;
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 10px;
+}
+#mainInfo .infoFooter span {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+#mainInfo .infoFooter span a {
+  text-decoration: none;
+  cursor: pointer;
+}
+#mainInfo .infoFooter p {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+}
+.tooltip-inner {
+  background-color: #e7141a;
+  font-size: 14px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tooltip.top .tooltip-arrow {
+  border-top-color: #e7141a;
+}

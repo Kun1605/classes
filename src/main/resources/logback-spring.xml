@@ -1,0 +1,57 @@
+<!DOCTYPE logback>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern><![CDATA[%d{HH:mm:ss} %-5level  %logger[%file:%line] - %msg%n]]></pattern>
+        </encoder>
+    </appender>
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>false</prudent>
+        <file>/search/banji/log/banji.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/yk/log/banji_%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss:SSS} [%-5level] %logger[%file:%line] - %message%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Application Loggers -->
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.hibernate" level="ERROR"/>
+    <logger name="springfox.documentation" level="ERROR"/>
+    <logger name="org.jboss" level="ERROR"/>
+    <logger name="org.apache" level="ERROR"/>
+    <logger name="org.activiti" level="ERROR"/>
+    <logger name="hibernate.validator" level="ERROR"/>
+    <logger name="org.apache.shiro" level="ERROR"/>
+    <logger name="org.mybatis.spring.mapper" level="ERROR"/>
+    <logger name="org.apache.ibatis" level="ERROR"/>
+    <logger name="org.mybatis.spring.SqlSessionFactoryBean" level="ERROR"/>
+    <logger name="com.arjuna" level="ERROR"/>
+    <logger name="io.undertow" level="ERROR"/>
+    <logger name="org.mongodb" level="ERROR"/>
+    <!-- -->
+    <logger name="com.joinus.common" level="DEBUG"/>
+    <!-- <logger name="druid.sql.DataSource" level="ERROR" />
+    <logger name="druid.sql.Connection" level="ERROR" />
+    <logger name="druid.sql.Statement" level="ERROR" />
+    <logger name="druid.sql.ResultSet" level="ERROR" /> -->
+
+    <logger name="com.ibatis" level="DEBUG"/>
+    <logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG"/>
+    <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/>
+    <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG"/>
+    <logger name="java.sql.Connection" level="DEBUG"/>
+    <logger name="java.sql.Statement" level="DEBUG"/>
+    <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+    <logger name="org.thymeleaf" level="ERROR"/>
+    <!-- 开发 -->
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ROLLING"/>
+    </root>
+
+</configuration>

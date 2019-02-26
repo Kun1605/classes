@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/AccountInfo/AccountList.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/AccountInfo/accountBind.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/missionList/missionhome.css(v=${vtimestamp})}">
+    <title>班集-同学圈子</title>
+</head>
+<body>
+<div id="mainInfo">
+    <!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    <div class="infoContent">
+          <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+          <!--left_nav_bar E -->
+        <div class="infoRightBar pull-right">
+         <ul class="nav nav-tabs" id="tab-control">
+                <li role="presentation" >
+                    <a href="/web/student/zoneList" style="margin-right: 26px;" >我的同学</a>
+                </li>
+                <li role="presentation"  class="active">
+                    <a href="/web/student/contacts">同学通讯录</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active account-bind-panel" role="tabpanel" id="account-bind">
+                    <div class="missionListBox">
+                    <span></span><button  onclick="javascript:location.href='/web/student/excel'">导出excel</button>
+                          <!--暂无数据-->
+                        <div th:if="${list==null}" class="noDataBox">
+                            <img src="/web/image/accountpage/noData.png" alt="">
+                            <p>暂无数据</p>
+                        </div>
+                        <ul  class="missionList text-center">
+                            <li>
+                                <span>姓名</span>
+                                <span>手机</span>
+                                <span>邮箱</span>
+                                <span>微信</span>
+                                <span style="color:#666;">qq</span>
+                            </li>
+                              <li th:each="student,stat: ${list}">
+                                  <!-- 姓名 -->
+                                <span th:text="${student.name}"></span>
+                                <!-- 手机 -->
+                                <span th:text="${student.phone}"></span>
+                                <span th:text="${student.email}"></span>
+                               <!-- 微信 -->
+                                <span th:text="${student.wx}"></span>
+                                <!-- qq -->
+                                <span th:text="${student.qq}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	 <!--footer S -->
+        <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+
+</div>
+</body>
+<script th:src="@{/web/vendor/jquery/dist/jquery.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/MyMessage/mymessage.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/ArticleInfo/articleList.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/AccountInfo/AccountList.css(v=${vtimestamp})}">
+    <title>班集-我的消息</title>
+</head>
+<body>
+<div id="mainInfo">
+
+	<!--top_nav_bar S -->
+        <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    <div class="infoContent">
+    
+    	<!--left_nav_bar S -->
+            <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+        
+        <div class="infoRightBar pull-right">
+        	<ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" >
+                    <a href="/web/message/my_message_list" style="margin-right: 53px;">我的消息</a>
+                </li>
+                <li role="presentation" class="active">
+                    <a href="/web/message/unread_message_list" style="margin-right: 53px;">未读消息</a>
+                </li>
+                <li role="presentation" >
+                    <a href="/web/message/read_message_list">已读消息</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+			    <div class="message-list-panel">
+				    <div class="messageTable">
+				        <table class="table">
+				            <tbody class="text-center" th:each="e,stat : ${list}">
+				            <tr >
+                                <td style="border-top: none;"><span></span></td>
+                                <td style="border-top: none;" th:id="${e.id}"><a href="javascript:;" class="messageBtn" data-toggle="modal" data-target=".messageDetail" th:text="${e.title}"></a></td>
+                                <td style="border-top: none;" th:text="${#dates.format(e.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
+                                <td style="border-top: none;">
+                                    <a href="#" style="color: #0E8C11" class="btn-read" th:if="${e.state==1}">标记为已读</a>
+                                    <a href="#" style="color: #0E8C11" class="" th:if="${e.state!=1}">已读</a>
+                                    <a href="#" class="btn-delete">删除</a>
+                                </td>
+                            </tr>
+				            </tbody>
+				        </table>
+				        
+				<div id="dialog" class="modal fade messageDetail" tabindex="-1" role="dialog" style="display: none;">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-body" id="messageInfo">
+                                <h3></h3>
+                                <p class="messageContent"></p>
+                                <button  type="button" class="btn btn-default"
+                                        data-dismiss="modal">取消
+                                </button>
+                               <button type="button" class="btn btn-primary" data-dismiss="modal">确定
+                               </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+               
+				        
+				        <nav th:if="${page.total>10}" aria-label="Page navigation" class="loadingMore">
+				            <ul class="pagination">
+				                 <li th:if="${!page.isFirstPage}">
+                                    <a  th:href="'/web/message/unread_message_list/?page='+${page.prePage}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li th:each="i,stat : ${page.navigatepageNums}" th:class="${page.pageNum==i?'active':''}">
+                               	 <a th:href="'/web/message/unread_message_list/?page='+${i}" th:text="${i}">1</a>
+                                </li>
+                                <li th:if="${!page.isLastPage}">
+                                    <a  th:href="'/web/message/unread_message_list/?page='+${page.nextPage}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+				            </ul>
+				        </nav>
+				    </div>
+				</div>
+				
+               <div th:if="${page.total==0}" class="noDataBox" id='noData'>
+			 		<img src="/web/image/accountpage/noData.png" alt="" />
+			 	 	<p>暂无数据</p >
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--footer S -->
+        <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+<p id="add_tan"   style="z-index:1000; height:50px;border-radius: 5px;padding:0 20px;background:rgba(224,82,68,.7);position:fixed;top:68%;margin-top: -25px;left:43%;margin-left: -107px;font-size: 16px;color:#fff;line-height:50px; display:none"></p>	
+</body>
+<script th:src="@{/web/vendor/jquery/dist/jquery.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:inline="javascript">
+		var page=[[${page}]]
+		var messageList = [[${list}]];
+		var dialog = $("#dialog");
+		var content = dialog.find("p");
+		var title = dialog.find("h3");
+		$('.messageBtn').click(function () {
+			var id=$(this).parent().attr("id");
+			messageList.forEach(function(item,index){
+				if(id == item.id) {
+					title.html(item.title)
+					content.html(item.content)
+				}
+			});
+			dialog.show();
+		});
+		
+		$('.btn-delete').click(function () {
+			var id=$(this).parent().prev().prev().attr("id");
+			deleteMessage(id);
+			
+			
+		});
+		$('.btn-read').click(function () {
+			var id=$(this).parent().prev().prev().attr("id");
+			read(id);
+		});
+		
+	function deleteMessage(id){
+		$.ajax({
+			url:"/web/message/del?id="+id,
+			dataType:"json",
+			type:"get",
+			success:function (data){
+				if(data.code==1){
+					//获取父页面方法，刷新头
+					window.parent.getUserMessage();
+					point(data.msg);
+				}
+			},
+			error:function(){
+				point("删除失败,可能是网络原因");
+			}
+		});
+	}
+	//标记已读
+	function read(id){
+		$.ajax({
+			url:"/web/message/read?id="+id,
+			dataType:"json",
+			type:"get",
+			success:function (data){
+				if(data.code==1){
+					window.parent.getUserMessage();
+					point(data.msg);
+				}
+			},
+			error:function(){
+				point("标记失败,可能是网络原因");
+			}
+		});
+	}
+	
+	function point(html){
+		$('#add_tan').html(html);
+		$('#add_tan').show().fadeOut(1500);
+		setTimeout(function(){
+			//刷新
+			location.reload();
+		},500);
+	}
+	
+</script>
+</html>

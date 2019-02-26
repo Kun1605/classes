@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/ArticleInfo/articleList.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/AccountInfo/AccountList.css(v=${vtimestamp})}">
+    <title>班集-学习园地</title>
+</head>
+<style type="text/css">
+    em {
+        color: red;
+    }
+</style>
+<body>
+<div id="mainInfo">
+
+    <!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+
+    <div class="infoContent">
+
+        <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+
+
+        <div class="infoRightBar pull-right">
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="/web/article/list" style="margin-right: 40px;">文章列表</a>
+                </li>
+            </ul>
+            <input class="searchInput" type="text" placeholder="请输入关键字">
+            <span class="searchBtn"><img src="/web/image/accountpage/sousuo.png"></span>
+
+            <div class="tab-content" style="margin-top: 10px;">
+                <div class="tab-pane active account-list-panel" role="tabpanel" id="account-list">
+                    <div class="topTagBox">
+                        <div style="margin-bottom:20px;">
+                            <span id="0" class="tagBtn" data-id="">全部</span>
+                            <span class="tagBtn" th:each="type,stat:${types}" th:data-id="${type.id}"
+                                  th:text="${type.name}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active article-list-panel datas" id="article-list">
+                    <ul id="article_table">
+                    </ul>
+                    <div class="pagination-wrap"></div>
+                </div>
+                <div class="noDataBox" id='noData' style="display:none;">
+                    <img src="/web/image/accountpage/noData.png" alt=""/>
+                    <p>暂无数据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer S -->
+    <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+</body>
+<script th:src="@{/web/vendor/jquery/dist/jquery.js(v=${vtimestamp})}"></script>
+
+<link rel="stylesheet" th:href="@{/web/css/dorea.css(v=${vtimestamp})}">
+<script th:src="@{/web/vendor/util.js(v=${vtimestamp})}"></script>
+
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:inline="javascript">
+    var page = 1;
+    var limit = 3;
+    var keyWords = "";
+    var type = "";
+    var article_table = $("#article_table");
+    $(".searchBtn").click(function () {
+        keyWords = $(".searchInput").val();
+        if (keyWords.trim().length == 0) {
+            return;
+        }
+        search(1,search_fenye);
+    });
+    var fenye = function (total) {
+        if ($(".pagination")) {
+            $(".pagination-wrap").empty();
+        }
+        total = Math.ceil(total / 3);
+        dorea.pagination({
+            ele: ".pagination-wrap",
+            count: total,
+            limit: 5,
+            page: function (obj) {
+                console.log(obj);
+                page = obj.curr;
+                getArticle(page);
+            }
+        });
+    }
+    var search_fenye = function (total) {
+        if ($(".pagination")) {
+            $(".pagination-wrap").empty();
+        }
+        total = Math.ceil(total / 3);
+        dorea.pagination({
+            ele: ".pagination-wrap",
+            count: total,
+            limit: 5,
+            page: function (obj) {
+                console.log(obj);
+                page = obj.curr;
+                search(page);
+            }
+        });
+    }
+    $(function () {
+        getArticle(page, fenye);
+    });
+
+    function getArticle(page, callback) {
+        $.post('/web/article/datagrid', {
+            page: page,
+            type: type,
+            limit: limit
+        }, function (data) {
+            if (data.code == 200) {
+                var pageInfo = data.obj;
+                if (pageInfo.total == 0) {
+                    //没有数据
+                    article_table.hide();
+                    $('.noDataBox').show();
+                    $('.pagination-wrap').hide();
+                } else {
+                    // 渲染界面
+                    article_table.show();
+                    $('.noDataBox').hide();
+                    htmlArticleData(pageInfo);
+                    if (typeof callback === 'function') {
+                        callback(pageInfo.total);
+                        $('.pagination-wrap').show();
+                    }
+                }
+            }
+        }, 'json');
+
+    }
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 13) {
+            keyWords = $(".searchInput").val();
+            if (keyWords.trim().length == 0) {
+                alert("请输入点文字再查询呗~!@");
+                return;
+            }
+            search(1,search_fenye);
+        }
+    });
+    function search(page,callback) {
+        $.ajax({
+            url: "/web/search",
+            data: {
+                q: keyWords.trim(),
+                page: page
+            },
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+                if (data.total <= 0) {
+                    article_table.hide()
+                    $('.noDataBox').show();
+                    $(".pagination-wrap").hide();
+                    return;
+                }
+                searchArticleData(data.rows);
+                article_table.show();
+                if (typeof callback == 'function') {
+                    callback(data.total,1);
+                }
+                $('.noDataBox').hide();
+                $(".pagination-wrap").show();
+            },
+            error: function (data) {
+                article_table.hide()
+                $('.noDataBox').show();
+                $(".pagination-wrap").hide();
+                return;
+            }
+        });
+    }
+    function searchArticleData(list) {
+        var html = [];
+        for (var i = 0; i < list.length; i++) {
+            html.push(' <li style="margin-bottom: 10px">');
+            html.push(' <span class="date"><a target="_blank" href="' + list[i].id + '">' + todate(list[i].update_time, "-", true) + '</a></span>');
+            html.push('<span class="title"><a target="_blank" href="/web/article/' + list[i].id + '">' + list[i].title + '</a></span>');
+            html.push('<span class="summary">摘要: ' + list[i].contentNoTag.substr(0, 200) + '</span>');
+            if (list[i].image) {
+                html.push('<a target="_blank" href="' + list[i].id + '"><img src="' + list[i].image + '"></a>');
+            }
+            html.push('</li>');
+            html.push('  <hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:  10px;">');
+        }
+        article_table.html("");
+        article_table.append(html.join(''));
+
+    }
+    function htmlArticleData(pageInfo) {
+        var html = [];
+        var list = pageInfo.list;
+        for (var i = 0; i < list.length; i++) {
+            html.push(' <li style="margin-bottom: 10px">');
+            html.push(' <span class="date"><a target="_blank" href="' + list[i].id + '">' + list[i].create_time + '</a></span>');
+            html.push('<span class="title"><a target="_blank" href="/web/article/' + list[i].id + '">' + list[i].title + '</a></span>');
+            html.push('<span class="summary">摘要: ' + list[i].summary + '</span>');
+            html.push('<span class="img">');
+            var imgList = list[i].imageList;
+            imgList.forEach(function (item, index) {
+                html.push('<a target="_blank" href="' + list[i].id + '"><img src="' + item + '"></a>');
+            });
+            html.push('&nbsp;&nbsp; </span>');
+            html.push('	<span class="info">发表于' + list[i].create_time + ' 阅读(' + list[i].clickHit + ') </span>');
+            html.push('</li>');
+            html.push('  <hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:  10px;">');
+        }
+        article_table.html("");
+        article_table.append(html.join(''));
+    }
+
+    function todate(inputstr, showsplit, showweek) {
+        inputstr = inputstr + ""; //末尾加一个空格
+        var date = "";
+        var month = new Array();
+        var week = new Array();
+        month["Jan"] = 1;
+        month["Feb"] = 2;
+        month["Mar"] = 3;
+        month["Apr"] = 4;
+        month["May"] = 5;
+        month["Jan"] = 6;
+        month["Jul"] = 7;
+        month["Aug"] = 8;
+        month["Sep"] = 9;
+        month["Oct"] = 10;
+        month["Nov"] = 11;
+        month["Dec"] = 12;
+        week["Mon"] = "一";
+        week["Tue"] = "二";
+        week["Wed"] = "三";
+        week["Thu"] = "四";
+        week["Fri"] = "五";
+        week["Sat"] = "六";
+        week["Sun"] = "日";
+        str = inputstr.split(" ");
+        date = str[5];
+        date += showsplit + month[str[1]] + showsplit + str[2];
+        if (showweek) {
+            date += "" + " 星期" + week[str[0]];
+        }
+        return date;
+    }
+    $('.tagBtn').on('click', function () {
+        $(this).addClass('activeBtn').siblings().removeClass('activeBtn');
+        type = $(this).data('id');
+        getArticle(1, fenye);
+    })
+</script>
+</html>

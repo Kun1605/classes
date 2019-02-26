@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Vue.js路由操作</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <script type="text/javascript" src="js/vue-router.min.js"></script>
+</head>
+<body>
+<div id="myVue">
+    <div>
+        <h1>HEAD</h1>
+        <router-link to="/JAVAEE">JAVAEE</router-link>
+        <router-link to="/IOS">IOS</router-link>
+        <router-link to="/Android">Android</router-link>
+    </div>
+
+    <router-view></router-view>
+
+    <div>
+        <h1>FOOT</h1>
+    </div>
+
+</div>
+</body>
+
+<script type="text/javascript">
+    var java = '<div style="width:100%;height:100%;overflow:hidden;">'
+        + '<iframe src="JAVAEE.html" scrolling="auto" style="width:100%;height:100%;border:0;" ></iframe></div>';
+
+    var ios = '<div style="width:100%;height:100%;overflow:hidden;">'
+        + '<iframe src="IOS.html" scrolling="auto" style="width:100%;height:100%;border:0;" ></iframe></div>';
+
+    var android = '<div style="width:100%;height:100%;overflow:hidden;">'
+        + '<iframe src="Android.html" scrolling="auto" style="width:100%;height:100%;border:0;" ></iframe></div>';
+
+
+    var JAVAEE = { template: java }
+    var IOS = { template: ios }
+    var Android = { template: android }
+
+    var routes = [
+        { path: '/', component: JAVAEE },
+        { path: '/JAVAEE', component: JAVAEE },
+        { path: '/IOS', component: IOS },
+        { path: '/Android', component: Android }
+    ]
+
+    var router = new VueRouter({
+        routes : routes
+    })
+
+    var app = new Vue({
+        router : router
+    }).$mount('#myVue')
+
+</script>
+</html>
+
+<!--
+router-link：默认会被渲染成一个a标签，用来设置导航操作，其中的to属性用来指定链接路径。
+​
+router-view：用来显示路由页面。
+​
+const JAVAEE = {template:java}：定义跳转的页面组件，因为Vue.js+vue-router是单页面的路由操作，所以如果想要实现页面跳转，需要借助iframe等标签显示页面。
+​
+{path:'/', component:JAVAEE}：设置相应的路由跳转到相应的页面。
+​
+var router = new VueRouter({routes:routes}):是创建路由对象。
+​
+var app = new Vue({router:router}).$mount('#myVue') ： 将路由的对象设置到Vue对象上，并通过$mount手动的挂载到相应的组件中。
+
+-->

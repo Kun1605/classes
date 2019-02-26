@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>网页视频播放器</title>
+</head>
+<script src="jquery.js"></script>
+<body>
+<div style="text-align: center">
+    <button onclick="playVideo()" type="button">开始</button>
+    <button onclick="pauseVideo()" type="button">暂停</button>
+    <button onclick="setPlaySpeedA()" type="button">1.00X</button>
+    <button onclick="setPlaySpeedB()" type="button">1.25X</button>
+    <button onclick="setPlaySpeedC()" type="button">1.50X</button>
+    <button onclick="setPlaySpeedD()" type="button">1.75X</button>
+    <button onclick="setPlaySpeedE()" type="button">2.00X</button>
+    <input id="video2" type="file" name="vd" value="请输入您要播放的视频文件路径">
+    <button  onclick="changeVideo()">播放</button>
+    <br>
+    <video id="video1" controls width="700px" >
+        <source  src="" type="video/x-msvideo">
+    </video>
+</div>
+<script type="text/javascript">
+    myVideo=document.getElementById('video1');
+    mysrc=document.getElementById('video2');
+    function setPlaySpeedE(){
+        myVideo.playbackRate=2;
+    }
+    function setPlaySpeedD(){
+        myVideo.playbackRate=1.75;
+    }
+    function setPlaySpeedC(){
+        myVideo.playbackRate=1.5;
+    }
+    function setPlaySpeedB(){
+        myVideo.playbackRate=1.25;
+    }
+    function setPlaySpeedA(){
+        myVideo.playbackRate=1;
+    }
+    function playVideo(){
+        myVideo.play();
+    }
+    function pauseVideo(){
+        myVideo.pause();
+    }
+    function changeVideo(){
+        newViedo=document.getElementById('video2').value;
+        document.getElementById('video1').src=newViedo;
+    }
+    $('#video2').on('change', function() {
+        changeVideo();
+        playVideo();
+        setPlaySpeedE();
+    })
+    $('video').on('click', function() {
+
+    })
+</script>
+</body>
+</html>

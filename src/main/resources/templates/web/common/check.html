@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.tips{width: 100%;height:100vh;position:fixed;left:0;top:0;}
+.tip_box{width: 500px;height: auto;padding:0 25px;border-radius: 5px;background: #eee;position: absolute;left:50%;margin-left: -255px;top:200px;padding-bottom: 30px;}
+.tip_bt{width: 100%;height: 50px;border-bottom: 1px solid #ddd} 
+.tip_bt h2{display: block;float:left;font-size: 22px;color:#333;}
+.tip_close{display: block;width: 18px;height: 18px;float:right;margin-top: 20px;background: url(/web/images/p38.png) no-repeat center center;}
+.tip_con{width:100%;height: auto;padding:30px 0;}
+.tip_con img{display: block;margin:0 auto;}
+.tip_con p{display: block;text-align: center;font-size: 18px;color:#333;margin-top: 30px;}
+.tip_btn{text-align: center;}
+.tip_btn a{display: inline-block;vertical-align: top;width: 86px;height: 38px;border-radius: 3px;text-align: center;line-height: 38px;font-size: 18px;color:#fff;background: #40abfb;margin:0 5px;}
+.tip_btn a:nth-child(2){background: #cdcdcd}
+</style>
+</head>
+<body style="text-align:center;font-size:16px;">
+	<div>
+		<table style="line-height:25px;border-collapse:collapse;">
+			<tr style="font-size:20px;border:1px solid #eeeeee;">
+				<td style="width:10%;">任务创建时间</td>
+				<td style="width:10%;">任务ID</td>
+				<td style="width:10%;" colspan="2">任务状态</td>
+				<td style="width:15%;">用户ID</td>
+				<td style="width:10%;">账号ID</td>
+				<td style="width:10%;">账号平台</td>
+				<td style="width:20%;" colspan="3">账号状态</td>
+			</tr>
+			<tr th:each="task:${list}" style="border:1px solid #eeeeee;">
+				<td style="width:10%;" th:text="${task.create_time}"></td>
+				<td style="width:10%;" th:text="${task.id}"></td>
+				<td style="width:3%;" th:text="${task.state}"></td><td id="update_task_state"><a href="javascript:void(0)">修改任务状态</a></td>
+				<td style="width:15%;" th:text="${task.user_id}"></td>
+				<td style="width:10%;" th:text="${task.mediaAccount.id}"></td>
+				<td style="width:10%;" th:text="${task.mediaAccount.account_type}"></td>
+				<td style="width:4%;" th:text="${task.mediaAccount.state}"></td><td id="clean_cookie" style="width:8%;"><a href="javascript:void(0)">清空cookie</a></td><td id="update_account_state" style="width:8%;"><a href="javascript:void(0)">修改账号状态</a></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="tips" style="display:none;z-index:10">
+		<div class="tip_box">
+			<div class="tip_bt">
+				<h2>提示</h2>
+				<a href="javascript:;" class="tip_close"></a>
+			</div>
+			
+			<div id="change_task_state" class="tip_con" style="display:none">
+			  	<p><span>任务状态</span><input type="text" id="task_state" style="width:250px;height:20px;"></p>
+			  	<p><span>修改原因</span><input type="text" id="task_reason" style="width:250px;height:20px;"></p>
+			</div>
+			
+			<div id="clean_cookie_msg" class="tip_con" style="display:none">
+				<p>将清空此账号的cookie</p>
+			</div>
+			
+			<div id="change_account_state" class="tip_con" style="display:none">
+			  	<p><span>账号状态</span>
+			  	<select id="account_state" style="width:250px;height:20px;">
+			  		<option value="2">2</option>
+  					<option value="4">4</option>
+  					<option value="5">5</option>
+  					<option value="6">6</option>
+			  	</select>
+			  	<p>
+			  		<span>修改原因</span>
+			  		<select id="account_reason" style="width:254px;height:26px;">
+			  			<option value="自媒体账号未激活">自媒体账号未激活</option>
+  						<option value="自媒体账号被封禁">自媒体账号被封禁</option>
+			  		</select>
+			  	</p>
+			</div>
+			
+			<div class="tip_btn">
+				<a href="javascript:void(0)" id="sure">确定</a>
+				<a href="javascript:void(0)" id="cancel">取消</a>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="/web/js/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(document).on('click',"#cancel,.tip_close",function(){
+		$(".tips").hide();
+		$("#change_task_state").hide();
+		$("#clean_cookie_msg").hide();
+		$("#change_account_state").hide();
+	});
+
+	$(document).on('click','#update_task_state',function(){
+		$(this).prev().attr('style','background-color:#D8B2A5;')
+		const task_id = $(this).siblings().eq(1).text();
+		$(".tips").show();
+		$("#change_task_state").show();
+		$("#sure").unbind('click');
+		$("#sure").on("click",function(){
+			var state = $("#task_state").val();
+			var reason = $("#task_reason").val();
+			if(!state||""==state.trim()){
+				alert("请输入改变的状态");
+				return;
+			}
+			if(isNaN(state)){
+				alert("请填写数字");
+				return;
+			}
+			console.log(state);
+			console.log(reason);
+			$.ajax({
+				type:"post",
+				data:{
+					task_id:task_id,
+					state:state,
+					reason:reason
+				},
+				dataType:"json",
+				url:"/s/f/ajax/check/update_task_state",
+				success:function(data){
+					if(data.code==200){
+						location.href="/s/f/check";
+					}else{
+						alert('fail');
+					}
+				},
+				error:function(){
+					alert("error");
+				}
+			})
+		})
+	})
+
+    $(document).on('click','#clean_cookie',function(){
+		$(this).prev().attr('style','background-color:#D8B2A5;');
+		const account_id = $(this).siblings().eq(5).text();
+		$(".tips").show();
+		$("#clean_cookie_msg").show();
+		$("#sure").unbind('click');
+		$("#sure").on("click",function(){
+			$.ajax({
+				type:"post",
+				data:{
+					account_id:account_id
+				},
+				dataType:"json",
+				url:"/s/f/ajax/check/clean_cookie",
+				success:function(data){
+					if(data.code==200){
+						$(".tips").hide();
+						$("#clean_cookie_msg").hide();
+					}else{
+						alert('fail');
+					}
+				},
+				error:function(){
+					alert("error");
+				}
+			})
+		})
+	})
+	
+	$(document).on('click','#update_account_state',function(){
+		$(this).prev().prev().attr('style','background-color:#D8B2A5;')
+		const account_id = $(this).siblings().eq(5).text();
+		$(".tips").show();
+		$("#change_account_state").show();
+		$("#sure").unbind('click');
+		$("#sure").on("click",function(){
+			var state = $("#account_state").val();
+			var reason = $("#account_reason").val();
+			if(!state||""==state.trim()){
+				alert("请输入改变的状态");
+				return;
+			}
+			if(isNaN(state)){
+				alert("请填写数字");
+				return;
+			}
+			if(state==4){
+				reason = "暂不可用";
+			}
+			if(state==6){
+				reason = "账号需要授权";
+			}
+			console.log(state);
+			console.log(reason);
+			$.ajax({
+				type:"post",
+				data:{
+					account_id:account_id,
+					state:state,
+					reason:reason
+				},
+				dataType:"json",
+				url:"/s/f/ajax/check/update_account_state",
+				success:function(data){
+					if(data.code==200){
+						location.href="/s/f/check";
+					}else{
+						alert('fail');
+					}
+				},
+				error:function(){
+					alert("error");
+				}
+			})
+		})
+	})
+})
+</script>
+</body>
+</html>

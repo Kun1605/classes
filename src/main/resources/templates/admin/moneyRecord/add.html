@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="utf-8">
+        <title>添加授权</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="renderer" content="webkit">
+        <link rel="shortcut icon" href="assets/img/favicon.ico" />
+        <link href="/admin/assets/css/backend.min.css" rel="stylesheet">
+        <script type="text/javascript">
+            var require = {
+                "config": {
+                    "site": {
+                        "name": "FastAdmin",
+                        "cdnurl": "",
+                        "version": "1.0.0",
+                        "timezone": "Asia/Shanghai",
+                        "languages": {
+                            "backend": "zh-cn",
+                            "frontend": "zh-cn"
+                        }
+                    },
+                    "modulename": "admin",
+                    "controllername": "tabletemplate",
+                    "actionname": "index",
+                    "jsname": "../js/moneyRecord/list.js",
+                    "moduleurl": "",
+                    "language": "zh-cn",
+                    "referer": null
+                }
+            };
+        </script>
+    </head>
+
+    <body class="inside-header inside-aside is-dialog">
+        <div id="main" role="main">
+            <div class="tab-content tab-addtabs">
+                <div id="content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="content">
+                                <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="/admin/moneyRecord/save">
+                                    <div class="form-group">
+                                        <label for="reason" class="control-label col-xs-12 col-sm-2">原因:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <input type="text" class="form-control"  id="reason" name="reason" data-rule="required">        
+                                         </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                      <label for="classId" class="control-label col-xs-12 col-sm-2">对应的班级:</label>
+                                      <div class="col-xs-12 col-sm-8">
+                                          <input type='text' class="form-control" id="eventkey"  th:value="${session.Student.depart.name}" data-rule="required" readonly />
+                                      	  <input type="hidden"  name="classId" th:value="${session.Student.depart.id}"/>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="amount" class="control-label col-xs-12 col-sm-2">金额:</label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <input type="text" class="form-control"  id="amount_a" placeholder="注意:+是加钱,-号是花钱" data-rule="required">        
+                                       		<input type="hidden" name="amount" id="amount" data-rule="required">
+                                         </div>
+                                    </div>
+                                    
+                                    <div class="form-group hidden layer-footer">
+                                        <label class="control-label col-xs-12 col-sm-2"></label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <button type="submit" class="btn btn-success btn-embossed disabled">确定</button>
+                                            <button type="reset" class="btn btn-default btn-embossed">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/admin/assets/js/require.min.js" data-main="/admin/assets/js/require-backend.min.js"></script>
+        
+    </body>
+</html>

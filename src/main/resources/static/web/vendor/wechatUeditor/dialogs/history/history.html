@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            background-color: #E7E3D8;
+        }
+        html{
+            padding: 0 15px 0 5px;
+        }
+        .historyContent{
+            width: 100%;
+            height: 100%;
+            padding: 0 50px 0 20px;
+        }
+        .leftHistoryBar{
+            width: 25%;
+            height: 604px;
+            display: inline-block;
+            padding-left: 0;
+            margin: 0;
+            float: left;
+        }
+        .leftHistoryBar li {
+            list-style:none;
+            width: 300px;
+            height:60px;
+            border-bottom:#cdcdcd;
+            /*margin: 0;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom:1px solid #cdcdcd;
+        }
+        .leftHistoryBar li:nth-of-type(1){
+            background-color: #e7141a;
+            color:#fff;
+            border-radius:5px;
+
+        }
+        .leftHistoryBar li a{
+            text-decoration: none;
+            color:#666;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        .leftHistoryBar li a span{
+            display:inline-block;
+        }
+        .rightHistoryContent{
+            width: 75%;
+            height: 100%;
+            float:right;
+
+        }
+        .rightHistoryContent .topTitle{
+            font-size: 32px;
+            border-bottom:1px solid #cdcdcd;
+            text-indent:1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rightHistoryContent .topTitle button{
+            width: 124px;
+            height: 37px;
+            border: none;
+            display: inline-block;
+            margin-right: 30px;
+            background-color:#e7141a;
+            color:#fff;
+            font-size: 13px;
+            border-radius:5px;
+        }
+        .rightHistoryContent .bottomContent{
+            padding: 30px 40px 50px 20px;
+        }
+        .rightHistoryContent .topTitle span img{
+            height: 30px;
+            margin-right: 30px;
+            margin-top: -25px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="historyContent">
+    <ul class="leftHistoryBar">
+        <li>共0条历史版本</li>
+    </ul>
+    <div class="rightHistoryContent">
+        <div class="topTitle">
+            <p>title</p>
+            <button>恢复到这个版本</button>
+            <span><img id="btnClose" src="../../../../image/accountpage/guanbi.png" style="height: 30px;"></span>
+        </div>
+        <div class="bottomContent">
+        </div>
+    </div>
+</div>
+</body>
+
+<script charset="utf-8" type="text/javascript" src="/web/vendor/jquery/dist/jquery.js"></script>
+<script charset="utf-8" type="text/javascript" src="/web/js/utils.js"></script>
+
+<!--History Article Version S-->
+<script type="text/javascript" th:inline="javascript">
+    var historyId = 0;
+
+    //get history Article
+    var historyArticleList = function () {
+        var material_id = window.parent.$("#material_id").val();
+        $.post('/s/f/content/historyList', {
+            material_id: material_id
+        }, function (data) {
+            if (data.code == 200) {
+                //count
+                $(".leftHistoryBar li").eq(0).html("共 " + data.data.length + " 条历史版本");
+
+                data.data.forEach(function (item, index) {
+                    if (index == 0) {
+                        historyArticle(item.id);
+                    }
+                    $(".leftHistoryBar").append(historyArticleTitleHtml(item));
+                });
+
+                $(".leftHistoryBar a").on("click", function () {
+                    historyId = $(this).attr("data-id");
+                    historyArticle(historyId);
+                });
+            } else {
+            }
+        }, "json");
+    };
+
+    //history title html
+    var historyArticleTitleHtml = function (obj) {
+        var arrHtml = [];
+        arrHtml.push('<li>');
+        arrHtml.push('<a href="javascript:void(0)" data-id="' + obj.id + '">');
+        arrHtml.push('<span>' + s_substring(obj.title,0,10) + '</span>');
+        arrHtml.push('<span>' + newsTime(obj.create_time) + '</span>');
+        arrHtml.push('</a>');
+        arrHtml.push('</li>');
+
+        return arrHtml.join('');
+    };
+
+    //article details
+    var historyArticle = function (id) {
+        $.post('/s/f/content/historyDetail', {
+            id: id
+        }, function (data) {
+            if (data.code == 200) {
+                var obj = data.data;
+                $(".topTitle").find("p").html(obj.title);
+                $(".bottomContent").html(obj.content);
+            } else {
+            }
+        }, "json");
+    };
+
+    $(function () {
+        historyArticleList();
+        //恢复
+        $(".topTitle button").on("click", function () {
+            var material_id = window.parent.$("#material_id").val();
+            window.parent.location.href = "/s/f/content/add?r_p_type=2&mid=" + material_id + "&hid=" + historyId;
+        });
+
+        $("#btnClose").on("click",function () {
+            window.parent.$("#edui14").trigger("click");
+        });
+    });
+</script>
+<!--History Article Version E-->
+</html>

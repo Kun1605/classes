@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vue.js按钮事件绑定</title>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+​
+<body>
+<div id="myVue">
+    <input v-on:click="show(event,'a')" type="button" value="点击">
+</div>
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:"#myVue",
+        data:{
+            message:"欢迎来到传智播客！"
+        },
+        methods:{
+            show:function(event,b){
+                alert(b);
+                alert(event.clientX);
+            }
+        }
+    });
+</script>
+</body>
+</html>

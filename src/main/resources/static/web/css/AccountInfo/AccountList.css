@@ -1,0 +1,503 @@
+@charset "UTF-8";
+.modal-backdrop {
+  background: transparent;
+}
+html,
+body {
+  position: relative;
+}
+#mainInfo .infoContent .infoRightBar {
+  height: 100%;
+  position: relative;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .topTagBox {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .topTagBox span {
+  padding: 0 10px;
+  max-width: 118px;
+  height: 27px;
+  border-radius: 2px;
+  border: solid 1px #e3e3e3;
+  font-size: 12px;
+  color: #666666;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 26px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .topTagBox span:hover {
+  background-color: #d8261c;
+  color: #fff;
+  border: 1px solid #d8261c;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .topTagBox .activeBtn {
+  background-color: #d8261c;
+  color: #fff;
+  border: 1px solid #d8261c;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .selectOption {
+  width: 100%;
+  height: 100%;
+  margin-right: 25px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .selectOption .optionBox {
+  width: 169px;
+  height: 30px;
+  border: solid 1px #e3e3e3;
+  display: inline-block;
+  border-radius: 2px;
+  color: #888;
+  font-size: 12px;
+  font-weight: 300;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 10px;
+  background: transparent url("../../image/InfoPage/moreGray.png") no-repeat;
+  background-position: 140px center;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .selectOption .optionBox:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  display: flex;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption input {
+  width: 189px;
+  height: 30px;
+  border-radius: 2px;
+  border: solid 1px #e3e3e3;
+  padding-left: 10px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption input:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: 12px;
+  color: #888;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 12px;
+  color: #888;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 12px;
+  color: #888;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: 12px;
+  color: #888;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .searchBox .leftSearch .searchOption img {
+  position: absolute;
+  right: 0;
+  top: 7px;
+  transform: translate(-50%);
+  height: 16px;
+  cursor: pointer;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .rightSearch {
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-top: -23px;
+  margin-right: 17px;
+  padding-right: 5px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .rightSearch span {
+  font-size: 12px;
+  color: #666666;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .rightSearch span:nth-of-type(2) {
+  font-size: 14px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox {
+  width: 300px;
+  height: 84px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 7px 0 rgba(190, 190, 190, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .leftInner {
+  height: 100%;
+  width: 44px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .leftInner img {
+  width: 44px;
+  height: 44px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner {
+  height: 100%;
+  width: 228px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .topTitle {
+  width: 100%;
+  font-size: 14px;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle {
+  height: 22px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 7px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagCount {
+  font-size: 12px;
+  padding-left: 18px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: url("../../image/accountpage/tag.png") no-repeat left center;
+  background-size: 15px 12px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagCount span:nth-of-type(1) {
+  color: #d5d5d5;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagCount span:nth-of-type(2) {
+  color: #666;
+  margin-left: 7px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus {
+  font-size: 12px;
+  padding-left: 15px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: url("../../image/accountpage/zhuangtai.png") no-repeat left;
+  background-size: 12px 12px;
+  background-position-y: 7px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus span {
+  color: #d5d5d5;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus .statusBtn {
+  height: 100%;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1px;
+  position: relative;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus .statusBtn span {
+  color: #fff;
+  width: 31px;
+  border-radius: 2px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus .statusBtn .normalStatus {
+  background-color: #09bb07;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus .statusBtn .errorStatus {
+  background-color: #d8261c;
+  cursor: pointer;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagStatus .statusBtn .tipBox {
+  min-width: 100px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  background-color: #d5d5d5;
+  position: absolute;
+  bottom: -48px;
+  right: -87px;
+  font-size: 12px;
+  color: #666;
+  font-weight: 300;
+  padding: 5px;
+  display: none;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagEdit {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagEdit a img {
+  width: 16px;
+  height: 16px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagEdit a:nth-of-type(1) {
+  margin-right: 8px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagEdit a:nth-of-type(2) {
+  margin-right: 8px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagEdit a:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .innerTagBox .rightInner .bottomTitle .tagEdit img {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .loadingMore {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 10px 0;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .loadingMore span {
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .loadingMore span::after {
+  content: '';
+  background-image: url("../../image/InfoPage/moreGray.png");
+  background-size: 17px 10px;
+  display: inline-block;
+  width: 17px;
+  height: 10px;
+  margin-left: 5px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .noDataBox {
+  width: 100%;
+  text-align: center;
+  padding: 100px 0;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .noDataBox img {
+  width: 80px;
+  margin-bottom: 14px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .noDataBox p {
+  color: #cdcdcd;
+  margin-left: 3px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog {
+  width: 450px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+  padding-left: 30px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .modal-footer {
+  border-top: none;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 0;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .modal-footer button {
+  width: 69px;
+  height: 25px;
+  border-radius: 2px;
+  border: solid 1px #e3e3e3;
+  font-size: 12px;
+  color: #666;
+  padding: 0;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .topCell {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .topCell .leftLabel {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .topCell .rightLabel {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .bottomCell {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 300;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .bottomCell .leftTagLabel {
+  width: 60px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .bottomCell .rightTagLabel {
+  width: 300px;
+  min-height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 10px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModal .modal-dialog .modal-content .bottomCell .rightTagLabel span {
+  padding: 0 10px;
+  height: 25px;
+  max-width: 120px;
+  border-radius: 2px;
+  background-color: #e3e3e3;
+  display: flex;
+  font-size: 12px;
+  color: #666;
+  font-weight: 300;
+  margin: 0 10px 10px 0;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  line-height: 25px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog {
+  width: 450px;
+  text-align: center;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody {
+  padding: 50px 0 30px 0;
+  height: 300px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody p {
+  color: #333;
+  font-size: 16px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody input {
+  display: block;
+  width: 274px;
+  height: 40px;
+  padding-left: 10px;
+  border: 1px solid #cdcdcd;
+  margin: 40px auto;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody input:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody button {
+  width: 114px;
+  height: 34px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody button:nth-of-type(1) {
+  border: 1px solid #cdcdcd;
+  background-color: transparent;
+  color: #666;
+  margin-right: 40px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody button:nth-of-type(2) {
+  border: 1px solid #e7141a;
+  background-color: #e7141a;
+  color: #fff;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .bottomTagBox .editModalBox .modal-dialog .modalBody button:focus {
+  outline: none;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .emptyPage {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 120px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .emptyPage img {
+  width: 72px;
+  height: 72px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .emptyPage p {
+  color: #cdcdcd;
+  font-size: 14px;
+  margin-top: 5px;
+}
+#mainInfo .infoContent .infoRightBar .tab-content .account-list-panel .emptyPage a {
+  width: 115px;
+  height: 34px;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #e7141a;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 34px;
+  text-decoration: none;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #e7141a;
+  border: 1px solid #e7141a;
+}

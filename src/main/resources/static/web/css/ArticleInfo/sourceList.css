@@ -1,0 +1,153 @@
+@charset "UTF-8";
+.modal-backdrop {
+  background: transparent!important;
+}
+.infoRightBar {
+  background-color: #fff;
+  padding: 30px 30px 26px 26px;
+  position: relative;
+}
+.infoRightBar .nav-tabs {
+  width: 200px;
+}
+.infoRightBar .nav-tabs li a {
+  font-size: 16px;
+  color: #666;
+  font-weight: bolder;
+  border: none;
+  margin-right: 0;
+  padding: 0 5px 10px 5px;
+}
+.infoRightBar .nav-tabs li a:hover {
+  background-color: transparent;
+  border: none;
+}
+.infoRightBar .nav-tabs li a:focus {
+  color: #e7141a;
+  border-bottom: 2px solid #e7141a;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.infoRightBar #sourceList {
+  margin-bottom: 100px;
+}
+.infoRightBar #sourceList .sourceTable {
+  margin-top: 32px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+}
+.infoRightBar #sourceList .sourceTable table {
+  text-align: center;
+  width: 100%;
+}
+.infoRightBar #sourceList .sourceTable table tr {
+  color: #666;
+  font-size: 14px;
+}
+.infoRightBar #sourceList .sourceTable table tr:last-of-type {
+  border-bottom: 1px solid #cdcdcd;
+}
+.infoRightBar #sourceList .sourceTable table tr td {
+  padding: 20px 8px;
+}
+.infoRightBar #sourceList .sourceTable table tr td:nth-of-type(1) {
+  width: 1%;
+  padding-left: 0;
+  padding-right: 6px;
+}
+.infoRightBar #sourceList .sourceTable table tr td:nth-of-type(2) {
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  padding-right: 100px;
+}
+.infoRightBar #sourceList .sourceTable table tr td:nth-of-type(3) {
+  max-width: 200px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.infoRightBar #sourceList .sourceTable table tr td:nth-of-type(4) {
+  width: 11%;
+  text-align: right;
+}
+.infoRightBar #sourceList .sourceTable table tr td a {
+  text-decoration: none;
+  font-size: 14px;
+}
+.infoRightBar #sourceList .sourceTable table tr td a:nth-of-type(1) {
+  margin-right: 20px;
+}
+.infoRightBar #sourceList .sourceTable table tr td span {
+  height: 8px;
+  width: 8px;
+  background-color: #e7141a;
+  border-radius: 50%;
+  display: inline-block;
+}
+.infoRightBar .nav-tabs > li.active > a,
+.infoRightBar .nav-tabs > li.active > a:hover,
+.infoRightBar .nav-tabs > li.active > a:focus {
+  border-bottom: 2px solid #e7141a;
+}
+.infoRightBar .searchInput {
+  width: 202px;
+  height: 34px;
+  border-radius: 5px;
+  border: 1px solid #cdcdcd;
+  padding-left: 10px;
+  position: absolute;
+  right: 30px;
+  top: 35px;
+}
+.infoRightBar .searchInput:focus {
+  outline: none;
+}
+.infoRightBar .searchBtn {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 37px;
+  top: 40px;
+}
+.infoRightBar .tab-content .noDataBox {
+  margin-top: 105px;
+  text-align: center;
+}
+.infoRightBar .tab-content .noDataBox img {
+  width: 80px;
+  margin-bottom: 14px;
+}
+.infoRightBar .tab-content .noDataBox p {
+  color: #cdcdcd;
+  margin-left: 3px;
+}
+.loadingMore {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 14px;
+  color: #666666;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #e7141a;
+  border: 1px solid #e7141a;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #e7141a;
+  background-color: transparent;
+}

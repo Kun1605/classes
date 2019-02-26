@@ -1,0 +1,23 @@
+/*订单列表*/
+.right-box-bg { position:relative;width:100%; background:#FFF; height:auto; overflow:hidden;}
+.ddlb-head { position:relative; width:100%; margin:0 auto; height:50px; line-height:50px; border-bottom:#e7e7e7 solid 1px; color:#333333; font-size:18px;}
+.ddlb-con { position:relative; width:100%; height:auto; overflow:hidden; margin:0 auto; }
+.ddlb-con-nav { position:relative; width:100%;; height:62px; margin:0 auto; overflow:hidden;  text-align:center;background: url(/web/image/homework/p43.png) no-repeat center center;}
+.ddlb-con-nav li { display:inline-table; margin-left:15px; margin-right:15px; font-size:18px; color:#666666 !important;}
+.ddlb-con-nav li a { color:#666; line-height:60px; display:block; font-weight:bold;padding:0 10px;}
+.ddlb-con-nav-this a{ border-bottom:#e83921 solid 2px; color:#e83921 !important;}
+.ddlb-con-boxlista { border-bottom:#e1e1e1 dashed 1px; width:100%; overflow:hidden; height:90px;}
+.ddlb-con-boxlista-a { width:600px; float:left; height:90px; overflow:hidden; position:relative; padding-top:15px;}
+.ddlb-con-boxlista-a li { line-height:25px;}
+.ddlb-con-boxlist { margin-top:30px;}
+.ddlb-con-boxlista-alia {overflow:hidden; white-space:nowrap !important; text-overflow:ellipsis !important; font-size:14px; color:#4d9ae3;}
+.ddlb-con-boxlista-alia span { color:#333333 !important;}
+.ddlb-con-boxlista-alia img { float:left;}
+.ddlb-con-boxlista-alib { color:#999999;}
+.ddlb-con-boxlista-b {width:00px; float:left; height:90px; overflow:hidden; position:relative; text-align:center; line-height:90px; font-size:14px; color:#999999;}
+.ddlb-con-boxlista-b span { font-size:16px; color:#e83921; font-weight:bold;}
+.ddlb-con-boxlista-c {width:220px; float:left; height:90px; overflow:hidden; position:relative; text-align:left; line-height:90px; font-size:14px; color:#666666;}
+.ddlb-con-boxlista-d { width:120px; float:left; height:90px; overflow:hidden; position:relative;}
+.ddlb-con-boxlista-d button { position:relative; width:95px; height:40px; background:#e83921; border-radius:40px; overflow:hidden; border:none; color:#FFF; font-size:14px; margin-top:25px; float:left;}
+.ddlb-con-boxlist .homepage4_list{width: 100%}
+

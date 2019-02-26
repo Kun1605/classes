@@ -1,0 +1,170 @@
+@charset "UTF-8";
+.infoRightBar {
+  width: 1031px;
+  background-color: #fff;
+}
+.infoRightBar .OpenWeChatOrder {
+  padding-left: 22px;
+  padding-right: 22px;
+  box-sizing: border-box;
+}
+.infoRightBar .OpenWeChatOrder h2 {
+  font-size: 10px;
+  color: #7E7E7E;
+  line-height: 64px;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign {
+  display: flex;
+  flex-wrap: wrap;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign li {
+  height: 90px;
+  box-shadow: -1px 1px 2px 2px #EDEDED;
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  margin-bottom: 24px;
+  width: 32%;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign li b {
+  height: 55px;
+  width: 55px;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 12px 8px  0 13px;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign li b img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign li span {
+  position: absolute;
+  top: 28px;
+  font-size: 14px;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign li button {
+  color: #F7D5D3;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  border: 0;
+  padding: 4px 10px;
+  outline: none;
+  background-color: #D8261C;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign .current p {
+  position: absolute;
+  top: 28px;
+  left: 168px;
+  font-size: 14px;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign .current p em,
+.infoRightBar .OpenWeChatOrder .reverseDesign .current p i {
+  font-style: normal;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign .current p i {
+  font-size: 12px;
+  display: block;
+  text-align: right;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign .current p img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 97px;
+}
+.infoRightBar .OpenWeChatOrder .reverseDesign .current .dredge {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#myModal .modal-content,
+#myModalNext .modal-content {
+  width: 400px;
+  height: 260px;
+  margin: 0 auto;
+}
+#myModal .modal-content .modal-body,
+#myModalNext .modal-content .modal-body {
+  padding: 0px 25px;
+  text-align: center;
+}
+#myModal .modal-content .modal-body span,
+#myModalNext .modal-content .modal-body span {
+  display: block;
+  font-size: 10px;
+  line-height: 40px;
+  height: 40px;
+}
+#myModal .modal-content .modal-body span:nth-child(1),
+#myModalNext .modal-content .modal-body span:nth-child(1) {
+  line-height: 50px;
+  height: 50px;
+  border-bottom: 1px solid #F2F2F2;
+  font-weight: 800;
+  font-size: 16px;
+  color: #747474;
+}
+#myModal .modal-content .modal-body span:nth-child(2),
+#myModalNext .modal-content .modal-body span:nth-child(2) {
+  color: #A7A7A7;
+}
+#myModal .modal-content .modal-body span:nth-child(3),
+#myModalNext .modal-content .modal-body span:nth-child(3),
+#myModal .modal-content .modal-body span:nth-child(4),
+#myModalNext .modal-content .modal-body span:nth-child(4) {
+  height: 30px;
+  line-height: 30px;
+  color: #A7A7A7;
+  position: relative;
+}
+#myModal .modal-content .modal-body span:nth-child(3) input,
+#myModalNext .modal-content .modal-body span:nth-child(3) input,
+#myModal .modal-content .modal-body span:nth-child(4) input,
+#myModalNext .modal-content .modal-body span:nth-child(4) input {
+  position: absolute;
+  top: 4px;
+  margin-left: -21px;
+}
+#myModal .modal-content .modal-body p,
+#myModalNext .modal-content .modal-body p {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+}
+#myModal .modal-content .modal-body button,
+#myModalNext .modal-content .modal-body button {
+  padding: 3px 12px;
+  line-height: 20px;
+  text-align: center;
+  border: 0;
+  outline: none;
+  font-size: 10px;
+  background-color: #D8261C;
+  border-radius: 5px;
+  color: #F8D9D7;
+  margin-top: 24px;
+}
+#myModal .modal-content .modal-body img,
+#myModalNext .modal-content .modal-body img {
+  width: 115px;
+  height: 115px;
+  margin-top: 20px;
+}
+#myModal .modal-content .identifyingCode span:nth-child(2),
+#myModalNext .modal-content .identifyingCode span:nth-child(2) {
+  font-size: 14px;
+  color: #7B7B7B;
+}
+#myModal .modal-content .identifyingCode span:nth-child(3),
+#myModalNext .modal-content .identifyingCode span:nth-child(3) {
+  color: #DCDCDC;
+  height: 0;
+  line-height: 0;
+}

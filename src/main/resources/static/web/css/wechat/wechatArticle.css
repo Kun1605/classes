@@ -1,0 +1,519 @@
+@charset "UTF-8";
+.navbarStatic {
+  position: static !important;
+}
+.wechatContent {
+  width: 1200px;
+  height: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.wechatContent .leftSideBar {
+  width: 183px;
+  background-color: #FBF7EC;
+  padding-top: 25px;
+}
+.wechatContent .leftSideBar .newArticle {
+  width: 135px;
+  height: 38px;
+  border: 1px solid #666;
+  display: inline-block;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.wechatContent .leftSideBar .newArticle img {
+  margin-right: 10px;
+}
+.wechatContent .leftSideBar .articleTitle {
+  width: 135px;
+  padding-left: 0;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+.wechatContent .leftSideBar .articleTitle li {
+  list-style: none;
+  margin-bottom: 23px;
+}
+.wechatContent .leftSideBar .articleTitle li a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
+.wechatContent .rightSideContent {
+  width: 983px;
+  min-height: 800px;
+  background-color: #FBF7EC;
+  padding: 20px 0;
+  position: relative;
+}
+.wechatContent .rightSideContent #contentForm .articleTitle,
+.wechatContent .rightSideContent #contentForm .artistName {
+  color: #333;
+  padding-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+.wechatContent .rightSideContent #contentForm .articleTitle:focus,
+.wechatContent .rightSideContent #contentForm .artistName:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent #contentForm .articleTitle {
+  width: 840px;
+  height: 98px;
+  font-size: 24px;
+}
+.wechatContent .rightSideContent #contentForm .artistBox {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.wechatContent .rightSideContent #contentForm .artistBox input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #666;
+}
+.wechatContent .rightSideContent #contentForm .artistBox .artistName {
+  width: 80%;
+  font-size: 20px;
+  padding-left: 14px;
+}
+.wechatContent .rightSideContent #contentForm .artistBox .artistCount {
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #cdcdcd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+.wechatContent .rightSideContent #contentForm input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #F5676B;
+}
+.wechatContent .rightSideContent #contentForm .articleTitle::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #F5676B;
+}
+.wechatContent .rightSideContent #contentForm .articleCount {
+  display: inline-block;
+  height: 98px;
+  width: 143px;
+  float: right;
+  line-height: 98px;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 24px;
+  color: #cdcdcd;
+}
+.wechatContent .rightSideContent .uploadImg {
+  width: 100%;
+  position: absolute;
+  bottom: -466px;
+  left: 0;
+}
+.wechatContent .rightSideContent .uploadImg span {
+  font-size: 16px;
+  color: #666;
+  display: block;
+  margin-top: 27px;
+}
+.wechatContent .rightSideContent .uploadImg .selectOption {
+  width: 238px;
+  height: 42px;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  color: #666;
+  font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 13px;
+  background: url("../../image/InfoPage/moreGray.png") no-repeat center right;
+  background-color: #FBF7EC;
+  background-position: 210px center;
+  margin-bottom: 10px;
+}
+.wechatContent .rightSideContent .uploadImg .selectOption:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent .uploadImg a {
+  margin-top: 16px;
+  display: block;
+  width: 120px;
+  height: 38px;
+  font-size: 16px;
+  color: #666;
+  border: 1px solid #cdcdcd;
+  text-align: center;
+  line-height: 38px;
+}
+.wechatContent .rightSideContent .uploadImg .imgPanel {
+  width: 188px;
+  height: 120px;
+  margin-top: 11px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../image/InfoPage/upLoadBg.png") no-repeat left center;
+  background-size: contain;
+}
+.wechatContent .rightSideContent .uploadImg .imgPanel img {
+  height: 100%;
+  width: 100%;
+}
+.wechatContent .rightSideContent .uploadImg textarea {
+  width: 938px;
+  height: 100px;
+  background-color: transparent;
+  border: 1px solid #cdcdcd;
+  margin-top: 18px;
+  resize: none;
+  text-align: left;
+  font-size: 16px;
+  text-indent: 1em;
+  padding-top: 5px;
+}
+.wechatContent .rightSideContent .uploadImg textarea::placeholder {
+  color: #cdcdcd;
+}
+.wechatContent .rightSideContent .uploadImg textarea:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent .saveBox {
+  width: 938px;
+  text-align: right;
+  margin-bottom: 33px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: -580px;
+}
+.wechatContent .rightSideContent .saveBox .saveBtn {
+  width: 205px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 22px;
+  margin-top: 33px;
+  border: none;
+  background-color: #e7141a;
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+}
+.wechatContent .rightSideContent .saveBox .saveBtn:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent .saveBox .previewBtn {
+  width: 205px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 22px;
+  margin-top: 33px;
+  background-color: transparent;
+  border: 1px solid #cdcdcd;
+  color: #666;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 42px;
+}
+.wechatContent .rightSideContent .saveBox .previewBtn:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent .saveBox #saveNewContent .modal-content {
+  width: 430px;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.wechatContent .rightSideContent .saveBox #saveNewContent .modal-body p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 73px;
+  margin-bottom: 65px;
+}
+.wechatContent .rightSideContent .saveBox #saveNewContent .modal-body button {
+  margin: 0 0 46px 0;
+  width: 140px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+}
+.wechatContent .rightSideContent .saveBox #saveNewContent .modal-body button:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent .saveBox #saveNewContent .modal-body button:nth-of-type(1) {
+  margin-right: 43px;
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #cdcdcd;
+}
+.wechatContent .rightSideContent .saveBox #saveNewContent .modal-body button:nth-of-type(2) {
+  background-color: #e7141a;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog {
+  margin-left: 200px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .modal-content {
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .modal-body {
+  text-align: center;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .modal-body h3 {
+  font-size: 24px;
+  margin: 30px 0 39px 0;
+  color: #333;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon {
+  height: 100%;
+  width: 100%;
+  padding-left: 30px;
+  margin-top: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .leftListIcon {
+  height: 57px;
+  width: 82px;
+  text-align: center;
+  float: left;
+  margin-right: 26px;
+  padding-top: 5px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .leftListIcon span {
+  font-size: 16px;
+  color: #666;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon ul {
+  width: 717px;
+  height: 100%;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  float: left;
+  margin-right: 13px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon ul li {
+  list-style: none;
+  height: 46px;
+  width: 46px;
+  float: left;
+  margin-right: 9px;
+  margin-bottom: 11px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a:hover {
+  text-decoration: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a img {
+  height: 44px;
+  width: 44px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon ul li a span {
+  height: 44px;
+  width: 44px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  display: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .extraIconList {
+  display: none;
+  margin-left: 108px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon {
+  width: 45px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 23px;
+  top: 15px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon a {
+  font-size: 12px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon a:hover {
+  text-decoration: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listIcon .rightListIcon a img {
+  margin-left: 4px;
+  height: 5px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag {
+  margin-top: 35px;
+  height: 100%;
+  width: 100%;
+  padding-left: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .leftListIcon {
+  height: 112px;
+  width: 82px;
+  text-align: left;
+  float: left;
+  margin-right: 26px;
+  padding-top: 5px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .leftListIcon span {
+  font-size: 16px;
+  color: #666;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag ul {
+  width: 717px;
+  height: 100%;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  float: left;
+  margin-right: 13px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag ul li {
+  list-style: none;
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag ul li a {
+  display: inline-block;
+  background-color: #E8E8E8;
+  text-decoration: none;
+  width: 72px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #8e8e8c;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag ul li a:hover {
+  text-decoration: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag ul li a img {
+  height: 44px;
+  width: 44px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon {
+  height: 80px;
+  width: 45px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 23px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon a {
+  font-size: 12px;
+  text-decoration: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon a:hover {
+  text-decoration: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .rightListIcon a img {
+  margin-left: 4px;
+  height: 5px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .listTag .extraTagList {
+  display: none;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .selectedTag {
+  width: 875px;
+  min-height: 100px;
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .selectedTag li {
+  list-style: none;
+  width: 125px;
+  height: 30px;
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .selectedTag li span {
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 0;
+  cursor: pointer;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .selectedTag li span img {
+  height: 12px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog .selectedTag li img {
+  height: 30px;
+  margin-right: 5px;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog button {
+  margin-top: 46px !important;
+  margin-bottom: 43px !important;
+}
+.wechatContent .rightSideContent #accountModal .modal-dialog button:nth-of-type(1) {
+  color: #666;
+}
+.wechatContent .rightSideContent #myModal .modal-content {
+  width: 430px;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.wechatContent .rightSideContent #myModal .modal-body p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 73px;
+  margin-bottom: 65px;
+}
+.wechatContent .rightSideContent #myModal .modal-body button {
+  margin: 0 0 46px 0;
+  width: 140px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+}
+.wechatContent .rightSideContent #myModal .modal-body button:focus {
+  outline: none;
+}
+.wechatContent .rightSideContent #myModal .modal-body button:nth-of-type(1) {
+  margin-right: 43px;
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #cdcdcd;
+}

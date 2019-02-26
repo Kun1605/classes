@@ -1,0 +1,139 @@
+@charset "UTF-8";
+.modal-backdrop {
+  background: transparent;
+}
+.infoRightBar {
+  position: relative;
+}
+.infoRightBar #unReadMessage {
+  margin-bottom: 100px;
+}
+.infoRightBar #unReadMessage .articleTable {
+  margin-top: 29px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+}
+.infoRightBar #unReadMessage .articleTable table {
+  text-align: center;
+  width: 100%;
+}
+.infoRightBar #unReadMessage .articleTable table tr:last-of-type {
+  border-bottom: 1px solid #cdcdcd;
+}
+.infoRightBar #unReadMessage .articleTable table tr td {
+  font-size: 14px;
+  color: #666;
+  padding: 18px 8px;
+}
+.infoRightBar #unReadMessage .articleTable table tr td:nth-of-type(1) {
+  width: 1%;
+}
+.infoRightBar #unReadMessage .articleTable table tr td:nth-of-type(2) {
+  text-align: left;
+  max-width: 320px;
+  width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 100px;
+}
+.infoRightBar #unReadMessage .articleTable table tr td:nth-of-type(3) {
+  width: 18%;
+  text-align: left;
+}
+.infoRightBar #unReadMessage .articleTable table tr td:nth-of-type(4) {
+  width: 25%;
+  text-align: right;
+  font-size: 14px;
+}
+.infoRightBar #unReadMessage .articleTable table tr td a {
+  color: #666;
+  text-decoration: none;
+}
+.infoRightBar #unReadMessage .articleTable table tr td a:nth-of-type(1) {
+  margin-right: 20px;
+}
+.infoRightBar #unReadMessage .articleTable table tr td span {
+  height: 8px;
+  width: 8px;
+  background-color: #e7141a;
+  border-radius: 50%;
+  display: inline-block;
+}
+.infoRightBar #unReadMessage .messageDetail2 {
+  margin: 0 auto;
+  text-align: center;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content {
+  height: 303px;
+  width: 479px;
+  margin: 0 auto;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content h3 {
+  font-size: 18px;
+  margin-top: 28px;
+  color: #333;
+  margin-bottom: 23px;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content p {
+  width: 421px;
+  height: 100px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: left;
+  color: #666;
+  overflow: hidden;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content button {
+  width: 149px;
+  height: 47px;
+  border: 1px solid #cdcdcd;
+  font-size: 18px;
+  color: #666;
+  margin-top: 44px;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content button:nth-of-type(1) {
+  margin-right: 45px;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content button:nth-of-type(1):hover {
+  background-color: transparent;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content button:nth-of-type(2) {
+  background-color: #e7141a;
+  color: #fff;
+  border: 1px solid #e7141a;
+}
+.infoRightBar #unReadMessage .messageDetail2 .modal-content button:nth-of-type(2):hover {
+  background-color: #e7141a;
+}
+.infoRightBar #unReadMessage .loadingMore {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 14px;
+  color: #666666;
+}
+.infoRightBar #unReadMessage .pagination > .active > a,
+.infoRightBar #unReadMessage .pagination > .active > span,
+.infoRightBar #unReadMessage .pagination > .active > a:hover,
+.infoRightBar #unReadMessage .pagination > .active > span:hover,
+.infoRightBar #unReadMessage .pagination > .active > a:focus,
+.infoRightBar #unReadMessage .pagination > .active > span:focus {
+  background-color: #e7141a;
+  border: 1px solid #e7141a;
+}
+.infoRightBar .noDataBox {
+  margin-top: 100px;
+  text-align: center;
+}
+.infoRightBar .noDataBox img {
+  width: 80px;
+  margin-bottom: 14px;
+}
+.infoRightBar .noDataBox p {
+  color: #cdcdcd;
+  margin-left: 3px;
+}

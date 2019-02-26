@@ -1,0 +1,20 @@
+package cn.kunakun.drools;
+dialect  "mvel"
+import cn.kunakun.pojo.Student
+
+
+rule "名字叫杨坤的规则"
+    when
+      $student: Student(name=="杨坤")
+    then
+    System.err.println("我具有后台的所有权限");
+end
+
+
+rule "名字不是杨坤的规则"
+    when
+      $student: Student(name!="杨坤")
+    then
+    System.err.println("我只是一个吃瓜群众");
+end
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+     <ul class="infoLeftBar pull-left" th:fragment="left_bar">
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarOne" href="/web/home/index">个人主页</a>
+           </li>
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarTwo" href="/web/student/zoneList">同学圈子</a>
+           </li>
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarThree" href="/web/article/list">学习园地</a>
+           </li>
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarFour" href="/web/depart/list">班级主页</a>
+           </li>
+          
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarSix" href="/web/moneyRecord/list">班费详情</a>
+           </li>
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarThree" href="/web/homework/list">班级作业</a>
+           </li>
+           <li class="infoLeftTab">
+               <a name="left_nav" class="navbarSeven" href="/web/message/my_message_list">我的消息</a>
+           </li>
+             <li class="infoLeftTab">
+               <a name="left_nav" class="navbarFive" href="/web/other/list">班集工具</a>
+           </li> 
+       </ul>
+     <script type="application/javascript" th:fragment="left_bar">
+		var leftTitle = document.title.split("-")[1];
+		var navs = document.getElementsByName("left_nav");
+		for(i = 0; i < navs.length; i ++) {
+			if(navs[i].text == leftTitle) {
+				navs[i].parentNode.classList.add("active");
+			}
+		}
+      </script>
+</html>
+

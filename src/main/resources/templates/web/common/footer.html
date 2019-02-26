@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="footer" class="infoFooter">
+        <div class="contactMail">
+            <span>安阳师范学院-软件学院-移动设备应用开发&nbsp&nbsp</span>
+            <div class="contactBox">
+                <a class="contactUs1" href="http://aynu.com">联系我们</a>
+                <div class="contactCode">
+                    <img src="/web/image/InfoPage/maincode.png" alt="">
+                </div>
+            </div>
+        </div>
+        <span>&copy;&nbsp2018&nbspAYSF&nbspBanJi&nbsp豫ICP备XXXXXXX号-X&nbsp&nbsp&nbsp&nbsp<img src="/web/image/InfoPage/police.png">&nbsp公网安备 XXXXXXXXXXXXXX号</span>
+        <script type="application/javascript" th:fragment="footer">
+		//底部联系我们
+	        $('.contactUs').hover(function () {
+	            $('.contactCode').fadeIn();
+	        },function () {
+	            $('.contactCode').fadeOut();
+	        });
+      </script>
+</div>
+</html>

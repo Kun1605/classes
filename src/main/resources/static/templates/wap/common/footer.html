@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="footer" class="footer">
+      	 <ul class="footer-page clearfix">
+				<li class="page-item active">
+					<a href="/wap/home/index">
+						<i class="iconfont icon-index"></i>
+						<p>功能首页</p>
+					</a>
+				</li>
+				<li class="page-item">
+					<a href="/wap/article">
+						<i class="iconfont icon-computer"></i>
+						<p>学习文章</p>
+					</a>
+				</li>
+				<li class="page-item">
+					<a href="ask.html">
+						<i class="iconfont icon-ask"></i>
+						<p>我的消息</p>
+					</a>
+				</li>
+				<li class="page-item">
+					<a href="user-center.html">
+						<i class="iconfont icon-person1"></i>
+						<p>个人中心</p>
+					</a>
+				</li>
+			</ul>
+			    <script type="text/javascript" th:src="@{/wap/js/jquery.min.js(v=${vtimestamp})}"></script>
+<script type="text/javascript">
+	var title=$('.header span').text();
+	var caidan=$(".page-item");
+	caidan.each(function() {
+		var elt=$(this);
+		var title2=elt.find('p').text();
+		console.log(title2)
+		if(title.indexOf(title2)!=-1){
+			elt.addClass('active');
+			elt.siblings().removeClass('active');
+		}
+	})
+	
+</script>
+</div>
+</html>

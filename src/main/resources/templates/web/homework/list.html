@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/missionList/missionhome.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/style.css(v=${vtimestamp})}">
+    <title>班集-班级作业</title>
+</head>
+<body>
+<div id="mainInfo">
+
+	<!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar" />
+    <!--top_nav_bar E -->
+	<div class="infoContent">
+	    	<!--left_nav_bar S -->
+	        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+	        <!--left_nav_bar E -->
+	        
+	        <div class="infoRightBar pull-right">
+	        	<!-- 开始 -->
+	            <div class="tab-content">
+	                <div class="tab-pane active account-bind-panel" role="tabpanel" id="account-bind">
+						   <div class="missionListBox">
+						   			<span>班级作业</span> 
+			                       <div th:if="${#lists.isEmpty(homeworkList)}" class="noDataBox">
+			                           <img src="/web/image/accountpage/noData.png" alt="">
+			                           <p>目前暂无作业</p>
+			                	  </div>
+			               </div>
+			               <br>
+			               <div class="ddlb-con-boxlista" th:each="work : ${homeworkList}">
+	                        	<div class="ddlb-con-boxlista-a">
+	                            	<ul style="list-style: none;">
+	                                    <li class="ddlb-con-boxlista-alia"><img src="/web/image/homework/wr-1.png"/>
+		                                    <span th:text="'【'+${work.type}+'】'"></span>
+		                                    <span th:text="${work.title}"><span>
+	                                    </li>
+	                                    <li class="ddlb-con-boxlista-alib" th:text="${work.content}"></li>
+	                                </ul>
+	                            </div>
+	                            <div class="ddlb-con-boxlista-b">
+	                            	<!-- 已缴人数：<span th:text="${work.submit_num}"></span> -->
+	                            </div>
+	                            <div class="ddlb-con-boxlista-c">
+	                            	发布于<img src="/web/image/homework/wr-3.png" th:text="${#dates.format(work.create_time, 'yyyy-MM-dd hh:mm:ss')}"></img>
+	                            </div>
+	                            <div class="ddlb-con-boxlista-d">
+	                            	<button th:data-id="${work.id}">查看详情</button>
+	                            </div>
+					      </div>
+		       		</div>
+	       		 </div>
+	       		 <!-- 结束 -->
+			</div>
+	</div>
+	<!--footer S -->
+        <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+<p id="add_tan"   style="z-index:1000; height:50px;border-radius: 5px;padding:0 20px;background:rgba(224,82,68,.7);position:fixed;top:68%;margin-top: -25px;left:43%;margin-left: -107px;font-size: 16px;color:#fff;line-height:50px; display:none"></p>	
+</body>
+<script th:src="@{/web/vendor/jquery/dist/jquery.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/js/swiper.min.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script type="text/javascript">
+	$('button').on('click', function() {
+		window.location.href="/web/homework/detail?work_id="+$(this).data('id');
+	})
+
+</script>
+</html>

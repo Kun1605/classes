@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/missionList/missionhome.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/style.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/video/creatVideo.css(v=${vtimestamp})}">
+    <title>班集-班级作业</title>
+</head>
+<body>
+<div id="mainInfo">
+
+    <!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    <div class="infoContent">
+        <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+
+        <div class="infoRightBar pull-right">
+            <div>
+                <button id="button"
+                        style="  display:none; border: 0; outline: none;color: gray;border-radius: 3px; padding: 4px 5px;float: right;">
+                    您已经提交过作业，可点击此处下载
+                </button>
+                <h4 th:text="${work.title}"></h4>
+            </div>
+            <!-- 开始 -->
+            <div class="uploadVideo">
+                <!-- 上传作业S -->
+                <a id="upload1" href="javascript:;" class="uploadBtn"> <input
+                        type="file" class="uploadInput" name="file" id="input_id" multiple
+                        data-url="/Upload">
+                    <p id="infoTxt">上传作业</p>
+                </a>
+                <!-- 上传作业E -->
+                <!-- 上传作业完成S -->
+
+                <div id="upload3" class="uploadSuccess" style="display: none;">
+                    <img src="/web/image/article/wc.png" alt="">
+                    <div>
+                        <p>作业上传成功</p>
+                        <span id="subDate"></span><span id="reset">重新上传</span>
+                    </div>
+                </div>
+                <!-- 上传作业完成E -->
+                <!-- 上传中 -->
+                <div id="upload2" class="loadingIcon" style="display: none;">
+                    <img src="/web/image/mymessage/loading.gif" alt=""
+                         style="width:90px;">
+                    <p style="margin-top: -10px;">正在上传，请稍后...</p>
+                </div>
+                <!-- 上传中 -->
+
+
+            </div>
+            <form class="uploadForm" action="/web/homework/save">
+                <p>作业要求</p>
+                <div class="form-group" style="align-items:flex-start">
+                    <div class="inputRightSide">
+							<textarea id="" cols="30" rows="10"
+                                      name="content" th:placeholder="${work.content}" readonly="readonly"></textarea>
+                    </div>
+                </div>
+                <p>已交作业学生名单</p>
+                <!-- 已经提交学生名单 -->
+                <ul class="selectedAccount">
+                </ul>
+
+            </form>
+
+            <!--PC版-->
+            <div id="SOHUCS" th:sid="${work.id}"></div>
+            <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+            <script type="text/javascript">
+                window.changyan.api.config({
+                    appid: 'cytzrQBAt',
+                    conf: 'prod_dfd5fde65b1af1db7a91f9397bc3f1be'
+                });
+            </script>
+            <!-- 结束 -->
+        </div>
+    </div>
+
+    <!--footer S -->
+    <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+<p id="add_tan"
+   style="z-index:1000; height:50px;border-radius: 5px;padding:0 20px;background:rgba(224,82,68,.7);position:fixed;top:68%;margin-top: -25px;left:43%;margin-left: -107px;font-size: 16px;color:#fff;line-height:50px; display:none"></p>
+</body>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/js/jquery/jquery-2.2.4.min.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/vendor/jquery-ui/jquery-ui.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript"
+        th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript"
+        th:src="@{/web/vendor/jquery-tagit/js/tag-it.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript"
+        th:src="@{/web/vendor/jquery.fileupload/jquery.iframe-transport.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript"
+        th:src="@{/web/vendor/jquery.fileupload/jquery.xdr-transport.js(v=${vtimestamp})}"></script>
+<script charset="utf-8" type="text/javascript"
+        th:src="@{/web/vendor/ajaxFileUpload/jquery.ajaxfileupload.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:inline="javascript">
+    var work_id = [[${work_id}]];
+    var student_id = [[${student.id}]]
+    var upload1 = $("#upload1");
+    var upload2 = $("#upload2");
+    var upload3 = $("#upload3");
+    var file = $('input[type=file]');
+    $("#reset").click(function () {
+        upload1.show();
+        upload2.hide();
+        upload3.hide();
+    })
+
+    function point(html) {
+        $('#add_tan').html(html);
+        $('#add_tan').show().fadeOut(10000);
+        setTimeout(function () {
+        }, 5000);
+    }
+
+    file.ajaxfileupload({
+        action: '/web/homework/upload',
+        method: 'post',
+        valid_extensions: ['rar', 'txt', 'doc', 'zip', 'docx', 'xls', 'zip'],
+        params: {
+            work_id: work_id
+        },
+        onComplete: function (resp) {
+            if (resp.status == false) {
+                point("上传的格式不支持");
+                return;
+            }
+            upload1.hide();
+            upload2.hide();
+            upload3.show();
+            console.log(JSON.stringify(resp));
+            $('#subDate').text(getFormatDate(new Date(), "yyyy-MM-dd hh:mm:ss"));
+            submitList();
+
+        },
+        onStart: function () {
+            console.log('img upload start')
+            upload1.hide();
+            upload2.show();
+            upload3.hide();
+        },
+        onCancel: function () {
+            console.log('no file selected');
+        }
+    });
+    $("#publish").click(function () {
+        $.post('/web/homework/save', $("form").serialize()
+            , function (data) {
+                console.log(data)
+                if (data.code == 200) {
+                    point("上传成功")
+                    window.location.href = "/web/home/index"
+                } else {
+                    point("保存失败")
+                }
+            }, "json");
+    })
+    $("#button").click(function () {
+        window.location.href = "download/" + work_id + "/" + student_id
+    });
+
+    function isSubmit() {
+        $.post('/web/homework/isSubmit', {work_id: work_id}, function (data) {
+            if (data.code == 200) {
+                $('#infoTxt').text('重新上传');
+                $("#button").show();
+            } else {
+                $("#button").hide();
+            }
+
+        })
+    }
+
+    function submitList() {
+        $.post('/web/homework/submitList', {work_id: work_id}, function (data) {
+            if (data.code == 200) {
+                var html = [];
+                var list = data.obj;
+                for (var i = 0; i < list.length; i++) {
+                    /* <li class="tagModal" th:each="student: ${studentList}">
+                          <img ></img>
+                      </li> */
+                    html.push(' <li class="tagModal" >  ')
+                    html.push(' <img src=' + list[i].avatar + '>' + list[i].name + '</img> ')
+                    html.push(' </li>  ')
+                    $('.selectedAccount').html(html.join());
+                }
+            }
+
+        })
+    }
+
+    $(function () {
+        isSubmit();
+        submitList();
+    })
+</script>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header (title,links)">
+    <meta name="baidu-site-verification" content="H2ug6gKGsH"/>
+    <title th:replace="${title}"></title>
+    <meta charset="UTF-8">
+    <meta name="keywords"
+          content="班集-班级事务尽在掌握">
+    <meta name="description"
+          content="班集-班级事务尽在掌握">
+    <link rel="icon" type="image/x-icon" href="/web/image/other/favicon.ico"/>
+    <link rel="stylesheet" th:href="@{/web/css/spigPet.css(v=${vtimestamp})}">
+    <th:block th:replace="${links}"/>
+</head>
+</html>

@@ -1,0 +1,213 @@
+@charset "UTF-8";
+.infoRightBar {
+  width: 1031px;
+  background-color: #fff;
+  padding: 40px 20px 26px 40px;
+}
+.infoRightBar .account-bind-panel .missionListBox span {
+  font-size: 16px;
+  color: #666;
+  font-weight: bold;
+}
+.infoRightBar .account-bind-panel .missionListBox button {
+  border: 0;
+  outline: none;
+  color: black;
+  border-radius: 3px;
+  padding: 4px 5px;
+  float: right;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList {
+  width: 100%;
+  margin-top: 30px;
+  padding-left: 0;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 1px 4px 0 rgba(183, 183, 183, 0.5);
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li {
+  height: 50px;
+  width: 96%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 0.5px #e2e2e2;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 300;
+  color: #666666;
+  width: 12%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(1) {
+  width: 16%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(2) {
+  width: 13%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(3) {
+  width: 13%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(4) {
+  width: 13%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(5) {
+  width: 12%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(6) {
+  width: 10%;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d7271d;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(7) {
+  width: 12%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span:nth-child(8) {
+  width: 12%;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkContent,
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkAccount,
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkArticle {
+  width: 44px;
+  height: 25px;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkContent,
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkAccount {
+  background-color: #d7271d;
+  border: none;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkContent:focus,
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkAccount:focus {
+  outline: none;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkContent:hover,
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkAccount:hover {
+  text-decoration: none;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkArticle {
+  background-color: #32a7f2;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li span .checkArticle:hover {
+  text-decoration: none;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li:nth-of-type(1) {
+  background-color: #d0d0d0;
+  width: 100%;
+  height: 40px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li:nth-of-type(1) span {
+  font-size: 14px;
+  font-weight: normal;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList li:nth-of-type(1) span:nth-child(1) {
+  padding: 0;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .modal {
+  top: 100px;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content {
+  text-align: center;
+  width: 750px;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .close {
+  opacity: 1;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .closeBtn {
+  font-size: 36px;
+  background-color: #fff;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content p {
+  font-size: 16px;
+  color: #333333;
+  width: 607px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .messageInfo {
+  height: 22px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  margin-top: 10px;
+  color: #e7141a;
+  font-size: 14px;
+  font-weight: 300;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .accountItemBox {
+  display: flex;
+  width: 617px;
+  margin: 0;
+  margin: 20px auto;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .accountItemBox .accountItemList {
+  width: 100%;
+  padding-left: 0;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .accountItemBox .accountItemList .missionAccount {
+  width: 115px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  border-bottom: none;
+  padding: 0;
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 8px;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .accountItemBox .accountItemList .missionAccount img {
+  height: 45px;
+  width: 45px;
+  display: block;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .accountItemBox .accountItemList .missionAccount .missionTitle {
+  font-size: 12px;
+  color: #333333;
+  margin-top: 7px;
+  width: 100%;
+  height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.infoRightBar .account-bind-panel .missionListBox .missionList .checkAccountDetail .modal-content .accountItemBox .accountItemList .missionAccount .missionPrice {
+  font-size: 12px;
+  color: #d7271d;
+  width: 100%;
+  height: 20px;
+}
+.infoRightBar .account-bind-panel .missionListBox .noDataBox {
+  margin-top: 100px;
+  text-align: center;
+}
+.infoRightBar .account-bind-panel .missionListBox .noDataBox img {
+  width: 80px;
+  margin-bottom: 14px;
+}
+.infoRightBar .account-bind-panel .missionListBox .noDataBox p {
+  color: #cdcdcd;
+  margin-left: 3px;
+}
+.modal-backdrop {
+  background-color: transparent !important;
+}

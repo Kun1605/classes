@@ -1,0 +1,196 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+#loginPlatForm .loginHeader {
+  height: 47px;
+  width: 100%;
+  background-color: #FE8686;
+  display: flex;
+  align-items: center;
+}
+#loginPlatForm .loginHeader img {
+  height: 39px;
+  margin-left: 350px;
+  margin-right: 28px;
+}
+#loginPlatForm .loginHeader span {
+  color: #fff;
+  font-size: 20px;
+}
+#loginPlatForm .loginContent {
+  width: 100%;
+  height: 100%;
+  padding-left: 300px;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  display: flex;
+}
+#loginPlatForm .loginContent .leftLoginForm {
+  box-sizing: border-box;
+  text-align: center;
+  height: 600px;
+  border-right: 1px solid #cacaca;
+  display: inline-block;
+  padding-right: 20px;
+}
+#loginPlatForm .loginContent .leftLoginForm p {
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+#loginPlatForm .loginContent .leftLoginForm p:nth-of-type(1) {
+  font-size: 20px;
+  color: #333;
+}
+#loginPlatForm .loginContent .leftLoginForm p:nth-of-type(2) {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group label {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #333;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group .inputForm {
+  width: 242px;
+  height: 36px;
+  border: 1px solid #cdcdcd;
+  display: inline-block;
+  margin-top: 20px;
+  text-indent: 1em;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group .inputForm:focus {
+  outline: none;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group .loginTag1 {
+  font-size: 14px;
+  color: #333;
+  width: 392px;
+  height: 40px;
+  margin-top: 10px;
+  display: block;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group .loginTag2 {
+  text-align: left;
+  margin-top: 10px;
+  display: inline-block;
+  width: 392px;
+  box-sizing: border-box;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group .loginTag2 a {
+  text-decoration: none;
+  color: #666;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  padding: 2px 3px;
+  display: inline-block;
+  margin: 0 3px 5px 3px;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group button {
+  width: 110px;
+  height: 40px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  margin-top: 16px;
+  cursor: pointer;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group button:focus {
+  outline: none;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group button:nth-of-type(1) {
+  background-color: #51B7EC;
+  margin-right: 20px;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group button:nth-of-type(2) {
+  background-color: #cdcdcd;
+}
+#loginPlatForm .loginContent .leftLoginForm form .tagFormGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loginPlatForm .loginContent .leftLoginForm form .tagFormGroup label {
+  margin-left: 42px;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group2 {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group2 span {
+  font-size: 16px;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group2 span:nth-of-type(1) {
+  margin-right: 20px;
+}
+#loginPlatForm .loginContent .leftLoginForm form .form-group2 span img {
+  height: 40px;
+  margin-right: 24px;
+}
+#loginPlatForm .loginContent .rightLoginForm {
+  padding: 50px 50px 0 35px;
+  text-align: center;
+  height: 614px;
+  display: inline-block;
+}
+#loginPlatForm .loginContent .rightLoginForm div {
+  font-size: 16px;
+  color: #666;
+  width: 240px;
+  text-align: left;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #cdcdcd;
+}
+#loginPlatForm .loginContent .rightLoginForm ul {
+  text-align: left;
+  padding-left: 20px;
+}
+#loginPlatForm .loginContent .rightLoginForm ul li {
+  font-size: 14px;
+  color: #969696;
+  margin-bottom: 10px;
+}
+#loginPlatForm .loginContent .rightLoginForm ul li a {
+  text-decoration: none;
+  color: #51B7EC;
+}
+#container {
+  width: 242px;
+  margin-right: 53px;
+  display: inline-block;
+  margin-left: 4px;
+}
+input[type=submit] {
+  padding: 8px;
+}
+/*定义边框*/
+#singleFieldTags {
+  border: 1px solid #b1c9dc;
+  background: #e7e3ca;
+}
+/*定义输入元素text*/
+#singleFieldTags input {
+  background: #e7e3ca;
+  color: blue;
+}
+/*定义标签样式*/
+#singleFieldTags li {
+  background: #e7e3ca;
+  border: 1px solid #930;
+  color: red;
+}
+/*第一输入元素的父元素*/
+#singleFieldTags .tagit-new {
+  border: none;
+}
+#myTags {
+  width: 236px;
+  border-radius: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}

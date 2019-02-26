@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="web/common/header :: header(~{::title},~{::link})">
+    <title>班集-班费详情</title>
+    <link rel="stylesheet" th:href="@{/web/vendor/bootstrap/dist/css/bootstrap.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/mainInfo.css(v=${vtimestamp})}">
+    <link rel="stylesheet" th:href="@{/web/css/MyPocket/pocketHome.css(v=${vtimestamp})}">
+</head>
+<body>
+<div id="mainInfo">
+    <!--top_nav_bar S -->
+    <th:block th:replace="web/common/top_nav_bar :: top_bar"/>
+    <!--top_nav_bar E -->
+    <div class="infoContent">
+        <!--left_nav_bar S -->
+        <th:block th:replace="web/common/left_nav_bar :: left_bar"/>
+        <!--left_nav_bar E -->
+        <div class="infoRightBar pull-right">
+            <div class="tab-content">
+                <div class="tab-pane active account-bind-panel" role="tabpanel" id="account-bind">
+                    <div class="pocketTopBox">
+                        <span>班费余额</span>
+                        <div class="moneyDetail">
+                            <div class="moneyBox" style="margin-left: 197px;">
+                                <span th:text="'￥ '+${balance}"></span>
+                                <span>班费余额<span class="questionMark" title="这里数字展现的是班费减少和添加计算后的数额">!</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moneyListBox">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs moneyListTab" role="tablist">
+                            <li role="presentation" class="active"><a href="#moneyList" aria-controls="moneyList" role="tab" data-toggle="tab">班费流水表</a></li>
+                            <!-- <li role="presentation"><a href="#moneyRecord" aria-controls="moneyRecord" role="tab" data-toggle="tab">添加记录</a></li> -->
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content moneyListContent" >
+                            <div role="tabpanel" class="tab-pane active" id="moneyList">
+                                <ul id="moneyRecordUl" class="moneyList">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="noDataBox" style="display: none">
+                            <img src="/web/image/accountpage/noData.png" alt="">
+                            <p>暂无数据</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="Page navigation" class="loadingMore">
+                <ul class="pagination">
+					
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--footer S -->
+    <th:block th:replace="web/common/footer :: footer"/>
+    <!--footer E -->
+</div>
+</body>
+
+<script th:src="@{/web/vendor/jquery/dist/jquery.js(v=${vtimestamp})}"></script>
+<script th:src="@{/web/vendor/bootstrap/dist/js/bootstrap.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:src="@{/web/js/utils.js(v=${vtimestamp})}"></script>
+<script type="text/javascript" th:inline="javascript">
+var page=1;
+var limit=5;
+
+$(function(){
+	$('[aria-controls=moneyList]').trigger('click');
+})
+$('[aria-controls=moneyList]').on('click', function() {
+	getMoneyRecordData();
+});
+
+
+var getMoneyRecordData= function(page){
+	$.post('/web/moneyRecord/datagrid',{
+		page : page,
+		limit:limit
+	}, function(data) {
+		if(data.code==200){
+			var pageInfo=data.obj;
+			if(pageInfo.total==0){
+				 $(".moneyListContent").hide();
+                 $(".pagination").children().remove();
+                 $(".noDataBox").show();
+				 return;
+			}
+			drawMoneyRecord(pageInfo);
+			getpage1(pageInfo,"getMoneyRecordData");
+		}
+	}, 'json');
+};
+function drawMoneyRecord(pageInfo){
+	var list=pageInfo.list;
+	var html = [];
+    html.push('<li> <span style="justify-content: center">流水号</span>');
+    html.push('<span>原因</span>');
+    html.push('<span>时间</span>');
+    html.push('<span>金额</span> </li>');
+    for(var i = 0 ;i<list.length;i++){
+    	 html.push('<li> <span>' + parseInt(100000000000+list[i].id)+ '</span>');
+    	 html.push('<span>' + list[i].reason + '</span>');
+    	 html.push('<span>' + list[i].create_time + '</span>');
+    	 var amount = (list[i].amount/ 100.0).toFixed(2);
+    	 html.push('<span style="color :red">' +'￥'+ amount + '</span></li>');
+    }
+    $('#moneyRecordUl').html(html.join(''));
+}
+//封装page分页对象
+function getpage1(contactsPage, name) {
+    var page = [];
+    page.push('<li>');
+    if (contactsPage.isFirstPage) {
+        //page.push('<a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>');
+    } else {
+        page.push('<a onclick="' + name + '(' + (contactsPage.pageNum - 1) + ')"><span aria-hidden="true">&laquo;</span></a>');
+    }
+    page.push('</li>');
+    for (var i = contactsPage.navigateFirstPage; i <= contactsPage.navigateLastPage; i++) {
+        var start = i;
+        if (contactsPage.navigateFirstPage == contactsPage.navigateLastPage) {
+            break;
+        }
+        if (contactsPage.pageNum == start) {
+            page.push('<li class="active"><a>' + start + '</a></li>');
+            continue;
+        }
+        page.push('<li><a onclick="' + name + '(' + start + ')">' + start + '</a></li>');
+    }
+    page.push('<li>');
+    if (contactsPage.isLastPage) {
+        //page.push('<a aria-label="Next"><span aria-hidden="true">&raquo;</span></a>');
+    } else {
+        page.push('<a onclick="' + name + '(' + (contactsPage.pageNum + 1) + ')"><span aria-hidden="true">&raquo;</span></a>');
+    }
+    page.push('</li>');
+    $(".pagination").children().remove();
+    $(".pagination").html(page.join(''));
+}
+</script>
+</html>
